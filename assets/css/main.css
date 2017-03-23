@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,700");
+@import url("https://fonts.googleapis.com/css?family=Oxygen");
+:root, html, body, .site-container {
+  width: 100%;
+  min-height: 100%; }
+
+.site-container {
+  overflow: auto; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px; }
+
+.site-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+p {
+  font-family: 'Montserrat';
+  line-height: 1.75em;
+  max-width: 45em;
+  margin-bottom: 1.75em; }
+
+a {
+  text-decoration: none; }
+
+.button {
+  padding: 1em;
+  margin: 1em;
+  border: solid #00aeed .2em;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  color: #111111; }
+
+.button:hover {
+  border: solid #00aeed .2em;
+  background-color: #00aeed;
+  color: white; }
+
+/*FLEX DEFAULTS*/
+.flex {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; }
+  .flex {
+    width: 100%; }
+
+.column {
+  flex-direction: column; }
+
+.row {
+  flex-direction: row; }
+
+.home-header {
+  height: 100vh;
+  background-color: #001e4f;
+  background-image: url(../images/home/welder4-2.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative; }
+  .home-header img {
+    height: 40vh;
+    margin: 2em; }
+
+.mission {
+  text-align: center;
+  font-size: 1.5em;
+  background: white; }
+  .mission p {
+    padding: 3em 0; }
+  .mission img {
+    max-width: 30em;
+    width: 100%;
+    margin-bottom: 2em; }
+
+.w50 {
+  width: 50%;
+  height: 35em; }
+  .w50 p {
+    margin: 2em 5em; }
+
+.spot {
+  justify-content: center;
+  margin: 0;
+  text-align: center; }
+  .spot h1 {
+    color: #111111;
+    font-size: 3em;
+    font-weight: bold;
+    width: 100%;
+    text-transform: uppercase;
+    opacity: 1;
+    margin: 0; }
+  .spot p {
+    color: #111111;
+    margin-bottom: 1em; }
+
+.spot-img {
+  height: 35em;
+  background-repeat: no-repeat; }
+
+.outreach-con {
+  flex-direction: row-reverse; }
+
+.outreach {
+  background-image: url(/assets/images/home/outreach.JPG);
+  background-size: cover;
+  background-position: center;
+  z-index: -1; }
+
+.team {
+  background-image: url(/assets/images/home/PAHS.jpg);
+  background-size: cover;
+  background-position: center;
+  z-index: -1; }
+
+@media (max-width: 70em) {
+  .spot-link {
+    width: 100%; }
+    .spot-link .spot {
+      width: 100%; }
+
+  .w50 {
+    width: 100%; }
+    .w50 p {
+      margin: 1em 2em; } }
+@media (max-width: 20em) {
+  .logo {
+    width: 100%; } }
+.content {
+  margin-bottom: 1.33em;
+  justify-content: flex-start; }
+  .content img {
+    max-width: 45em;
+    display: inline-block; }
+
+.post-list {
+  list-style: none;
+  max-width: 45em; }
+  .post-list .post-list-item {
+    padding-bottom: 1.33em; }
+    .post-list .post-list-item .post-title {
+      color: #00aeed;
+      text-decoration: none;
+      font-size: 2em; }
+      .post-list .post-list-item .post-title h4 {
+        margin: 0; }
+    .post-list .post-list-item .post-title:hover {
+      text-decoration: underline; }
+
+.heading {
+  align-content: flex-start;
+  width: 45em; }
+  .heading h1 {
+    text-transform: uppercase; }
+  .heading div {
+    width: 45em; }
+
+.date {
+  margin: 0 0 1.33em 0;
+  padding: 0; }
+
+.back-button {
+  text-decoration: none;
+  color: #111111;
+  padding-left: 1em; }
+
+.header2-logo {
+  height: 16em;
+  margin: 1.33em 0; }
+
+.navbar {
+  flex-direction: row;
+  background: #111111; }
+  .navbar a {
+    color: white;
+    font-family: Montserrat;
+    text-decoration: none;
+    padding: 0 1em; }
+
+.image-wrapper {
+  display: flex;
+  flex-direction: column; }
+  .image-wrapper p {
+    font-size: .75em !important; }
+
+.category {
+  margin: .5em;
+  text-decoration: none;
+  color: #111111; }
+
+.catbloc:not(:target) {
+  display: none; }
+
+@media (max-width: 50em) {
+  .content img {
+    width: 100%; }
+
+  .heading div {
+    width: 100%;
+    padding: 0 .67em; }
+    .heading div h1 {
+      padding: 0 0.67em; } }
+.sponsors {
+  display: flex;
+  justify-content: center;
+  max-width: 60em;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 6em; }
+  .sponsors .logo {
+    width: 10em;
+    padding: 2em; }
+
+.footer {
+  padding: 4em 0.5em;
+  background-color: #111111; }
+  .footer {
+    color: white; }
+  .footer a {
+    color: white;
+    text-decoration: none; }
+  .footer img {
+    display: inline-block;
+    height: 12em; }
+
+.social img {
+  height: 4em; }
+
+.nav {
+  /*Navigation Bar*/
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  justify-content: flex-start; }
+
+.links {
+  display: flex;
+  flex-wrap: wrap; }
+
+.logo-5431 {
+  align-self: flex-start;
+  margin-left: .75em;
+  height: 2em; }
+
+.nav-button {
+  /*Navigation Button*/
+  height: 100%;
+  display: flex;
+  line-height: 1.5em;
+  padding: 1em;
+  font-size: 1em;
+  font-family: Montserrat;
+  text-transform: uppercase;
+  color: #111111;
+  text-decoration: none;
+  transition: background .2s, color .2s; }
+
+.nav-button:hover {
+  background-color: rgba(200, 200, 255, 0.3); }
+
+.home-nav {
+  /*Navigation Bar*/
+  background: url(../images/home/gradient.png);
+  background-size: contain;
+  background-repeat: repeat-x;
+  height: 8em; }
+
+.home-nav-button {
+  /*Navigation Button*/
+  color: #ffffff; }
+
+.home-nav-button:hover {
+  background-color: rgba(200, 200, 255, 0.3); }
+
+@media (max-width: 800px) {
+  .nav {
+    justify-content: center; } }
