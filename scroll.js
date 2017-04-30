@@ -1,42 +1,18 @@
-/*(function(){
-    
-    var leftButton = document.getElementById("carosuel-left");
-    var rightButton = document.getElementById("carosuel-right");
-    
-    leftButton.addEventListener("click", left);
-    rightButton.addEventListener("click", right);
-    
-    var carosuel = document.getElementById("carosuel");
-    var imgs = carosuel.getElementsByClassName("carosuel-img");
-    var scroll = -50;
-    
-    function left() {
-        scroll -= 100;
-        for(var i = 0; i < imgs.length; i++) {
-            imgs[i].style.transform = "translateX(" + scroll + "%)";
-        }
-    }
-    
-    function right() {
-        scroll += 100;
-        for(var i = 0; i < imgs.length; i++) {
-            imgs[i].style.transform = "translateX(" + scroll + "%)";
-        }
-    }
-    
-    imgs[1] = dumb;
-    
-}());*/
+window.addEventListener("scroll", scrollListener);
+window.addEventListener("scroll", parallax);
+window.addEventListener("resize", homeBannerSize);
 
 var navBar = document.getElementById("nav-bar");
 var navBarChildren = navBar.children;
 var Logo5431 = document.getElementById("5431-logo");
-var homeCoverHeight = document.getElementById("home-cover").offsetHeight - 64;
+var homeBannerHeight = document.getElementById("home-banner").offsetHeight - 64;
+
+scrollListener();
 
 function scrollListener() {
     var scrollY = window.scrollY;
-    
-    if (scrollY < homeCoverHeight) {
+
+    if (scrollY < homeBannerHeight) {
         navBar.style.backgroundColor = "transparent";
         navBar.style.borderBottomColor = "transparent"
         Logo5431.style.filter = "invert(0)";
@@ -54,13 +30,12 @@ function scrollListener() {
     }
 }
 
-function homeCoverSize() {
-    homeCoverHeight = document.getElementById("home-cover").offsetHeight - 64;
-    scrollListener();
+var homeBanner = document.getElementById("home-banner");
+function parallax() {
+    homeBanner.style.transform = "translateY("+ scrollY/2 + "px)";
 }
 
-//window.onscroll = function(){scrollListener()};
-//window.onresize = function(){homeCoverSize()};
-
-window.addEventListener("scroll", scrollListener);
-window.addEventListener("resize", homeCoverSize);
+function homeBannerSize() {
+    homeBannerHeight = document.getElementById("home-banner").offsetHeight - 64;
+    scrollListener();
+}
