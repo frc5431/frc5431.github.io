@@ -1,0 +1,114 @@
+/*fonts*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,600');
+
+/*border-box reset*/
+:root, html, body {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+    background: #f9f9f9;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hyperlink-button {
+    padding: 1em;
+    background: #00aeed;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    margin: .2em;
+    border-radius: 200em;
+    transition: 0.2s;
+}
+
+.hyperlink-button:hover {
+    background: #60d5ff;
+}
+
+.hyperlink-button:active {
+    background: #008cbf;
+}
+
+/*Navigation*/
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: transparent solid 1px;
+    width: 100%;
+    background: transparent;
+    height: 4em;
+    z-index: 1000;
+    transition: .2s;
+}
+
+.nav-bar a {
+    padding: 1.25em 1em;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    transition: .2s;
+}
+
+.nav-bar img {
+    height: 2em;
+    padding: 0 1em;
+    transition: .2s;
+}
+
+.sm {
+    height: 4em;
+    width: 4rem;
+}
+
+.sm-tw {
+    background-image: url(img/universal/twitter.svg);
+}
+.sm-yt {
+    background-image: url(img/universal/youtube.svg);
+}
+.sm-fb {
+    background-image: url(img/universal/facebook.svg);
+}
+
+/*Content*/
+
+.home-cover {
+    width: 100%;
+    height: 100vh;
+    background:  url(img/home/BannerWidescreen-01.png);
+    background-size: cover;
+    background-position: bottom;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .home-cover {
+        height: 50vh;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media (min-aspect-ratio: 5/2) {
+    .home-cover {
+        height: 100vh;
+        background-size: contain;
+        background-position: center;
+    }
+}
