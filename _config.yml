@@ -1,4 +1,4 @@
 markdown: kramdown
 port: 5431
-
-sass: sass
+highlighter: rogue
+encoding: utf-8
