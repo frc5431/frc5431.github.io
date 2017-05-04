@@ -1,5 +1,4 @@
 window.addEventListener("scroll", scrollListener);
-window.addEventListener("scroll", parallax);
 window.addEventListener("resize", homeBannerSize);
 
 var navBar = document.getElementById("nav-bar");
@@ -28,11 +27,6 @@ function scrollListener() {
             navBarChildren[i].style.color = "black";
         }
     }
-}
-
-var homeBanner = document.getElementById("home-banner");
-function parallax() {
-    homeBanner.style.transform = "translateY("+ scrollY/2 + "px)";
 }
 
 function homeBannerSize() {
