@@ -29,6 +29,7 @@ a {
 
 p {
     padding: 0 1.5em;
+    text-align: center;
 }
 
 /*universal button*/
@@ -84,7 +85,7 @@ p {
 
 .sm {
     height: 4em;
-    width: 4rem;
+    width: 4em;
 }
 
 .sm-tw {
