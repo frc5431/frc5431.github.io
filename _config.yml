@@ -1,4 +1,4 @@
 markdown: kramdown
-port: 5431
 highlighter: rouge
 encoding: utf-8
+port: 80

@@ -29,6 +29,7 @@ a {
 
 p {
     padding: 0 1.5em;
+    text-align: center;
 }
 
 .max-width-40em {
@@ -86,11 +87,17 @@ p {
 
 /*photo-slider*/
 
+<<<<<<< HEAD
 .photo-slider {
     background: #111111;
     width: 100%;
     color: white;
     padding: 2%;
+=======
+.sm {
+    height: 4em;
+    width: 4em;
+>>>>>>> origin/master
 }
 
 
