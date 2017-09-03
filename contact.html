@@ -5,12 +5,11 @@
 
     {% include head.html %}
 
-    <body>
+    <body class="no-cover-image">
         <!--Navigation-->
         {% include nav.html %}
 
-        <!--Banner-->
-        <div id="home-banner" class="home-banner"></div>
+        <div style="height:4em;"></div>
 
         <!--Content Container-->
         <div class="column-flex center-vertically-flex page-content">
@@ -34,6 +33,6 @@
                 </p>
             </div>
         </div>
-        <script src="scroll.js"></script>
+        {% include footer.html %}
     </body>
 </html>

@@ -5,12 +5,11 @@
 
     {% include head.html %}
 
-    <body>
+    <body class="no-cover-image">
         <!--Navigation-->
         {% include nav.html %}
 
-        <!--Banner-->
-        <div id="home-banner" class="home-banner"></div>
+        <div style="height:4em;"></div>
 
         <!--Content Container-->
         <div class="column-flex center-vertically-flex page-content">
@@ -42,9 +41,9 @@
                 Throughout the season, over 50,000 people from across the world watched us compete.
                 </p>
             </div>
-            
+
             <!-- 2017 -->
-            
+
             <div class="column-flex" style="max-width: 40em;">
                 <h1 class="center-vertically-self-flex">2017</h1>
                 <p>
@@ -53,10 +52,12 @@
                 At each competition we ended in Quarter finals.
                 Then during the off season we competed in TRI, which we got to quarterfinals in.
                 We also competed TRR, which we got semifinals at and were awarded with Team Spirit Award.
-                We also, in cooperation with Chain Reaction, set up our own off-season event the North Texas Robotics Competition. 
+                We also, in cooperation with Chain Reaction, set up our own off-season event the North Texas Robotics Competition.
                 </p>
             </div>
         </div>
-        <script src="scroll.js"></script>
+
+        {% include footer.html %}
+
     </body>
 </html>

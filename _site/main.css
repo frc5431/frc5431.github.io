@@ -71,6 +71,11 @@ p {
     transition: .2s;
 }
 
+body.no-cover-image .nav-bar{
+    background: white;
+    border-bottom: #dddddd solid 1px;
+}
+
 .nav-bar a {
     padding: 1.25em 1em;
     font-weight: 600;
@@ -79,25 +84,18 @@ p {
     transition: .2s;
 }
 
+body.no-cover-image .nav-bar a {
+    color: black;
+}
+
 .nav-bar img {
     height: 2em;
     padding: 0 1em;
     transition: .2s;
 }
 
-/*photo-slider*/
-
-<<<<<<< HEAD
-.photo-slider {
-    background: #111111;
-    width: 100%;
-    color: white;
-    padding: 2%;
-=======
-.sm {
-    height: 4em;
-    width: 4em;
->>>>>>> origin/master
+body.no-cover-image .nav-bar img {
+    filter: invert(1);
 }
 
 
@@ -107,6 +105,7 @@ p {
     padding: 4em 0.5em;
     background-color: #111111;
     color: white;
+    margin-top: 5em;
 }
 
 .footer img {
