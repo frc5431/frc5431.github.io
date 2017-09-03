@@ -31,6 +31,10 @@ p {
     padding: 0 1.5em;
 }
 
+.max-width-40em {
+    max-width: 40em;
+}
+
 /*universal button*/
 
 .hyperlink-button {
@@ -52,7 +56,7 @@ p {
     background: #008cbf;
 }
 
-/*Navigation*/
+/*navigation*/
 
 .nav-bar {
     position: fixed;
@@ -80,21 +84,32 @@ p {
     transition: .2s;
 }
 
-/*social-media-buttons*/
+/*photo-slider*/
 
-.sm {
+.photo-slider {
+    background: #111111;
+    width: 100%;
+    color: white;
+    padding: 2%;
+}
+
+
+/*footer*/
+
+.footer {
+    padding: 4em 0.5em;
+    background-color: #111111;
+    color: white;
+}
+
+.footer img {
+    height: 12em;
+}
+
+.footer-social-media img {
     height: 4em;
     width: 4rem;
-}
-
-.sm-tw {
-    background-image: url(img/universal/twitter.svg);
-}
-.sm-yt {
-    background-image: url(img/universal/youtube.svg);
-}
-.sm-fb {
-    background-image: url(img/universal/facebook.svg);
+    margin-top: 1em;
 }
 
 /*home-page*/
