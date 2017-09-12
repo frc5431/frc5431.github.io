@@ -19,16 +19,38 @@
         <!--Navigation-->
 
             <div id="nav-bar" class="nav-bar center-vertically-flex row-flex">
-<a href="/"><img id="5431-logo" src="img/universal/5431Logo.png" draggable="false"></a>
-<div style="flex-grow: 1;"></div>
-<a href="/">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<!-- <a href="news.html">News</a> -->
-<!-- <a href="photos.html">Photos</a> -->
-<!-- <a href="blog.html">Blog</a> -->
-<a href="events.html">Events</a>
+    <a href="/"><img id="5431-logo" src="img/universal/5431Logo.png" draggable="false"></a>
+    <div style="flex-grow: 1;"></div>
+    <a href="/">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <!--<a href="news.html">News</a> -->
+    <!--<a href="photos.html">Photos</a> -->
+    <!--<a href="blog.html">Blog</a> -->
+    <a href="events.html">Events</a>
 </div>
+<span id="nav-container">
+<!-- This checkbox will give us the toggle behavior, it will be hidden, but functional -->
+<input id="toggle" type="checkbox">
+
+<!-- IMPORTANT: Any element that we want to modify when the checkbox state changes go here, being "sibling" of the checkbox element -->
+
+<!-- This label is tied to the checkbox, and it will contain the toggle "buttons" -->
+<label class="toggle-container" for="toggle">
+        <!-- If menu is open, it will be the "X" icon, otherwise just a clickable area behind the hamburger menu icon -->
+        <span class="button button-toggle"></span>
+    </label>
+
+<!-- The nav menu -->
+<nav class="nav">
+    <a class="nav-item" href="">Dashboard</a>
+    <a class="nav-item" href="">History</a>
+    <a class="nav-item" href="">Statistics</a>
+    <a class="nav-item" href="">Settings</a>
+</nav>
+<img id="logo" src="img/universal/5431Logo.png" draggable="false">
+</span>
+
 
 
         <!--Banner-->
