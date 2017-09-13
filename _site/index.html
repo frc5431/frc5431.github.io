@@ -18,7 +18,7 @@
     <body>
         <!--Navigation-->
 
-            <div id="nav-bar" class="nav-bar center-vertically-flex row-flex">
+        <div id="nav-bar" class="nav-bar center-vertically-flex row-flex">
     <a href="/"><img id="5431-logo" src="img/universal/5431Logo.png" draggable="false"></a>
     <div style="flex-grow: 1;"></div>
     <a href="/">Home</a>
@@ -29,6 +29,7 @@
     <!--<a href="blog.html">Blog</a> -->
     <a href="events.html">Events</a>
 </div>
+
 <span id="nav-container">
 <!-- This checkbox will give us the toggle behavior, it will be hidden, but functional -->
 <input id="toggle" type="checkbox">
@@ -37,21 +38,27 @@
 
 <!-- This label is tied to the checkbox, and it will contain the toggle "buttons" -->
 <label class="toggle-container" for="toggle">
-        <!-- If menu is open, it will be the "X" icon, otherwise just a clickable area behind the hamburger menu icon -->
-        <span class="button button-toggle"></span>
-    </label>
+    <!-- If menu is open, it will be the "X" icon, otherwise just a clickable area behind the hamburger menu icon -->
+    <span class="button button-toggle"></span>
+</label>
 
 <!-- The nav menu -->
 <nav class="nav">
-    <a class="nav-item" href="">Dashboard</a>
-    <a class="nav-item" href="">History</a>
-    <a class="nav-item" href="">Statistics</a>
-    <a class="nav-item" href="">Settings</a>
+    <a class="nav-item" href="/">Home</a>
+    <a class="nav-item" href="about.html">About</a>
+    <a class="nav-item" href="contact.html">Contact</a>
+    <a class="nav-item" href="events.html">Events</a>
 </nav>
-<img id="logo" src="img/universal/5431Logo.png" draggable="false">
+<!--<img id="logo" src="img/universal/5431Logo.png" draggable="false">-->
 </span>
 
 
+        
+        <style>
+            body {
+                background-color: #001331;
+            }
+        </style>
 
         <!--Banner-->
         <div id="home-banner" class="home-banner"></div>
