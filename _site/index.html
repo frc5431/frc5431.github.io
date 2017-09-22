@@ -49,7 +49,6 @@
     <a class="nav-item" href="contact.html">Contact</a>
     <a class="nav-item" href="events.html">Events</a>
 </nav>
-<!--<img id="logo" src="img/universal/5431Logo.png" draggable="false">-->
 </span>
 
 
@@ -57,6 +56,15 @@
         <style>
             body {
                 background-color: #001331;
+            }
+            #toggle:checked ~ .nav .nav-item{
+                color: white;
+            }
+            .button-toggle:before, .button-toggle:after{
+                background-color: white;
+            }
+            .nav-item:before{
+                background-color: white;
             }
         </style>
 

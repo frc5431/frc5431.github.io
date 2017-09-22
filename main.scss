@@ -310,6 +310,7 @@ a {
   // Don't want pointer-events as menu is closed
   pointer-events: none;
   transition: $transition-duration;
+  color: black;
 }
 
 // Showing nav items as lines, making up the hamburger menu icon
@@ -364,9 +365,10 @@ a {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: white;
+    background-color: black;
     transform: translateY(-50%) scaleY(5);
     transition: $transition-duration;
+    color: black;
   }
 }
 

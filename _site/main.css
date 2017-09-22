@@ -215,7 +215,8 @@ a {
   display: inline-block;
   margin: 25px 25px 20px;
   pointer-events: none;
-  transition: 0.5s; }
+  transition: 0.5s;
+  color: black; }
 
 .nav-item {
   position: relative;
@@ -262,9 +263,10 @@ a {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: white;
+    background-color: black;
     transform: translateY(-50%) scaleY(5);
-    transition: 0.5s; }
+    transition: 0.5s;
+    color: black; }
 
 /* Dummy content */
 .dummy-content {
