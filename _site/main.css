@@ -53,7 +53,8 @@ p {
   background: transparent;
   height: 4em;
   z-index: 1000;
-  transition: .2s; }
+  transition: .2s;
+  vertical-align: middle; }
 
 body.no-cover-image .nav-bar {
   background: white;
@@ -72,19 +73,25 @@ body.no-cover-image .nav-bar a {
 .nav-bar img {
   height: 2em;
   padding: 0 1em;
-  transition: .2s; }
+  transition: .2s;
+  margin-top: 1em; }
 
 body.no-cover-image .nav-bar img {
   filter: invert(1); }
 
+.nav-bar-content {
+  float: right;
+  margin-top: 1.5em; }
+
 /*footer*/
-.footer {
+footer {
+  text-align: center;
   padding: 4em 0.5em;
   background-color: #111111;
   color: white;
   margin-top: 5em; }
 
-.footer img {
+footer img {
   height: 12em; }
 
 .footer-social-media img {
@@ -112,8 +119,18 @@ body.no-cover-image .nav-bar img {
     background-size: contain; } }
 .page-content {
   background: #f9f9f9;
-  position: relative; }
+  position: relative;
+  text-align: center;
+  width: 100%; }
 
+.page-section {
+  width: 40%;
+  margin-left: 30%; }
+
+@media screen and (max-width: 900px) {
+  .page-section {
+    width: 90%;
+    margin-left: 5%; } }
 /* Basic styles */
 * {
   box-sizing: border-box; }
@@ -124,6 +141,12 @@ html, body {
 a {
   text-decoration: none; }
 
+/* img tags*/
+img.left-side-image, img.right-side-image {
+  display: inline;
+  width: 30%;
+  height: 30em; }
+
 img.full-width-image {
   height: 100vh;
   padding-bottom: 1em; }
@@ -132,7 +155,12 @@ img.full-width-image {
   img.full-width-image {
     width: 100%;
     height: auto;
-    padding-bottom: 0; } }
+    padding-bottom: 0; }
+
+  img.left-side-image, img.right-side-image {
+    display: block;
+    width: 100%;
+    height: auto; } }
 /* Toggle functionality */
 #toggle {
   position: absolute;
@@ -217,7 +245,9 @@ img.full-width-image {
   .button-toggle:after {
     transform: translateY(-50%) rotate(-45deg) scale(0); }
 
+/* Event calender */
 #event-calender {
+  margin-left: 20%;
   position: relative;
   height: 40em;
   width: 60%;
@@ -234,6 +264,7 @@ img.full-width-image {
 
 @media screen and (max-width: 900px) {
   #event-calender {
+    margin-left: 10%;
     width: 80%; } }
 /* Menu */
 .nav {
