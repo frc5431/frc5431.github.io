@@ -13,14 +13,6 @@
 
         <!--Content Container-->
         <div class="column-flex center-vertically-flex page-content">
-            <!-- DIVIJA LOOK HERE -->
-            <div class="column-flex" style="max-width: 40em;">
-                <h1 class="center-vertically-self-flex">Latest News</h1>
-                <p>
-                    coming soon!
-                </p>
-            </div>
-
             <!-- Events -->
 
             <div class="column-flex" style="max-width: 40em;">
@@ -33,7 +25,11 @@
 
             <!-- Google Calendar Embed -->
 
-            <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=pisd.edu_57n5cfp52bltnua0aegb3mnr18%40group.calendar.google.com&amp;color=%235F6B02&amp;ctz=America%2FChicago" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        
+            <!-- Wrapping it in a 100% width/height div will make the iframe semi-responsive-->
+            <div id="event-calender">
+                <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=pisd.edu_57n5cfp52bltnua0aegb3mnr18%40group.calendar.google.com&amp;color=%235F6B02&amp;ctz=America%2FChicago" style="border:solid 1px #777" frameborder="0" scrolling="no"></iframe>
+            </div>
         </div>
         {% include footer.html %}
     </body>
