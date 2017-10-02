@@ -13,7 +13,7 @@
     "dir": "ltr",
     "start_url": "/",
     "icons": [{
-        "src": "/img/universal/5431Logo.png",
+        "src": "/img/universal/titlelesslogo.png",
         "type": "image/png"
       }]
 }
