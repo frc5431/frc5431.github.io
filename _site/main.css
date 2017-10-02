@@ -1,5 +1,3 @@
-/*fonts*/
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,600");
 /*border-box reset*/
 :root, html, body {
   -webkit-box-sizing: border-box;
@@ -97,7 +95,7 @@ body.no-cover-image .nav-bar img {
 /*home-page*/
 .home-banner {
   width: 100%;
-  height: 100vh;
+  height: 95vh;
   background: url(img/home/Banner.png);
   background-size: cover;
   background-position: center;
@@ -126,6 +124,15 @@ html, body {
 a {
   text-decoration: none; }
 
+img.full-width-image {
+  height: 100vh;
+  padding-bottom: 1em; }
+
+@media screen and (max-width: 800px) {
+  img.full-width-image {
+    width: 100%;
+    height: auto;
+    padding-bottom: 0; } }
 /* Toggle functionality */
 #toggle {
   position: absolute;
@@ -225,6 +232,9 @@ a {
   left: 0;
   position: absolute; }
 
+@media screen and (max-width: 900px) {
+  #event-calender {
+    width: 80%; } }
 /* Menu */
 .nav {
   display: inline-block;
@@ -354,9 +364,6 @@ a {
   height: 100%; }
 
 @media screen and (max-width: 800px) {
-  #event-calender {
-    width: 80%; }
-
   #nav-container {
     display: block; }
 
