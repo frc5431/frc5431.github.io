@@ -251,7 +251,7 @@ img.full-width-image {
 #event-calender {
   margin-left: 20%;
   position: relative;
-  height: 40em;
+  height: 80vh;
   width: 60%;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
