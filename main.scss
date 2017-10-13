@@ -81,7 +81,7 @@ body.no-cover-image .nav-bar{
 	padding: 1.25em 1em;
 	font-weight: 600;
 	text-decoration: none;
-	color: white;
+	color: inherit;
 	transition: .2s;
 }
 
@@ -129,9 +129,9 @@ footer img {
 
 .home-banner {
 		width: 100%;
-		height: 95vh;
-		background:  url(/img/home/Team.jpg);
-		background-size: cover;
+		height: 70vh;
+		background:  url(/img/universal/LogoWhite.svg);
+		background-size: auto 60%;
 		background-repeat: no-repeat;
 		background-position: center;
 		z-index: -1000;
