@@ -1,9 +1,9 @@
 window.addEventListener("scroll", scrollListener);
 window.addEventListener("resize", homeBannerSize);
 
-var navBar = document.getElementById("nav-bar");
+var navBar = document.getElementById("nav-container");
 var navBarChildren = navBar.children;
-var Logo5431 = document.getElementById("5431-logo");
+var Logo5431 = document.getElementById("nav-bar-logo");
 var homeBannerHeight = document.getElementById("home-banner").offsetHeight - 64;
 
 scrollListener();
