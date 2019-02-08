@@ -1,7 +1,10 @@
+---
+---
 <!DOCTYPE HTML>
 <html lang="en-US">
 
 	<head>
+		{% include head.html %}
 		
 		<meta property="og:title" content="FRC 5431 Titan Robotics Blog" />
 		
@@ -12,6 +15,7 @@
 
     <body class="no-cover-image">
         <!--Navigation-->
+        {% include nav.html %}
 
         <div style="height:4em;"></div>
 
@@ -28,15 +32,19 @@
                 </p>
             </div>
             
+            {% for post in site.posts %}
                 <article class="post">
                 
-                    <h1><a href="htpps://www.google.com">{{ post.title }}</a></h1>
+                    <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
                     
                     <div class="entry">
+                        {{ post.excerpt }}
                     </div>
                     
-                    <a href="htpps://www.google.com" class="read-more">Read More</a>
+                    <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
                 </article>
+            {% endfor %}
         </div>
+        {% include footer.html %}
     </body>
 </html>
