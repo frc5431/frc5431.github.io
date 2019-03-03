@@ -62,9 +62,9 @@ body.no-cover-image .nav-bar {
   text-decoration: none;
   color: inherit;
   transition: .2s; }
-
+/* 
 body.no-cover-image .nav-item {
-  color: black; }
+  color: black; } */
 
 .nav-bar img {
   height: 2em;
