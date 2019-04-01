@@ -1,19 +1,19 @@
 {
-    "version": "0.1",
-    "manifest_version": "0.1",
-    "name": "5431 TITAN ROBOTICS",
-    "short_name": "FRC 5431",
-    "description": "TITAN ROBOTICS strives to develop student leaders by collaborating to solve complex problems.",
-    "author": "Titan Robotics",
-    "theme_color": "#00AEED",
-    "display": "fullscreen",
-    "background_color": "#001E4F",
-    "lang": "en-US",
-    "default_locale": "en-US",
-    "dir": "ltr",
-    "start_url": "/",
-    "icons": [{
-        "src": "/img/universal/titlelesslogo.png",
-        "type": "image/png"
-      }]
+  "version": "0.1",
+  "manifest_version": "0.1",
+  "name": "5431 TITAN ROBOTICS",
+  "short_name": "FRC 5431",
+  "description": "TITAN ROBOTICS strives to develop student leaders by collaborating to solve complex problems.",
+  "author": "Titan Robotics",
+  "theme_color": "#00AEED",
+  "display": "fullscreen",
+  "background_color": "#001E4F",
+  "lang": "en-US",
+  "default_locale": "en-US",
+  "dir": "ltr",
+  "start_url": "/",
+  "icons": [{
+    "src": "/img/universal/titlelesslogo.png",
+    "type": "image/png"
+  }]
 }
