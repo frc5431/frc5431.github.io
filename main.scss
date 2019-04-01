@@ -1,52 +1,56 @@
 /*border-box reset*/
-:root, html, body {
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-		width: 100%;
-		overflow-x: hidden;
+:root,
+html,
+body {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	overflow-x: hidden;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
 	box-sizing: inherit;
 }
 
 /*default resets*/
 
 body {
-		margin: 0;
-		padding: 0;
-		font-family: montserrat;
-		background: #f9f9f9;
+	margin: 0;
+	padding: 0;
+	font-family: montserrat;
+	background: #f9f9f9;
 }
 
 a {
-		text-decoration: none;
+	text-decoration: none;
 }
 
 .max-width-40em {
-		max-width: 40em;
+	max-width: 40em;
 }
 
 /*universal button*/
 
 .hyperlink-button {
-		padding: 1em;
-		background: #00aeed;
-		color: white;
-		font-weight: bold;
-		display: inline-block;
-		margin: .2em;
-		border-radius: 200em;
-		transition: 0.2s;
+	padding: 1em;
+	background: #00aeed;
+	color: white;
+	font-weight: bold;
+	display: inline-block;
+	margin: .2em;
+	border-radius: 200em;
+	transition: 0.2s;
 }
 
 .hyperlink-button:hover {
-		background: #60d5ff;
+	background: #60d5ff;
 }
 
 .hyperlink-button:active {
-		background: #008cbf;
+	background: #008cbf;
 }
 
 /*navigation*/
@@ -64,7 +68,7 @@ a {
 	vertical-align: middle;
 }
 
-body.no-cover-image .nav-bar{
+body.no-cover-image .nav-bar {
 	background: white;
 	border-bottom: #dddddd solid 1px;
 }
@@ -120,28 +124,28 @@ footer img {
 /*home-page*/
 
 .home-banner {
-		width: 100%;
-		height: 70vh;
-		background:  url(img/universal/LogoWhite.svg);
-		background-size: auto 60%;
-		background-repeat: no-repeat;
-		background-position: center;
-		z-index: -1000;
-		position: relative;
+	width: 100%;
+	height: 70vh;
+	background: url(img/universal/LogoWhite.svg);
+	background-size: auto 60%;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: -1000;
+	position: relative;
 }
 
 @media (max-aspect-ratio: 1/1) {
-		.home-banner {
-				height: 50vh;
-				background-size: cover;
-		}
+	.home-banner {
+		height: 50vh;
+		background-size: cover;
+	}
 }
 
 @media (min-aspect-ratio: 5/2) {
-		.home-banner {
-				height: 100vh;
-				background-size: contain;
-		}
+	.home-banner {
+		height: 100vh;
+		background-size: contain;
+	}
 }
 
 .page-content {
@@ -152,16 +156,16 @@ footer img {
 	text-align: center;
 }
 
-.page-section{
-	width:40%;
+.page-section {
+	width: 40%;
 	margin-left: 30%;
 	text-align: justify;
 	padding: 0.15em;
 	display: block;
 }
 
-@media screen and (max-width: 900px){
-	.page-section{
+@media screen and (max-width: 900px) {
+	.page-section {
 		width: 90%;
 		margin-left: 5%;
 		text-align: left;
@@ -179,7 +183,8 @@ $transition-delay: 0.05s;
 	box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
 	margin: 0;
 }
 
@@ -189,7 +194,8 @@ a {
 
 /* img tags*/
 
-img.left-side-image, img.right-side-image {
+img.left-side-image,
+img.right-side-image {
 	display: inline;
 	width: 30%;
 	height: 30em;
@@ -200,14 +206,15 @@ img.full-width-image {
 	padding-bottom: 1em;
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
 	img.full-width-image {
 		width: 100%;
 		height: auto;
 		padding-bottom: 0;
 	}
-	
-	img.left-side-image, img.right-side-image {
+
+	img.left-side-image,
+	img.right-side-image {
 		display: block;
 		width: 100%;
 		height: auto;
@@ -216,26 +223,26 @@ img.full-width-image {
 
 /* Event calender */
 
-#event-calender{
+#event-calender {
 	margin-left: 20%;
 	position: relative;
 	height: 80vh;
 	width: 60%;
-	overflow: auto; 
-	-webkit-overflow-scrolling:touch;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
 	border: solid black 1px;
 }
 
-#event-calender iframe{
-	width:100%;
-	height:100%;
-	top:0;
-	left:0;
-	position:absolute;
+#event-calender iframe {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
 }
 
-@media screen and (max-width: 900px){
-	#event-calender{
+@media screen and (max-width: 900px) {
+	#event-calender {
 		margin-left: 10%;
 		width: 80%;
 	}
@@ -247,52 +254,53 @@ img.full-width-image {
 	display: none;
 }
 
-@media screen and (max-width: 800px){
-		// To hide the checkbox
+@media screen and (max-width: 800px) {
+
+	// To hide the checkbox
 	#toggle {
 		position: absolute;
 		left: -100%;
 		top: -100%;
 	}
-	
+
 	#toggle:focus {
-	
-		& ~ .toggle-container .button-toggle {
+
+		&~.toggle-container .button-toggle {
 			box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1);
 		}
 	}
-	
+
 	// Styles for the 'open' state, if the checkbox is checked
 	#toggle:checked {
 		// Any element you need to change the style if menu is open goes here, using the sibling selector (~) as follows
-	
+
 		// Making the "X" icon using `:before` and `:after` pseudo-elements
-		& ~ .toggle-container .button-toggle {
+		&~.toggle-container .button-toggle {
 			box-shadow: 0 0 0 550px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1);
-	
+
 			&:hover {
 				box-shadow: 0 0 0 550px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1), 0 0 0 8px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1);
 			}
-	
+
 			&:before {
 				transform: translateY(-50%) rotate(45deg) scale(1);
 			}
-	
+
 			&:after {
 				transform: translateY(-50%) rotate(-45deg) scale(1);
 			}
 		}
-	
-		&:focus ~ .toggle-container .button-toggle {
+
+		&:focus~.toggle-container .button-toggle {
 			box-shadow: 0 0 0 550px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1), 0 0 0 8px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1);
 		}
-	
+
 		// Open nav
-		& ~ .nav-bar-content {
+		&~.nav-bar-content {
 			margin-bottom: 100px;
 			pointer-events: auto;
 			transform: translate(50px, 50px);
-	
+
 			// Restoring nav items from "lines" in the menu icon
 			.nav-item {
 				color: black;
@@ -303,38 +311,39 @@ img.full-width-image {
 				opacity: 1;
 				transform: scaleY(1);
 				transition: $transition-duration, opacity 0.1s;
-	
+
 				// Setting delays for the nav items in open transition
 				@for $i from 1 through $items {
 					&:nth-child(#{$i}) {
 						$delay: ($items - $i) * $transition-delay;
 						transition-delay: $delay;
+
 						&:before {
 							transition-delay: $delay;
 						}
 					}
 				}
-	
+
 				// Hiding the lines
 				&:before {
 					opacity: 0;
 				}
 			}
 		}
-	
+
 		// Dummy content
-		& ~ .dummy-content {
+		&~.dummy-content {
 			padding-top: 30px;
-	
+
 			&:before {
 				background-color: rgba(0, 0, 0, 0.3);
 			}
 		}
 	}
-	
-	
+
+
 	/* Toggle button */
-	
+
 	.button-toggle {
 		position: absolute;
 		display: inline-block;
@@ -346,16 +355,17 @@ img.full-width-image {
 		cursor: pointer;
 		border-radius: 100%;
 		transition: $transition-duration + 0.1;
-	
+
 		// Shadow on hover
 		&:hover {
 			box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1);
 		}
-	
+
 		// Making the "X" icon using `:before` and `:after` pseudo-elements
 		// Initially hidden because `scale(0)` transformation
-	
-		&:before, &:after {
+
+		&:before,
+		&:after {
 			position: absolute;
 			content: '';
 			top: 50%;
@@ -366,16 +376,16 @@ img.full-width-image {
 			border-radius: 5px;
 			transition: $transition-duration;
 		}
-	
+
 		&:before {
 			transform: translateY(-50%) rotate(45deg) scale(0);
 		}
-	
+
 		&:after {
 			transform: translateY(-50%) rotate(-45deg) scale(0);
 		}
 	}
-	
+
 	.nav-bar-content {
 		display: inline-block;
 		margin: 25px 25px 20px;
@@ -385,7 +395,7 @@ img.full-width-image {
 		color: black;
 		float: none;
 	}
-	
+
 	// Showing nav items as lines, making up the hamburger menu icon
 	.nav-item {
 		position: relative;
@@ -402,35 +412,36 @@ img.full-width-image {
 		white-space: nowrap;
 		transform: scaleY(0.2);
 		transition: $transition-duration, opacity 1s;
-	
+
 		// Setting delays for the nav items in close transition
 		@for $i from 1 through $items {
 			&:nth-child(#{$i}) {
 				$delay: ($i - 1) * $transition-delay;
 				transition-delay: $delay;
+
 				&:before {
 					transition-delay: $delay;
 				}
 			}
 		}
-	
+
 		// Adjusting width for the first line
 		&:nth-child(1) {
 			letter-spacing: -8px;
 		}
-	
+
 		// Adjusting width for the second line
 		&:nth-child(2) {
 			letter-spacing: -7px;
 		}
-	
+
 		// Adjusting from the fourth element onwards
 		&:nth-child(n + 4) {
 			letter-spacing: -8px;
 			margin-top: -7px;
 			opacity: 0;
 		}
-	
+
 		// Getting the lines for the hamburger menu icon
 		&:before {
 			position: absolute;
@@ -445,15 +456,15 @@ img.full-width-image {
 			color: black;
 		}
 	}
-	
-	
+
+
 	/* Dummy content */
-	
+
 	.dummy-content {
 		position: relative;
 		text-align: center;
 		transition: $transition-duration;
-	
+
 		&:before {
 			position: absolute;
 			content: '';
@@ -466,7 +477,7 @@ img.full-width-image {
 			transition: $transition-duration;
 		}
 	}
-	
+
 	.circle {
 		display: inline-block;
 		width: 75px;
@@ -474,27 +485,27 @@ img.full-width-image {
 		background-color: white;
 		border-radius: 100%;
 	}
-	
+
 	.text {
 		margin: 15px 0 30px;
-	
+
 		span {
 			display: inline-block;
 			height: 10px;
 			margin: 0 5px;
 			background-color: #C06162;
 			border-radius: 5px;
-	
+
 			&:first-child {
 				width: 50px;
 			}
-	
+
 			&:last-child {
 				width: 80px;
 			}
 		}
 	}
-	
+
 	.square-top {
 		display: inline-block;
 		position: relative;
@@ -503,7 +514,7 @@ img.full-width-image {
 		background-color: #FEBE7E;
 		z-index: 1;
 	}
-	
+
 	.square-behind {
 		display: inline-block;
 		position: relative;
@@ -511,37 +522,38 @@ img.full-width-image {
 		width: 250px;
 		height: 210px;
 		background-color: #C28683;
-	
-		&:before, &:after {
+
+		&:before,
+		&:after {
 			position: absolute;
 			content: '';
 			top: 0;
 			width: 40%;
 			height: 100%;
 		}
-	
+
 		&:before {
 			left: 0;
 			background-color: #9D567C;
 		}
-	
+
 		&:after {
 			right: 0;
 			background-color: #958C6B;
 		}
 	}
-	
-	#nav-container{
+
+	#nav-container {
 		position: static;
 		display: block;
 		// background-color: #001331;
-		background-color: rgba(0,0,0,0);
+		background-color: rgba(0, 0, 0, 0);
 		// position: fixed;
 		width: 100%;
 		height: 100%;
 	}
-	
-	#nav-bar-logo{
+
+	#nav-bar-logo {
 		display: none;
 	}
 }
