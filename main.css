@@ -102,7 +102,7 @@ body.no-cover-image .nav-bar img {
 footer {
   text-align: center;
   padding: 4em 0.5em;
-  background-color: #111111;
+  background-color: #001331;
   color: white;
   margin-top: 5em;
 }
@@ -185,8 +185,6 @@ a {
 img.left-side-image,
 img.right-side-image {
   display: inline;
-  width: 30%;
-  height: 30em;
 }
 
 img.full-width-image {
@@ -384,7 +382,6 @@ img.full-width-image {
     position: relative;
     padding: 0;
     display: inline-block;
-    float: left;
     clear: both;
     color: transparent;
     font-size: 14px;
