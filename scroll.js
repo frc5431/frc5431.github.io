@@ -18,7 +18,8 @@ function scrollListener() {
         for (i = 0; i < navBarChildren.length; i++) {
             navBarChildren[i].style.color = "white";
         }
-    } else {
+    }
+    else {
         navBar.style.backgroundColor = "white";
         navBar.style.borderBottomColor = "#dddddd";
         Logo5431.style.filter = "invert(100%)";
