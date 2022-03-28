@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#00AEED" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#00AEED" />
+    <meta name="apple-mobile-web-app-title" content="FRC 5431" />
+
+    <meta http-equiv="cleartype" content="on" />
+
+    <meta name="application-name" content="FRC 5431" />
+    <meta name="msapplication-tooltip" content="FRC 5431" />
+
+    <meta name="msapplication-allowDomainApiCalls" content="true" />
+    <meta name="msapplication-allowDomainMetaTags" content="true" />
+    <meta name="msapplication-navbutton-color" content="#00AEED" />
+    <meta name="msapplication-TileColor" content="##001E4F" />
+    <meta
+      name="msapplication-TileImage"
+      content="/img/universal/titlelesslogo.png"
+    />
+
+    <meta property="al:ios:app_name" content="FRC 5431" />
+
+    <meta property="al:android:app_name" content="FRC 5431" />
+
+    <meta name="ICBM" content="33.019843, -96.698886" />
+    <meta name="geo.position" content="33.019843;-96.698886" />
+    <meta name="geo.region" content="US, TX" />
+    <meta name="geo.placename" content="Plano" />
+
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/img/universal/titlelesslogo.png" />
+    <meta property="og:url" content="http://0.0.0.0:8080/" />
+    <meta
+      property="og:description"
+      content="FRC 5431 Titan Robotics strives to develop student leaders by collaborating to solve complex problems."
+    />
+    <meta property="og:site_name" content="frc5431.com" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="FRC 5431" />
+    <meta name="twitter:site" content="@frc5431" />
+    <meta name="twitter:creator" content="@frc5431" />
+    <meta
+      name="twitter:description"
+      content="FRC 5431 Titan Robotics strives to develop student leaders by collaborating to solve complex problems."
+    />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!--Bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="icon" type="image/png" href="/img/universal/titlelesslogo.png" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
+
+    <link rel="manifest" href="/manifest.json" />
+
+    <meta property="og:title" content="FRC 5431 Titan Robotics" />
+
+    <meta
+      name="description"
+      content="FRC 5431 Titan Robotics strives to develop student leaders by collaborating to solve complex problems."
+    />
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="rellax-master/rellax.min.js"></script>
+    <script src="script.js"></script>
+
+    <title>Our Story - 5431 Titan Robotics</title>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function () {
+        var years = $("*[id*=sidenav-20]:visible").toArray(); //each year
+        var dividers = $("*[id*=divider]:visible").toArray(); //each divider
+        var offsets = []; //will contain how far each year is from the top
+        var adjustment =
+          $(window).height() /
+          7.5; /*makes the visual effect more accurate, there's probably a better way to do this but idc it kinda works*/
+        $("*[id*=anchor-20]:visible").each(function (value) {
+          offsets.push($(this).offset().top - adjustment); //building the offsets array
+        });
+        $(window).scroll(function () {
+          var scrollTop = $(window).scrollTop(); //how far down the user has scrolled
+          $(offsets).each(function (index, value) {
+            var aboveNext =
+              typeof offsets[index + 1] === "undefined"
+                ? true
+                : scrollTop < offsets[index + 1];
+            if (scrollTop >= value && aboveNext) {
+              $(years[index]).addClass("pos");
+            } else {
+              $(years[index]).removeClass("pos");
+            }
+          });
+        });
+      });
+    </script>
+
+    <!--Navigation bar-->
+    <div id="navbar"></div>
+
+    <main>
+      <!--Top banner-->
+      <section id="ourstory-banner">
+        <div class="rellax" id="ourstory-banner-image"></div>
+
+        <center id="banner-text">
+          <h1>Our Story</h1>
+          <h3>
+            In 2015, three students had a goal of creating a robotics team.
+          </h3>
+        </center>
+      </section>
+
+      <section class="page-content" id="ourstory-content">
+        <div class="container-fluid py-2 py-md-4" id="">
+          <div class="px-lg-5 px-md-2 px-xs-0">
+            <div
+              class="row mt-3 mx-md-3 mx-xs-0 px-md-5 px-xs-3 py-md-4 py-xs-2"
+              id="ourstory-main"
+            >
+              <div class="col-2 d-none d-md-block">
+                <div class="ourstory-sidenav sticky-top pt-3">
+                  <h2 class="d-none d-xl-block">Seasons</h2>
+                  <h2 class="d-block invisible d-xl-none">Seasons</h2>
+                  <ul class="years ml-0 pl-0">
+                    <li>
+                      <a id="sidenav-2022" href="#anchor-2022">2022</a>
+                    </li>
+
+                    <div class="hr" id="divider-22"></div>
+
+                    <li>
+                      <a id="sidenav-2020-21" href="#anchor-2020-21">2020-21</a>
+                    </li>
+
+                    <div class="hr" id="divider-20"></div>
+
+                    <li>
+                      <a id="sidenav-2019" href="#anchor-2019">2019</a>
+                    </li>
+
+                    <div class="hr" id="divider-19"></div>
+
+                    <li>
+                      <a id="sidenav-2018" href="#anchor-2018">2018</a>
+                    </li>
+
+                    <div class="hr" id="divider-18"></div>
+
+                    <li>
+                      <a id="sidenav-2017" href="#anchor-2017">2017</a>
+                    </li>
+
+                    <div class="hr" id="divider-17"></div>
+
+                    <li>
+                      <a id="sidenav-2016" href="#anchor-2016">2016</a>
+                    </li>
+
+                    <div class="hr" id="divider-16"></div>
+
+                    <li>
+                      <a id="sidenav-2015" href="#anchor-2015">2015</a>
+                    </li>
+
+                    <!--                                <div class="hr" id="divider-15"></div>-->
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-10 col-sm-12 pt-3">
+                <h2>History of 5431</h2>
+                <ul class="timeline pt-1">
+                  <!--It’s called the carousel slider. It lets us travel the way a child travels. Round and around, and back home again, to a place where we know we are loved.-->
+                  <li>
+                    <!--2022-->
+                    <h2><a class="anchor" id="anchor-2022">2022</a></h2>
+
+                    <!--2022 slider-->
+                    <div
+                      id="carousel-2022"
+                      class="carousel slide pb-3"
+                      data-ride="carousel"
+                    >
+                      <ol class="carousel-indicators pb-3">
+                        <li
+                          data-target="#carousel-2022"
+                          data-slide-to="0"
+                          class="active"
+                        ></li>
+                        <li data-target="#carousel-2022" data-slide-to="1"></li>
+                        <li data-target="#carousel-2022" data-slide-to="2"></li>
+                      </ol>
+                      <div class="carousel-inner">
+                        <div
+                          class="game-logo carousel-item active h-100"
+                          id="game-logo-22"
+                        ></div>
+                        <div class="team carousel-item">
+                          <img
+                            class="img-fluid d-block"
+                            src="img/about/2022/team in bleachers.jpg"
+                            alt="2022 photo"
+                          />
+                        </div>
+                        <div class="bot carousel-item">
+                          <img
+                            class="img-fluid d-block w-100"
+                            src="img/about/2022/Hermes up close.jpg"
+                            alt="Hermes"
+                          />
+                          <div class="carousel-caption d-none d-lg-block">
+                            <h5>Hermes</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <a
+                        class="carousel-control-prev pl-1"
+                        href="#carousel-2022"
+                        role="button"
+                        data-slide="prev"
+                      >
+                        <span
+                          class="carousel-control-prev-icon"
+                          aria-hidden="true"
+                        ></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a
+                        class="carousel-control-next pr-1"
+                        href="#carousel-2022"
+                        role="button"
+                        data-slide="next"
+                      >
+                        <span
+                          class="carousel-control-next-icon"
+                          aria-hidden="true"
+                        ></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+                    <!--End of 2022 slider-->
+                    <p class="pb-2 mb-0">
+                      h
+                    </p>
+                    <p>
+                      <a
+                        href="https://www.thebluealliance.com/team/5431/2022"
+                        target="”_blank”"
+                      >
+                        More on the 2022 Season ></a
+                      >
+                    </p>
+                    <!--End of 2022-->
+                  </li>
+
+                  <li>
+                    <!--2020-21-->
+                    <h2><a class="anchor" id="anchor-2020-21">2020-21</a></h2>
+
+                    <!--2020-21 slider-->
+                    <div
+                      id="carousel-2020-21"
+                      class="carousel slide pb-3"
+                      data-ride="carousel"
+                    >
+                      <ol class="carousel-indicators pb-3">
+                        <li
+                          data-target="#carousel-2020-21"
+                          data-slide-to="0"
+                          class="active"
+                        ></li>
+                        <li
+                          data-target="#carousel-2020-21"
+                          data-slide-to="1"
+                        ></li>
+                        <li
+                          data-target="#carousel-2020-21"
+                          data-slide-to="2"
+                        ></li>
+                        <li
+                          data-target="#carousel-2020-21"
+                          data-slide-to="3"
+                        ></li>
+                      </ol>
+                      <div class="carousel-inner">
+                        <div
+                          class="game-logo carousel-item active h-100"
+                          id="game-logo-20"
+                        ></div>
+                        <div class="team carousel-item">
+                          <img
+                            class="img-fluid d-block"
+                            src="img/about/2020/opening day team photo.jpg"
+                            alt="2020 photo"
+                          />
+                        </div>
+                        <div class="team carousel-item">
+                          <img
+                            class="img-fluid d-block"
+                            src="img/about/2021/zoom team photo.jpg"
+                            alt="2021 photo"
+                          />
+                        </div>
+                        <div class="bot carousel-item">
+                          <img
+                            class="img-fluid d-block w-100"
+                            src="img/about/2020/Hyperion on platform cropped.jpg"
+                            alt="Hyperion"
+                          />
+                          <div class="carousel-caption d-none d-lg-block">
+                            <h5>Hyperion</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <a
+                        class="carousel-control-prev pl-1"
+                        href="#carousel-2020-21"
+                        role="button"
+                        data-slide="prev"
+                      >
+                        <span
+                          class="carousel-control-prev-icon"
+                          aria-hidden="true"
+                        ></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a
+                        class="carousel-control-next pr-1"
+                        href="#carousel-2020-21"
+                        role="button"
+                        data-slide="next"
+                      >
+                        <span
+                          class="carousel-control-next-icon"
+                          aria-hidden="true"
+                        ></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+                    <!--End of 2020-21 slider-->
+                    <p class="pb-2 mb-0">
+                      In 2020, we were fortunate to attend the Plano District
+                      tournament before the Covid-19 pandemic prematurely
+                      cancelled the Infinite Recharge season. At this event, we
+                      ranked 6th and won the Chairman’s award.
+                    </p>
+                    <p>
+                      <a
+                        href="https://www.thebluealliance.com/team/5431/2020"
+                        target="”_blank”"
+                      >
+                        More on the 2020 Season ></a
+                      >
+                      <br />
+                      <a
+                        href="https://www.thebluealliance.com/team/5431/2021"
+                        target="”_blank”"
+                      >
+                        More on the 2021 Season ></a
+                      >
+                    </p>
+                    <!--End of 2020-21-->
+                  </li>
+
+                  <li>
+                    <!--2019-->
+                    <h2><a class="anchor" id="anchor-2019">2019</a></h2>
+
+                    <!--2019 slider-->
+                    <div
+                      id="carousel-2019"
+                      class="carousel slide pb-3"
+                      data-ride="carousel"
+                    >
+                      <ol class="carousel-indicators pb-3">
+                        <li
+                          data-target="#carousel-2019"
+                          data-slide-to="0"
+                          class="active"
+                        ></li>
+                        <li data-target="#carousel-2019" data-slide-to="1"></li>
+                        <li data-target="#carousel-2019" data-slide-to="2"></li>
+                      </ol>
+                      <div class="carousel-inner">
+                        <div
+                          class="game-logo carousel-item active h-100"
+                          id="game-logo-19"
+                        ></div>
+                        <div class="team carousel-item">
+                          <img
+                            class="img-fluid d-block"
+                            src="img/about/2019/5431group2019.jpg"
+                            alt="2019 photo"
+                          />
+                        </div>
+                        <div class="bot carousel-item">
+                          <img
+                            class="img-fluid d-block w-100"
+                            src="img/about/2019/5431robot.jpg"
+                            alt="Astraeus"
+                          />
+                          <div class="carousel-caption d-none d-lg-block">
+                            <h5>Astrius</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <a
+                        class="carousel-control-prev pl-1"
+                        href="#carousel-2019"
+                        role="button"
+                        data-slide="prev"
+                      >
+                        <span
+                          class="carousel-control-prev-icon"
+                          aria-hidden="true"
+                        ></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a
+                        class="carousel-control-next pr-1"
+                        href="#carousel-2019"
+                        role="button"
+                        data-slide="next"
+                      >
+                        <span
+                          class="carousel-control-next-icon"
+                          aria-hidden="true"
+                        ></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+                    <!--End of 2019 slider-->
+                    <p class="pb-2 mb-0">
+                      Our first district event was very impactful to our team.
+                      An alumni of our team had passed away before this event.
+                      In honor of his memory, we dedicated this season to him by
+                      changing our team name to “Titan Robotics in memory of
+                      Jordan Grant”.<br />
+                      We played each match to the best of our ability, winning
+                      each match (and tying in one). At Plano District, when the
+                      judges started calling winners for awards our team was
+                      shocked. First it was the Safety Award, then Event Winner,
+                      finally Chairman's Awards. We won a second safety award at
+                      the Greenville District. At States we won the Chairman's
+                      Award and performed just as well during matches.<br />
+                      With Chain Reaction, 6171 (now Wildcat Robotics) we
+                      co-hosted 2 new summer camps alongside our original Battle
+                      Bots camp;Intro to FIRST LEGO League and Intro to
+                      Engineering.
+                    </p>
+                    <p>
+                      <a
+                        href="https://www.thebluealliance.com/team/5431/2019"
+                        target="”_blank”"
+                      >
+                        More on the 2019 Season ></a
+                      >
+                    </p>
+                    <!--End of 2019-->
+                  </li>
+
+                  <li>
+                    <!--2018-->
+                    <h2><a class="anchor" id="anchor-2018">2018</a></h2>
+
+                    <!--2018 slider-->
+                    <div
+                      id="carousel-2018"
+                      class="carousel slide pb-3"
+                      data-ride="carousel"
+                    >
+                      <ol class="carousel-indicators pb-3">
+                        <li
+                          data-target="#carousel-2018"
+                          data-slide-to="0"
+                          class="active"
+                        ></li>
+                        <li data-target="#carousel-2018" data-slide-to="1"></li>
+                        <li data-target="#carousel-2018" data-slide-to="2"></li>
+                      </ol>
+                      <div class="carousel-inner">
+                        <div
+                          class="game-logo carousel-item active h-100"
+                          id="game-logo-18"
+                        ></div>
+                        <div class="team carousel-item">
+                          <img
+                            class="img-fluid d-block"
+                            src="img/about/2018/2018group.jpg"
+                            alt="2018 photo"
+                          />
+                        </div>
+                        <div class="bot carousel-item">
+                          <img
+                            class="img-fluid -block w-100"
+                            src="img/about/2018/Scorpius.jpg"
+                            alt="Ophidian"
+                          />
+                          <div class="carousel-caption d-none d-lg-block">
+                            <h5>Ophidian</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <a
+                        class="carousel-control-prev pl-1"
+                        href="#carousel-2018"
+                        role="button"
+                        data-slide="prev"
+                      >
+                        <span
+                          class="carousel-control-prev-icon"
+                          aria-hidden="true"
+                        ></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a
+                        class="carousel-control-next pr-1"
+                        href="#carousel-2018"
+                        role="button"
+                        data-slide="next"
+                      >
+                        <span
+                          class="carousel-control-next-icon"
+                          aria-hidden="true"
+                        ></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+                    <!--End of 2018 slider-->
+                    <p class="pb-2 mb-0">
+                      PowerUp was a challenge that pushed our engineering
+                      capabilities. During the ideation phase, our team came up
+                      with two great designs for a possible robot. Scorpios, a
+                      catapult on a drivetrain, was one of our original designs.
+                      We later changed the design and renamed the robot to
+                      Ophidian, which used a collapsible ladder system as both
+                      an intake and a climbing mechanism.<br />
+                      That year we had our second Dean’s List Finalist, Liav
+                      Turkia. He was the programming lead and developed our
+                      Titan UTIL Library. This library laid out templates,
+                      classes, and methods that the programming team could use
+                      for years to come. Our team also won the Creativity Award
+                      and the Imagery Award.<br />
+                      We volunteered and competed in both NTX and STEM Gals,
+                      hosted this year by 5417, Eagle Robotics. Titan Robotics
+                      also hosted our first summer camp! We taught kids ages 9
+                      to 14 about STEM by using LEGO Mindstorms and fun
+                      challenges.
+                    </p>
+                    <p>
+                      <a
+                        href="https://www.thebluealliance.com/team/5431/2018"
+                        target="”_blank”"
+                      >
+                        More on the 2018 Season ></a
+                      >
+                    </p>
+                    <!--End of 2018-->
+                  </li>
+
+                  <li>
+                    <!--2017-->
+                    <h2><a class="anchor" id="anchor-2017">2017</a></h2>
+
+                    <!--2017 slider-->
+                    <div
+                      id="carousel-2017"
+                      class="carousel slide pb-3"
+                      data-ride="carousel"
+                    >
+                      <ol class="carousel-indicators pb-3">
+                        <li
+                          data-target="#carousel-2017"
+                          data-slide-to="0"
+                          class="active"
+                        ></li>
+                        <li data-target="#carousel-2017" data-slide-to="1"></li>
+                        <li data-target="#carousel-2017" data-slide-to="2"></li>
+                      </ol>
+                      <div class="carousel-inner">
+                        <div
+                          class="game-logo carousel-item active h-100"
+                          id="game-logo-17"
+                        ></div>
+                        <div class="team carousel-item">
+                          <img
+                            class="img-fluid d-block"
+                            src="img/about/2017/Team.jpg"
+                            alt="2017 photo"
+                          />
+                        </div>
+                        <div class="bot carousel-item">
+                          <img
+                            class="img-fluid -block w-100"
+                            src="img/about/2017/AlsoThrice.jpg"
+                            alt="Thrice"
+                          />
+                          <div class="carousel-caption d-none d-lg-block">
+                            <h5>Thrice</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <a
+                        class="carousel-control-prev pl-1"
+                        href="#carousel-2017"
+                        role="button"
+                        data-slide="prev"
+                      >
+                        <span
+                          class="carousel-control-prev-icon"
+                          aria-hidden="true"
+                        ></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a
+                        class="carousel-control-next pr-1"
+                        href="#carousel-2017"
+                        role="button"
+                        data-slide="next"
+                      >
+                        <span
+                          class="carousel-control-next-icon"
+                          aria-hidden="true"
+                        ></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+                    <!--End of 2017 slider-->
+                    <p class="pb-2 mb-0">
+                      In 2017, our team walked into the Dallas regional with our
+                      robot, Themis. Due to bag-and-tag day, we had been unable
+                      to work on the physical robot, but we weren’t idle. We
+                      used this time to design a new lightning-fast robot named
+                      Thrice, and we used our 30-lb part bag to transform Themis
+                      into one of our best robots yet.<br />
+                      Thrice focused on scoring gears in the airships at high
+                      speeds and finishing matches with a blink-and-you’ll-miss
+                      it climb. This design choice paid off. With Thrice, we
+                      ranked 25th and tenth in the Dallas and Brazos Valley
+                      Regionals respectively. Our team also earned spirit and
+                      imagery awards, and Usaid Malik, one of our talented
+                      programmers, was a Dean’s List Finalist.<br />
+                      After our season, we started the North Texas Tournament of
+                      Robots (NTX) with FRC 6171: Wildcat Robotics, FRC 1296:
+                      Full Metal Jackets and FRC 5417: Allen Robotics. Together,
+                      we’ve created and sustained a tradition of friendly
+                      competition and engineering excellence demonstrated each
+                      year.
+                    </p>
+                    <p>
+                      <a
+                        href="https://www.thebluealliance.com/team/5431/2017"
+                        target="”_blank”"
+                      >
+                        More on the 2017 Season ></a
+                      >
+                    </p>
+                    <!--End of 2017-->
+                  </li>
+
+                  <li>
+                    <!--2016-->
+                    <h2><a class="anchor" id="anchor-2016">2016</a></h2>
+
+                    <!--2016 slider-->
+                    <div
+                      id="carousel-2016"
+                      class="carousel slide pb-3"
+                      data-ride="carousel"
+                    >
+                      <ol class="carousel-indicators pb-3">
+                        <li
+                          data-target="#carousel-2016"
+                          data-slide-to="0"
+                          class="active"
+                        ></li>
+                        <li data-target="#carousel-2016" data-slide-to="1"></li>
+                        <li data-target="#carousel-2016" data-slide-to="2"></li>
+                      </ol>
+                      <div class="carousel-inner">
+                        <div
+                          class="game-logo carousel-item active h-100"
+                          id="game-logo-16"
+                        ></div>
+                        <div class="team carousel-item">
+                          <img
+                            class="img-fluid d-block"
+                            src="img/about/2016/Team-2016.jpg"
+                            alt="2016 photo"
+                          />
+                        </div>
+                        <div class="bot carousel-item">
+                          <img
+                            class="img-fluid -block w-100"
+                            src="img/about/2016/Chronos.jpg"
+                            alt="Chronos"
+                          />
+                          <div class="carousel-caption d-none d-lg-block">
+                            <h5>Chronos</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <a
+                        class="carousel-control-prev pl-1"
+                        href="#carousel-2016"
+                        role="button"
+                        data-slide="prev"
+                      >
+                        <span
+                          class="carousel-control-prev-icon"
+                          aria-hidden="true"
+                        ></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a
+                        class="carousel-control-next pr-1"
+                        href="#carousel-2016"
+                        role="button"
+                        data-slide="next"
+                      >
+                        <span
+                          class="carousel-control-next-icon"
+                          aria-hidden="true"
+                        ></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+                    <!--End of 2016 slider-->
+                    <p class="pb-2 mb-0">
+                      In 2016, we experienced our second year of growth and
+                      change through Stronghold. We were no longer the only FRC
+                      team in Plano - we had a sister team over at Plano Senior
+                      High School, FRC 6171: Chain Reaction Robotics (now
+                      Wildcat Robotics).
+                    </p>
+                    <p>
+                      <a
+                        href="https://www.thebluealliance.com/team/5431/2016"
+                        target="”_blank”"
+                      >
+                        More on the 2016 Season ></a
+                      >
+                    </p>
+                    <!--End of 2016-->
+                  </li>
+
+                  <li>
+                    <!--2015-->
+                    <h2><a class="anchor" id="anchor-2015">2015</a></h2>
+
+                    <!--NOTE: photos of a wider resololution perform better in the sliders-->
+                    <!--NOTE 2: Find "Game Logos" in styles.css to add the logo to this year's slider unless you want to try to fix the html-->
+                    <!--2015 slider-->
+                    <div
+                      id="carousel-2015"
+                      class="carousel slide pb-3"
+                      data-ride="carousel"
+                    >
+                      <ol class="carousel-indicators pb-3">
+                        <li
+                          data-target="#carousel-2015"
+                          data-slide-to="0"
+                          class="active"
+                        ></li>
+                        <li data-target="#carousel-2015" data-slide-to="1"></li>
+                        <li data-target="#carousel-2015" data-slide-to="2"></li>
+                      </ol>
+                      <div class="carousel-inner">
+                        <div
+                          class="game-logo carousel-item active h-100"
+                          id="game-logo-15"
+                        ></div>
+                        <div class="team carousel-item">
+                          <img
+                            class="img-fluid d-block"
+                            src="img/about/2015/IrvingTeam.jpg"
+                            alt="2015 photo"
+                          />
+                        </div>
+                        <div class="bot carousel-item">
+                          <img
+                            class="img-fluid d-block w-100"
+                            src="img/about/2015/BotDoingStuff.jpg"
+                            alt="New Bot on the Block"
+                          />
+                          <div class="carousel-caption d-none d-lg-block">
+                            <h5>New Bot on the Block</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <a
+                        class="carousel-control-prev pl-1"
+                        href="#carousel-2015"
+                        role="button"
+                        data-slide="prev"
+                      >
+                        <span
+                          class="carousel-control-prev-icon"
+                          aria-hidden="true"
+                        ></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a
+                        class="carousel-control-next pr-1"
+                        href="#carousel-2015"
+                        role="button"
+                        data-slide="next"
+                      >
+                        <span
+                          class="carousel-control-next-icon"
+                          aria-hidden="true"
+                        ></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+                    <!--End of 2015 slider-->
+
+                    <p class="pb-2 mb-0">
+                      When the Plano Academy High School (AHS) opened in August
+                      of 2015, three students had a goal of creating a robotics
+                      team. These three students asked our principal for her
+                      permission to start an FRC team. She said NO! <br />So
+                      they worked together to start the Titan Robotics Club,
+                      building a robot to compete in a local BEST tournament.
+                      This only made the team want to join an FRC team more.
+                      This only made the students want an FRC team more, so they
+                      found mentors and coaches to grow into FRC 5431 Titan
+                      Robotics. <br />The first week of the 2015 competition
+                      season brought our team to the Dallas Regional. Competing
+                      with world champions like 118, 148, 1477, and 2848 was
+                      definitely exciting as 5431 came in 10th place, earning us
+                      an invitation to the third place alliance! Being the
+                      highest ranked rookie seed got us a spot to the St. Louis
+                      Championship! The seed started to sprout and we wanted to
+                      share it with our community!
+                    </p>
+                    <p>
+                      <a
+                        href="https://www.thebluealliance.com/team/5431/2015"
+                        target="”_blank”"
+                      >
+                        More on the 2015 Season ></a
+                      >
+                    </p>
+                    <!--End of 2015-->
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="footer"></div>
+      </section>
+    </main>
+  </body>
+</html>

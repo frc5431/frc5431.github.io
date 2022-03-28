@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#00AEED">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#00AEED">
+    <meta name="apple-mobile-web-app-title" content="FRC 5431">
+
+    <meta http-equiv="cleartype" content="on">
+
+    <meta name="application-name" content="FRC 5431">
+    <meta name="msapplication-tooltip" content="FRC 5431">
+
+    <meta name="msapplication-allowDomainApiCalls" content="true">
+    <meta name="msapplication-allowDomainMetaTags" content="true">
+    <meta name="msapplication-navbutton-color" content="#00AEED">
+    <meta name="msapplication-TileColor" content="##001E4F">
+    <meta name="msapplication-TileImage" content="/img/universal/titlelesslogo.png">
+
+    <meta property="al:ios:app_name" content="FRC 5431">
+
+    <meta property="al:android:app_name" content="FRC 5431">
+
+    <meta name="ICBM" content="33.019843, -96.698886">
+    <meta name="geo.position" content="33.019843;-96.698886">
+    <meta name="geo.region" content="US, TX">
+    <meta name="geo.placename" content="Plano">
+
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/img/universal/titlelesslogo.png" />
+    <meta property="og:url" content="http://0.0.0.0:8080/" />
+    <meta property="og:description" content="FRC 5431 Titan Robotics strives to develop student leaders by collaborating to solve complex problems.">
+    <meta property="og:site_name" content="frc5431.com">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="FRC 5431">
+    <meta name="twitter:site" content="@frc5431">
+    <meta name="twitter:creator" content="@frc5431">
+    <meta name="twitter:description" content="FRC 5431 Titan Robotics strives to develop student leaders by collaborating to solve complex problems.">
+
+    <meta name="mobile-web-app-capable" content="yes">
+
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="icon" type="image/png" href="/img/universal/titlelesslogo.png" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
+
+    <link rel="manifest" href="/manifest.json" />
+
+
+    <meta property="og:title" content="FRC 5431 Titan Robotics" />
+
+    <meta name="description" content="FRC 5431 Titan Robotics strives to develop student leaders by collaborating to solve complex problems.">
+
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+    <script>
+    const $dropdown = $(".dropdown");
+    const $dropdownToggle = $(".dropdown-toggle");
+    const $dropdownMenu = $(".dropdown-menu");
+    const showClass = "show";
+    $(window).on("load resize", function() {
+        if (this.matchMedia("(min-width: 768px)").matches) {
+        $dropdown.hover(
+          function() {
+            const $this = $(this);
+            $this.addClass(showClass);
+            $this.find($dropdownToggle).attr("aria-expanded", "true");
+            $this.find($dropdownMenu).addClass(showClass);
+          },
+          function() {
+            const $this = $(this);
+            $this.removeClass(showClass);
+            $this.find($dropdownToggle).attr("aria-expanded", "false");
+            $this.find($dropdownMenu).removeClass(showClass);
+          }
+        );
+      } else {
+        $dropdown.off("mouseenter mouseleave");
+      }
+    });
+    </script>
+
+</head>
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-custom">
+
+        <!--Side Logo-->
+        <a href="index.html" class="navbar-brand"><img src="img\universal\5431Logo.png" alt="5431" class="logo" draggable="false"></a>
+
+        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon "></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        About
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="ourteam.html">Our Team</a>
+                        <a class="dropdown-item" href="ourstory.html">Our Story</a>
+                        <a class="dropdown-item" href="ourvalues.html">Our Values</a>
+                        <a class="dropdown-item" href="oursponsors.html">Our Sponsors</a>
+                    </div>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">Gallery</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="events.html">Events</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Resources
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-wrap" href="https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system" target="_blank">Season Materials</a>
+                        <a class="dropdown-item text-wrap" href="https://firstfrc.blob.core.windows.net/frc2022/Manual/2022FRCGameManual.pdf" target="_blank">2022 FRC Game Manual</a>
+                        <a class="dropdown-item text-wrap" href="https://www.firstinspires.org/sites/default/files/uploads/frc/EventRulesManual.pdf" target="_blank">Event Rules</a>
+                        <a class="dropdown-item text-wrap" href="https://www.firstinspires.org/robotics/frc/playing-field" target="_blank">Playing Field Assets</a>
+                        <a class="dropdown-item text-wrap" href="https://docs.wpilib.org/en/stable/" target="_blank">WPILib Docs</a>
+                        <a class="dropdown-item text-wrap" href="https://www.firstinspires.org/robotics/frc/blog/" target="_blank">FRC Blog</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contactus.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</body>
+
+</html>
