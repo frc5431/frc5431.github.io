@@ -692,7 +692,7 @@ img.logo {
 }
 @media (max-width: 767px) {
   .carousel-caption {
-    top: 55%;
+    top: 55% !important;
   }
 }
 @media (min-width: 768px) {
