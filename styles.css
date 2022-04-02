@@ -686,10 +686,19 @@ img.logo {
 /*End of game logos*/
 
 .carousel-caption {
-  top: 81%;
   left: 5% !important;
   right: auto !important;
   text-align: left !important;
+}
+@media (max-width: 767px) {
+  .carousel-caption {
+    top: 55%;
+  }
+}
+@media (min-width: 768px) {
+  .carousel-caption {
+    top: 81%;
+  }
 }
 .carousel-caption h5 {
   display: inline-block;
