@@ -190,33 +190,32 @@ section::after {
     background: url("img/universal/mobile-splash.png") center no-repeat;
     background-size: cover;
   }
+
+  /* Makes Twitter widget shorter at tablet sizes */
+  #twitter-widget-0 {
+    height: 700px !important;
+  }
 }
 
-/* Removes a bunch of padding/margins in the content of the main page when at smaller screen sizes in order to make it easier to read */
 @media (max-width: 767px) {
+  /* Recenters icons in footer (previously they were off by a small amount at small screen sizes) */
+  .row-xs-12.pt-4.pl-5.text-center.icons {
+    padding-left: 1rem !important;
+  }
+
+  /* Removes a bunch of padding/margins in the content of the main page when at smaller screen sizes in order to make it easier to read */
   #media {
     flex-direction: column;
     align-items: center;
     margin: 0px -15px !important;
   }
-}
 
-/* Recenters icons in footer (previously they were off by a small amount at small screen sizes) */
-@media (max-width: 767px) {
-  .row-xs-12.pt-4.pl-5.text-center.icons {
-    padding-left: 1rem !important;
-  }
   /* Makes Twitter widget shorter  at mobile sizes */
   #twitter-widget-0 {
-    height: 450px !important;
+    height: 70vh !important;
   }
 }
 
-@media (min-width: 768px) {
-  #twitter-widget-0 {
-    height: 95% !important;
-  }
-}
 
 /* Fixes weird navbar wrapping on small screen size*/
 img.logo {
