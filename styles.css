@@ -682,6 +682,30 @@ img.logo {
   background-position: center center;
   background-size: contain;
 }
+#game-logo-23 {
+  background: url("img/about/2023/CHARGED_UP_Logo_Horiz_RGB_FullColor-removebg-preview.png"), rgba(255, 255, 255, 1); /* for browsers that don't support CSS gradients */
+  background: url("img/about/2023/CHARGED_UP_Logo_Horiz_RGB_FullColor-removebg-preview.png"),
+    radial-gradient(
+      rgba(255, 182, 0, 1) 2%,
+      rgba(255, 255, 255, 1) 35%,
+      rgba(104, 195, 228, 1) 100%
+    );
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+#game-logo-24 {
+  background: url("img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.png"), rgba(5, 154, 86, 1); /* for browsers that don't support CSS gradients */
+  background: url("img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.png"),
+  radial-gradient(
+      rgba(0, 0, 0, 1) 2%,
+      rgba(5, 154, 86, 1) 35%,
+      rgba(92, 203, 131, 0.5) 100%
+    );
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
 /*End of game logos*/
 
 .carousel-caption {
