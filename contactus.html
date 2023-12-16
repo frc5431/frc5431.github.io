@@ -19,8 +19,11 @@
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico"/>
 
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-  <script src="rellax-master/rellax.min.js"></script>
+  <script src="rellax.min.js"></script>
   <script src="script.js"></script>
+
+  <!-- Google reCAPTCHA V3 -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LcW_xspAAAAAK4bMzJ8aJi6PhMzQvHZ8QqOE5gU" async defer></script>
 </head>
 
 <body>
@@ -54,7 +57,42 @@
 
           <div class="col">
             <h2>How Can We Help?</h2>
-            <script type="text/javascript">var submitted=false;</script>
+
+            <form class="email-form" id="contact-form">
+              <div class="form-group">
+                <label>Name*</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Please enter your Name *" required data-error="Name is required."/>
+              </div>
+              <div class="form-group">
+                <label>Email*</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Please enter your Email *" required data-error="Email is required."/>
+              </div>
+              <div class="form-group">
+                <label>FRC Team Number</label>
+                  <input type="number" id="number" name="team number" class="form-control" placeholder="####">
+              </div>
+              <div class="form-group">
+                <label>Subject*</label>
+                <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject *" required/>
+              </div>
+              <div class="form-group">
+                <label>Message*</label>
+                <textarea id="message" name="message" rows="3" class="form-control" placeholder="Message" required></textarea>
+              </div>
+              <div class="g-recaptcha" data-sitekey="6LfJCRwpAAAAADNO352Hi5v-W3zTKxNNkDWjmEGP"></div>
+              <div class="my-3">
+                <div class="loading" style="display: none">Loading</div>
+                <div class="error-message" style="display: none">There was an error submitting your message. Please try and resubmit. Thank you!</div>
+                <div class="sent-message" style="display: none">Your message has been sent. Thank you!</div>
+              </div>
+              <button class="btn btn-primary" type="submit">Send Message</button>
+            </form>
+
+
+
+
+            
+            <!-- <script type="text/javascript">var submitted=false;</script>
             <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='contactus-submit.html';}"></iframe>
             <form class="needs-validation" novalidate method="post" target="hidden_iframe" onsubmit="submitted=true;" action="https://docs.google.com/forms/d/e/1FAIpQLSfylycio1OEE_4GfnL6wsp_Ufekcge1VjJEgTNZJB5buhnlNw/formResponse">
               <div class="form-group">
@@ -104,7 +142,7 @@
                   });
                 }, false);
               })();
-            </script>
+            </script> -->
           </div>
         </div>
       </div>
