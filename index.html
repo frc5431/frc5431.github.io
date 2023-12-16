@@ -1,377 +1,200 @@
 ﻿<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en">
 
-    <meta name="theme-color" content="#00AEED" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#00AEED" />
-    <meta name="apple-mobile-web-app-title" content="FRC 5431" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta http-equiv="cleartype" content="on" />
+  <title>5431 Titan Robotics</title>
+  <meta name="description" content="FRC 5431 Titan Robotics strives to develop student leaders by collaborating to solve complex problems."/>
 
-    <meta name="application-name" content="FRC 5431" />
-    <meta name="msapplication-tooltip" content="FRC 5431" />
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <meta name="msapplication-allowDomainApiCalls" content="true" />
-    <meta name="msapplication-allowDomainMetaTags" content="true" />
-    <meta name="msapplication-navbutton-color" content="#00AEED" />
-    <meta name="msapplication-TileColor" content="##001E4F" />
-    <meta
-      name="msapplication-TileImage"
-      content="/img/universal/titlelesslogo.png"
-    />
+  <link rel="stylesheet" href="styles.css" />
 
-    <meta property="al:ios:app_name" content="FRC 5431" />
+  <link rel="icon" type="image/png" href="/img/universal/titlelesslogo.png" />
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
 
-    <meta property="al:android:app_name" content="FRC 5431" />
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="rellax-master/rellax.min.js"></script>
+  <script src="script.js"></script>
 
-    <meta name="ICBM" content="33.019843, -96.698886" />
-    <meta name="geo.position" content="33.019843;-96.698886" />
-    <meta name="geo.region" content="US, TX" />
-    <meta name="geo.placename" content="Plano" />
+  <!--stuff added specifically for slider-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $("#slider").carousel({
+      interval: 6000,
+      pause: false,
+      ride: "carousel",
+    });
+  </script>
+</head>
 
-    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+<body>
+  <!--Navigation bar-->
+  <div id="navbar"></div>
 
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/img/universal/titlelesslogo.png" />
-    <meta property="og:url" content="http://0.0.0.0:8080/" />
-    <meta
-      property="og:description"
-      content="FRC 5431 Titan Robotics strives to develop student leaders by collaborating to solve complex problems."
-    />
-    <meta property="og:site_name" content="frc5431.com" />
-    <meta property="og:locale" content="en_US" />
-
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="FRC 5431" />
-    <meta name="twitter:site" content="@frc5431" />
-    <meta name="twitter:creator" content="@frc5431" />
-    <meta
-      name="twitter:description"
-      content="FRC 5431 Titan Robotics strives to develop student leaders by collaborating to solve complex problems."
-    />
-
-    <meta name="mobile-web-app-capable" content="yes" />
-
-    <!--Bootstrap-->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-
-    <link rel="stylesheet" href="styles.css" />
-
-    <link rel="icon" type="image/png" href="/img/universal/titlelesslogo.png" />
-    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
-    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
-
-    <link rel="manifest" href="/manifest.json" />
-
-    <meta property="og:title" content="FRC 5431 Titan Robotics" />
-
-    <meta
-      name="description"
-      content="FRC 5431 Titan Robotics strives to develop student leaders by collaborating to solve complex problems."
-    />
-
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="rellax-master/rellax.min.js"></script>
-    <script src="script.js"></script>
-
-    <!--stuff added specifically for slider-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      $("#slider").carousel({
-        interval: 6000,
-        pause: false,
-        ride: "carousel",
-      });
-    </script>
-
-    <title>5431 Titan Robotics</title>
-  </head>
-  <body>
-    <!--Navigation bar-->
-    <div id="navbar"></div>
-
-    <main>
-      <!--Top banner-->
-      <section id="banner">
-        <div
-          id="index-banner-image"
-          class="rellax"
-          data-rellax-speed="-1"
-        ></div>
-        <div id="arrowdown">
-          <a href="#slider"><span></span></a>
-        </div>
-      </section>
-
-      <div
-        id="slider"
-        class="carousel slide carousel-fade d-none d-md-block"
-        data-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active" id="activeOnLoad">
-            <!-- get the ID -->
-            <div
-              class="item-inner"
-              style="
-                background-image: url('img/universal/5431\ number\ sign.jpg');
-              "
-            ></div>
-          </div>
-
-          <div class="carousel-item">
-            <div
-              class="item-inner"
-              style="background-image: url('img/universal/frc\ event.jpg')"
-            ></div>
-          </div>
-
-          <div class="carousel-item">
-            <div
-              class="item-inner"
-              style="
-                background-image: url('img/about/2020/Hyperion\ shooting.jpg');
-              "
-            ></div>
-          </div>
-
-          <div class="carousel-item">
-            <div
-              class="item-inner"
-              style="
-                background-image: url('img/universal/hat\ construction.jpg');
-              "
-            ></div>
-          </div>
-        </div>
-        <a
-          class="carousel-control-prev"
-          href="#slider"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-        <a
-          class="carousel-control-next"
-          href="#slider"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
+  <main>
+    <!--Top banner-->
+    <section id="banner">
+      <div id="index-banner-image" class="rellax" data-rellax-speed="-1"></div>
+      <div id="arrowdown">
+        <a href="#slider"><span></span></a>
       </div>
-      <!-- /.carousel -->
+    </section>
 
-      <!--End of slider-->
+    <div id="slider" class="carousel slide carousel-fade d-none d-md-block" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" id="activeOnLoad">
+          <!-- get the ID -->
+          <div class="item-inner" style="background-image: url('img/universal/5431\ number\ sign.jpg');"></div>
+        </div>
 
-      <!--Everything below the slider-->
-      <section id="index-content">
-        <div class="container-fluid pb-0 pb-md-4">
-          <!--Three boxes containing information about FIRST, PAHS and NTX-->
-          <div class="card-group pt-3">
-            <div class="card p-2 p-lg-4" id="titan-blue">
-              <div class="mt-1">
-                <img
-                  class="card-img-overlay d-block d-md-none mh-100 mw-100"
-                  src="img/Logos/FRC_condensed.png"
-                  alt="FIRST Robotics (FRC)"
-                />
-                <img
-                  class="card-img-overlay d-none d-md-flex ml-md-auto d-lg-none mh-100 mw-100"
-                  src="img/Logos/FRC.png"
-                  alt="FIRST Robotics (FRC)"
-                />
-                <a
-                  href="https://www.firstinspires.org/robotics/frc"
-                  target="_blank"
-                  ><img
-                    class="card-img-top d-none d-lg-block"
-                    src="img/Logos/FRC.png"
-                    alt="FIRST Robotics (FRC)"
-                /></a>
-              </div>
-              <div class="card-body">
-                <h2 class="card-title mt-3">FIRST Robotics</h2>
-                <div class="line mb-3"></div>
-                <p class="card-text">
-                  FIRST (For Inspiration and Recognition of Science and
-                  Technology) was founded in 1989 to inspire young people’s
-                  interest and participation in science and technology. Over the
-                  past 30 years, FIRST participation has been proven to
-                  encourage students to pursue education and careers in
-                  STEM-related fields.
-                </p>
-              </div>
-              <div class="card-footer">
-                <h3>
-                  <a
-                    href="https://www.firstinspires.org/robotics/frc"
-                    target="_blank"
-                    >Find Out More ></a
-                  >
-                </h3>
-              </div>
+        <div class="carousel-item">
+          <div class="item-inner" style="background-image: url('img/universal/frc\ event.jpg')"></div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="item-inner" style="background-image: url('img/about/2020/Hyperion\ shooting.jpg');"></div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="item-inner" style="background-image: url('img/universal/hat\ construction.jpg');"></div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#slider" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
+    </div>
+    <!-- /.carousel -->
+
+    <!--End of slider-->
+
+    <!--Everything below the slider-->
+    <section id="index-content">
+      <div class="container-fluid pb-0 pb-md-4">
+        <!--Three boxes containing information about FIRST, PAHS and NTX-->
+        <div class="card-group pt-3">
+          <div class="card p-2 p-lg-4" id="titan-blue">
+            <div class="mt-1">
+              <img class="card-img-overlay d-block d-md-none mh-100 mw-100" src="img/Logos/FRC_condensed.png" alt="FIRST Robotics (FRC)"/>
+              <img class="card-img-overlay d-none d-md-flex ml-md-auto d-lg-none mh-100 mw-100" src="img/Logos/FRC.png" alt="FIRST Robotics (FRC)"/>
+              <a href="https://www.firstinspires.org/robotics/frc" target="_blank"><img class="card-img-top d-none d-lg-block" src="img/Logos/FRC.png" alt="FIRST Robotics (FRC)"/></a>
             </div>
-            <div class="w-100 pt-3 d-none d-sm-block d-lg-none">
-              <!-- wrap on sm-->
+            <div class="card-body">
+              <h2 class="card-title mt-3">FIRST Robotics</h2>
+              <div class="line mb-3"></div>
+              <p class="card-text">
+                FIRST (For Inspiration and Recognition of Science and
+                Technology) was founded in 1989 to inspire young people’s
+                interest and participation in science and technology. Over the
+                past 30 years, FIRST participation has been proven to
+                encourage students to pursue education and careers in
+                STEM-related fields.
+              </p>
             </div>
-            <div class="card p-2 p-lg-4" id="titan-navy">
-              <div class="mt-1">
-                <img
-                  class="card-img-overlay d-block d-md-flex ml-md-auto d-lg-none mh-100 mw-100"
-                  src="img/Logos/PAHS_helmet.png"
-                  alt="Plano ISD Academy High School (AHS)"
-                />
-                <a href="https://www.pisd.edu/academy" target="_blank"
-                  ><img
-                    class="card-img-top d-none d-lg-block"
-                    src="img/Logos/PAHS_helmet.png"
-                    alt="Plano ISD Academy High School (AHS)"
-                /></a>
-              </div>
-              <div class="card-body">
-                <h2 class="card-title mt-3">Plano ISD Academy</h2>
-                <div class="line mb-3"></div>
-                <p class="card-text">
-                  Plano ISD Academy High School is an innovative, STEAM,
-                  project-based 9th-12th grade learning community focused on
-                  interdisciplinary connections to foster a professional
-                  environment, inspire creativity, and empower students to
-                  collaborate and compete in a rapidly changing world.
-                </p>
-              </div>
-              <div class="card-footer">
-                <h3>
-                  <a href="https://www.pisd.edu/academy" target="_blank"
-                    >Find Out More ></a
-                  >
-                </h3>
-              </div>
-            </div>
-            <div class="w-100 pt-3 d-none d-sm-block d-lg-none">
-              <!-- wrap on sm-->
-            </div>
-            <div class="card p-2 p-lg-4" id="titan-purple">
-              <div class="mt-1">
-                <img
-                  class="card-img-overlay d-block d-md-none mh-100 mw-100"
-                  src="img/Logos/NTX_no_text.png"
-                  alt="North Texas Robotics (NTX)"
-                />
-                <img
-                  class="card-img-overlay d-none d-md-flex ml-md-auto d-lg-none mh-100 mw-100"
-                  src="img/Logos/NTX.png"
-                  alt="North Texas Robotics (NTX)"
-                />
-                <a href="https://www.ntxrobotics.com/" target="_blank"
-                  ><img
-                    class="card-img-top d-none d-lg-block"
-                    src="img/Logos/NTX.png"
-                    alt="North Texas Robotics (NTX)"
-                /></a>
-              </div>
-              <div class="card-body">
-                <h2 class="card-title mt-3">NTX Robotics</h2>
-                <div class="line mb-3"></div>
-                <p class="card-text">
-                  North Texas Robotics was founded in 2015 to bring teams
-                  together to further STEM and FIRST across North Texas. Its
-                  teams work hard to promote and create inter-team alliances
-                  across the area. NTX is responsible for the North Texas Coach
-                  and Mentor Workshop and the NTX Tournament of Robots.
-                </p>
-              </div>
-              <div class="card-footer">
-                <h3>
-                  <a href="https://www.ntxrobotics.com/" target="_blank"
-                    >Find Out More ></a
-                  >
-                </h3>
-              </div>
+            <div class="card-footer">
+              <h3>
+                <a href="https://www.firstinspires.org/robotics/frc" target="_blank">Find Out More ></a>
+              </h3>
             </div>
           </div>
-
-          <!--Main section containing embed videos and Twitter timeline-->
-          <div class="px-xl-5 px-md-3 px-0">
-            <div
-              class="row mt-3 mx-lg-3 mx-md-2 mx-0 px-xl-5 px-md-4 px-2 py-md-4 py-3"
-              id="media"
-            >
-              <div class="col col-lg-8 col-md-7">
-                <h2>5431 Chairman's Video</h2>
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe
-                    width="700"
-                    height="394"
-                    src="https://www.youtube.com/embed/V_4pVFlNjqI"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <p>
-                  Our 2019-2020 season chairman’s video. The video talks about
-                  our drive and passion for spreading the seeds of STEM
-                  education, and covers how we do it!
-                </p>
-                <h2>About FIRST</h2>
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe
-                    width="700"
-                    height="394"
-                    src="https://www.youtube.com/embed/K_PuWjr7qcM"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <p>
-                  This video talks about who FIRST is and what FIRST Robotics
-                  Competition (FRC) does. Impacting many highschool students
-                  around the world preparing them for the future through fun
-                  challenges.
-                </p>
-              </div>
-              <div class="col col-lg-4 col-md-5">
-                <h2>Stay Up to Date!</h2>
-                <a
-                  class="twitter-timeline"
-                  data-height="1000"
-                  href="https://twitter.com/frc5431?ref_src=twsrc%5Etfw"
-                  >Tweets by frc5431</a
-                >
-                <script
-                  async
-                  src="https://platform.twitter.com/widgets.js"
-                  charset="utf-8"
-                ></script>
-              </div>
+          <div class="w-100 pt-3 d-none d-sm-block d-lg-none">
+            <!-- wrap on sm-->
+          </div>
+          <div class="card p-2 p-lg-4" id="titan-navy">
+            <div class="mt-1">
+              <img class="card-img-overlay d-block d-md-flex ml-md-auto d-lg-none mh-100 mw-100" src="img/Logos/PAHS_helmet.png" alt="Plano ISD Academy High School (AHS)"/>
+              <a href="https://www.pisd.edu/academy" target="_blank"><img class="card-img-top d-none d-lg-block" src="img/Logos/PAHS_helmet.png" alt="Plano ISD Academy High School (AHS)"/></a>
+            </div>
+            <div class="card-body">
+              <h2 class="card-title mt-3">Plano ISD Academy</h2>
+              <div class="line mb-3"></div>
+              <p class="card-text">
+                Plano ISD Academy High School is an innovative, STEAM,
+                project-based 9th-12th grade learning community focused on
+                interdisciplinary connections to foster a professional
+                environment, inspire creativity, and empower students to
+                collaborate and compete in a rapidly changing world.
+              </p>
+            </div>
+            <div class="card-footer">
+              <h3>
+                <a href="https://www.pisd.edu/academy" target="_blank">Find Out More ></a>
+              </h3>
+            </div>
+          </div>
+          <div class="w-100 pt-3 d-none d-sm-block d-lg-none">
+            <!-- wrap on sm-->
+          </div>
+          <div class="card p-2 p-lg-4" id="titan-purple">
+            <div class="mt-1">
+              <img class="card-img-overlay d-block d-md-none mh-100 mw-100" src="img/Logos/NTX_no_text.png" alt="North Texas Robotics (NTX)"/>
+              <img class="card-img-overlay d-none d-md-flex ml-md-auto d-lg-none mh-100 mw-100" src="img/Logos/NTX.png" alt="North Texas Robotics (NTX)"/>
+              <a href="https://www.ntxrobotics.com/" target="_blank"><img class="card-img-top d-none d-lg-block" src="img/Logos/NTX.png" alt="North Texas Robotics (NTX)"/></a>
+            </div>
+            <div class="card-body">
+              <h2 class="card-title mt-3">NTX Robotics</h2>
+              <div class="line mb-3"></div>
+              <p class="card-text">
+                North Texas Robotics was founded in 2015 to bring teams
+                together to further STEM and FIRST across North Texas. Its
+                teams work hard to promote and create inter-team alliances
+                across the area. NTX is responsible for the North Texas Coach
+                and Mentor Workshop and the NTX Tournament of Robots.
+              </p>
+            </div>
+            <div class="card-footer">
+              <h3>
+                <a href="https://www.ntxrobotics.com/" target="_blank">Find Out More ></a>
+              </h3>
             </div>
           </div>
         </div>
-        <div id="footer"></div>
-      </section>
-    </main>
-  </body>
+
+        <!--Main section containing embed videos and Twitter timeline-->
+        <div class="px-xl-5 px-md-3 px-0">
+          <div class="row mt-3 mx-lg-3 mx-md-2 mx-0 px-xl-5 px-md-4 px-2 py-md-4 py-3" id="media">
+            <div class="col col-lg-8 col-md-7">
+              <h2>5431 Chairman's Video</h2>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="700" height="394" src="https://www.youtube.com/embed/V_4pVFlNjqI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <p>
+                Our 2019-2020 season chairman’s video. The video talks about
+                our drive and passion for spreading the seeds of STEM
+                education, and covers how we do it!
+              </p>
+              <h2>About FIRST</h2>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="700" height="394" src="https://www.youtube.com/embed/K_PuWjr7qcM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <p>
+                This video talks about who FIRST is and what FIRST Robotics
+                Competition (FRC) does. Impacting many highschool students
+                around the world preparing them for the future through fun
+                challenges.
+              </p>
+            </div>
+            <div class="col col-lg-4 col-md-5">
+              <h2>Stay Up to Date!</h2>
+              <a class="twitter-timeline" data-height="1000" href="https://twitter.com/frc5431?ref_src=twsrc%5Etfw">Tweets by frc5431</a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer"></div>
+    </section>
+  </main>
+</body>
+
 </html>

@@ -475,6 +475,7 @@ img.logo {
   color: var(--white);
   width: 100%;
   position: absolute;
+  text-align: center;
 }
 
 #banner-text h1 {
