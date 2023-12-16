@@ -1,295 +1,186 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en">
 
-    <meta name="theme-color" content="#00AEED" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#00AEED" />
-    <meta name="apple-mobile-web-app-title" content="FRC 5431" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta http-equiv="cleartype" content="on" />
+  <title>Our Story - 5431 Titan Robotics</title>
+  <meta name="description" content="FRC 5431 Titan Robotics strives to develop student leaders by collaborating to solve complex problems."/>
 
-    <meta name="application-name" content="FRC 5431" />
-    <meta name="msapplication-tooltip" content="FRC 5431" />
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <meta name="msapplication-allowDomainApiCalls" content="true" />
-    <meta name="msapplication-allowDomainMetaTags" content="true" />
-    <meta name="msapplication-navbutton-color" content="#00AEED" />
-    <meta name="msapplication-TileColor" content="##001E4F" />
-    <meta
-      name="msapplication-TileImage"
-      content="/img/universal/titlelesslogo.png"
-    />
+  <link rel="stylesheet" href="styles.css" />
 
-    <meta property="al:ios:app_name" content="FRC 5431" />
+  <link rel="icon" type="image/png" href="/img/universal/titlelesslogo.png" />
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
 
-    <meta property="al:android:app_name" content="FRC 5431" />
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="rellax-master/rellax.min.js"></script>
+  <script src="script.js"></script>
+</head>
 
-    <meta name="ICBM" content="33.019843, -96.698886" />
-    <meta name="geo.position" content="33.019843;-96.698886" />
-    <meta name="geo.region" content="US, TX" />
-    <meta name="geo.placename" content="Plano" />
-
-    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/img/universal/titlelesslogo.png" />
-    <meta property="og:url" content="http://0.0.0.0:8080/" />
-    <meta
-      property="og:description"
-      content="FRC 5431 Titan Robotics strives to develop student leaders by collaborating to solve complex problems."
-    />
-    <meta property="og:site_name" content="frc5431.com" />
-    <meta property="og:locale" content="en_US" />
-
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="FRC 5431" />
-    <meta name="twitter:site" content="@frc5431" />
-    <meta name="twitter:creator" content="@frc5431" />
-    <meta
-      name="twitter:description"
-      content="FRC 5431 Titan Robotics strives to develop student leaders by collaborating to solve complex problems."
-    />
-
-    <meta name="mobile-web-app-capable" content="yes" />
-
-    <!--Bootstrap-->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-
-    <link rel="stylesheet" href="styles.css" />
-
-    <link rel="icon" type="image/png" href="/img/universal/titlelesslogo.png" />
-    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
-    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
-
-    <link rel="manifest" href="/manifest.json" />
-
-    <meta property="og:title" content="FRC 5431 Titan Robotics" />
-
-    <meta
-      name="description"
-      content="FRC 5431 Titan Robotics strives to develop student leaders by collaborating to solve complex problems."
-    />
-
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="rellax-master/rellax.min.js"></script>
-    <script src="script.js"></script>
-
-    <title>Our Story - 5431 Titan Robotics</title>
-  </head>
-  <body>
-    <script>
-      $(document).ready(function () {
-        var years = $("*[id*=sidenav-20]:visible").toArray(); //each year
-        var dividers = $("*[id*=divider]:visible").toArray(); //each divider
-        var offsets = []; //will contain how far each year is from the top
-        var adjustment =
-          $(window).height() /
-          7.5; /*makes the visual effect more accurate, there's probably a better way to do this but idc it kinda works*/
-        $("*[id*=anchor-20]:visible").each(function (value) {
-          offsets.push($(this).offset().top - adjustment); //building the offsets array
-        });
-        $(window).scroll(function () {
-          var scrollTop = $(window).scrollTop(); //how far down the user has scrolled
-          $(offsets).each(function (index, value) {
-            var aboveNext =
-              typeof offsets[index + 1] === "undefined"
-                ? true
-                : scrollTop < offsets[index + 1];
-            if (scrollTop >= value && aboveNext) {
-              $(years[index]).addClass("pos");
-            } else {
-              $(years[index]).removeClass("pos");
-            }
-          });
+<body>
+  <script>
+    $(document).ready(function () {
+      var years = $("*[id*=sidenav-20]:visible").toArray(); //each year
+      var dividers = $("*[id*=divider]:visible").toArray(); //each divider
+      var offsets = []; //will contain how far each year is from the top
+      var adjustment = $(window).height() / 7.5; /*makes the visual effect more accurate, there's probably a better way to do this but idc it kinda works*/
+      $("*[id*=anchor-20]:visible").each(function (value) {
+        offsets.push($(this).offset().top - adjustment); //building the offsets array
+      });
+      $(window).scroll(function () {
+        var scrollTop = $(window).scrollTop(); //how far down the user has scrolled
+        $(offsets).each(function (index, value) {
+          var aboveNext =
+            typeof offsets[index + 1] === "undefined"
+              ? true
+              : scrollTop < offsets[index + 1];
+          if (scrollTop >= value && aboveNext) {
+            $(years[index]).addClass("pos");
+          } else {
+            $(years[index]).removeClass("pos");
+          }
         });
       });
-    </script>
+    });
+  </script>
 
-    <!--Navigation bar-->
-    <div id="navbar"></div>
+  <!--Navigation bar-->
+  <div id="navbar"></div>
 
-    <main>
-      <!--Top banner-->
-      <section id="ourstory-banner">
-        <div class="rellax" id="ourstory-banner-image"></div>
+  <main>
+    <!--Top banner-->
+    <section id="ourstory-banner">
+      <div class="rellax" id="ourstory-banner-image"></div>
 
-        <center id="banner-text">
-          <h1>Our Story</h1>
-          <h3>
-            In 2015, three students had a goal of creating a robotics team.
-          </h3>
-        </center>
-      </section>
+      <div id="banner-text">
+        <h1>Our Story</h1>
+        <h3>
+          In 2015, three students had a goal of creating a robotics team.
+        </h3>
+      </div>
+    </section>
 
-      <section class="page-content" id="ourstory-content">
-        <div class="container-fluid py-2 py-md-4" id="">
-          <div class="px-lg-5 px-md-2 px-xs-0">
-            <div
-              class="row mt-3 mx-md-3 mx-xs-0 px-md-5 px-xs-3 py-md-4 py-xs-2"
-              id="ourstory-main"
-            >
-              <div class="col-2 d-none d-md-block">
-                <div class="ourstory-sidenav sticky-top pt-3">
-                  <h2 class="d-none d-xl-block">Seasons</h2>
-                  <h2 class="d-block invisible d-xl-none">Seasons</h2>
-                  <ul class="years ml-0 pl-0">
-                    <li>
-                      <a id="sidenav-2022" href="#anchor-2022">2022</a>
-                    </li>
-
-                    <div class="hr" id="divider-22"></div>
-
-                    <li>
-                      <a id="sidenav-2020-21" href="#anchor-2020-21">2020-21</a>
-                    </li>
-
-                    <div class="hr" id="divider-20"></div>
-
-                    <li>
-                      <a id="sidenav-2019" href="#anchor-2019">2019</a>
-                    </li>
-
-                    <div class="hr" id="divider-19"></div>
-
-                    <li>
-                      <a id="sidenav-2018" href="#anchor-2018">2018</a>
-                    </li>
-
-                    <div class="hr" id="divider-18"></div>
-
-                    <li>
-                      <a id="sidenav-2017" href="#anchor-2017">2017</a>
-                    </li>
-
-                    <div class="hr" id="divider-17"></div>
-
-                    <li>
-                      <a id="sidenav-2016" href="#anchor-2016">2016</a>
-                    </li>
-
-                    <div class="hr" id="divider-16"></div>
-
-                    <li>
-                      <a id="sidenav-2015" href="#anchor-2015">2015</a>
-                    </li>
-
-                    <!--                                <div class="hr" id="divider-15"></div>-->
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md-10 col-sm-12 pt-3">
-                <h2>History of 5431</h2>
-                <ul class="timeline pt-1">
-                  <!--It’s called the carousel slider. It lets us travel the way a child travels. Round and around, and back home again, to a place where we know we are loved.-->
+    <section class="page-content" id="ourstory-content">
+      <div class="container-fluid py-2 py-md-4" id="">
+        <div class="px-lg-5 px-md-2 px-xs-0">
+          <div class="row mt-3 mx-md-3 mx-xs-0 px-md-5 px-xs-3 py-md-4 py-xs-2" id="ourstory-main">
+            <div class="col-2 d-none d-md-block">
+              <div class="ourstory-sidenav sticky-top pt-3">
+                <h2 class="d-none d-xl-block">Seasons</h2>
+                <h2 class="d-block invisible d-xl-none">Seasons</h2>
+                <ul class="years ml-0 pl-0">
                   <li>
-                    <!--2022-->
-                    <h2><a class="anchor" id="anchor-2022">2022</a></h2>
+                    <a id="sidenav-2022" href="#anchor-2022">2022</a>
+                  </li>
 
-                    <!--2022 slider-->
-                    <div
-                      id="carousel-2022"
-                      class="carousel slide pb-3"
-                      data-ride="carousel"
-                    >
-                      <ol class="carousel-indicators pb-3">
-                        <li
-                          data-target="#carousel-2022"
-                          data-slide-to="0"
-                          class="active"
-                        ></li>
-                        <li data-target="#carousel-2022" data-slide-to="1"></li>
-                        <li data-target="#carousel-2022" data-slide-to="2"></li>
-                      </ol>
-                      <div class="carousel-inner">
-                        <div
-                          class="game-logo carousel-item active h-100"
-                          id="game-logo-22"
-                        ></div>
-                        <div class="team carousel-item">
-                          <img
-                            class="img-fluid d-block"
-                            src="img/about/2022/team 2022.jpg"
-                            alt="2022 photo"
-                          />
-                        </div>
-                        <div class="bot carousel-item">
-                          <img
-                            class="img-fluid d-block w-100"
-                            src="img/about/2022/hermes cropped.jpg"
-                            alt="Hermes"
-                          />
-                          <div class="carousel-caption d-block">
-                            <h5>Hermes</h5>
-                          </div>
+                  <div class="hr" id="divider-22"></div>
+
+                  <li>
+                    <a id="sidenav-2020-21" href="#anchor-2020-21">2020-21</a>
+                  </li>
+
+                  <div class="hr" id="divider-20"></div>
+
+                  <li>
+                    <a id="sidenav-2019" href="#anchor-2019">2019</a>
+                  </li>
+
+                  <div class="hr" id="divider-19"></div>
+
+                  <li>
+                    <a id="sidenav-2018" href="#anchor-2018">2018</a>
+                  </li>
+
+                  <div class="hr" id="divider-18"></div>
+
+                  <li>
+                    <a id="sidenav-2017" href="#anchor-2017">2017</a>
+                  </li>
+
+                  <div class="hr" id="divider-17"></div>
+
+                  <li>
+                    <a id="sidenav-2016" href="#anchor-2016">2016</a>
+                  </li>
+
+                  <div class="hr" id="divider-16"></div>
+
+                  <li>
+                    <a id="sidenav-2015" href="#anchor-2015">2015</a>
+                  </li>
+
+                  <!--<div class="hr" id="divider-15"></div>-->
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-12 pt-3">
+              <h2>History of 5431</h2>
+              <ul class="timeline pt-1">
+                <!--It’s called the carousel slider. It lets us travel the way a child travels. Round and around, and back home again, to a place where we know we are loved.-->
+                <li>
+                  <!--2022-->
+                  <h2><a class="anchor" id="anchor-2022">2022</a></h2>
+
+                  <!--2022 slider-->
+                  <div id="carousel-2022" class="carousel slide pb-3" data-ride="carousel">
+                    <ol class="carousel-indicators pb-3">
+                      <li data-target="#carousel-2022" data-slide-to="0" class="active"></li>
+                      <li data-target="#carousel-2022" data-slide-to="1"></li>
+                      <li data-target="#carousel-2022" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <div class="game-logo carousel-item active h-100" id="game-logo-22"></div>
+                      <div class="team carousel-item">
+                        <img class="img-fluid d-block" src="img/about/2022/team 2022.jpg" alt="2022 photo"/>
+                      </div>
+                      <div class="bot carousel-item">
+                        <img
+                          class="img-fluid d-block w-100"
+                          src="img/about/2022/hermes cropped.jpg"
+                          alt="Hermes"
+                        />
+                        <div class="carousel-caption d-block">
+                          <h5>Hermes</h5>
                         </div>
                       </div>
-                      <a
-                        class="carousel-control-prev pl-1"
-                        href="#carousel-2022"
-                        role="button"
-                        data-slide="prev"
-                      >
-                        <span
-                          class="carousel-control-prev-icon"
-                          aria-hidden="true"
-                        ></span>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                      <a
-                        class="carousel-control-next pr-1"
-                        href="#carousel-2022"
-                        role="button"
-                        data-slide="next"
-                      >
-                        <span
-                          class="carousel-control-next-icon"
-                          aria-hidden="true"
-                        ></span>
-                        <span class="sr-only">Next</span>
-                      </a>
                     </div>
-                    <!--End of 2022 slider-->
-                    <p class="pb-2 mb-0">
-                      This season we have joined The Open Alliance on Chief
-                      Delphi. Open Alliance is a group of FRC teams who openly
-                      share their process of building robots and connections
-                      between FRC teams. We have met with an FLL and FTC team to
-                      demonstrate our bot and mentor. Attending both the Waco
-                      and Irving district events in Texas we left with a greater
-                      appreciation for thee teams around us who work together to
-                      share practice fields and parts. Our team has also
-                      realized how impactful our Imagery and Spirit is to our
-                      team and our STEM community.
-                      <br />
-                      For future years we hope to reach out to organizations and
-                      events like Ski Plano and Night At The Ballpark in order
-                      to demonstrate our robot and the benefits of FIRST.
-                    </p>
-                    <p>
-                      <a
-                        href="https://www.thebluealliance.com/team/5431/2022"
-                        target="”_blank”"
-                      >
-                        More on the 2022 Season ></a
-                      >
-                    </p>
-                    <!--End of 2022-->
-                  </li>
+                    <a class="carousel-control-prev pl-1" href="#carousel-2022" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next pr-1" href="#carousel-2022" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                  <!--End of 2022 slider-->
+                  <p class="pb-2 mb-0">
+                    This season we have joined The Open Alliance on Chief
+                    Delphi. Open Alliance is a group of FRC teams who openly
+                    share their process of building robots and connections
+                    between FRC teams. We have met with an FLL and FTC team to
+                    demonstrate our bot and mentor. Attending both the Waco
+                    and Irving district events in Texas we left with a greater
+                    appreciation for thee teams around us who work together to
+                    share practice fields and parts. Our team has also
+                    realized how impactful our Imagery and Spirit is to our
+                    team and our STEM community.
+                    <br />
+                    For future years we hope to reach out to organizations and
+                    events like Ski Plano and Night At The Ballpark in order
+                    to demonstrate our robot and the benefits of FIRST.
+                  </p>
+                  <p>
+                    <a href="https://www.thebluealliance.com/team/5431/2022" target="”_blank”">More on the 2022 Season ></a>
+                  </p>
+                  <!--End of 2022-->
+                </li>
 
                   <li>
                     <!--2020-21-->
