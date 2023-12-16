@@ -190,33 +190,32 @@ section::after {
     background: url("img/universal/mobile-splash.png") center no-repeat;
     background-size: cover;
   }
+
+  /* Makes Twitter widget shorter at tablet sizes */
+  #twitter-widget-0 {
+    height: 700px !important;
+  }
 }
 
-/* Removes a bunch of padding/margins in the content of the main page when at smaller screen sizes in order to make it easier to read */
 @media (max-width: 767px) {
+  /* Recenters icons in footer (previously they were off by a small amount at small screen sizes) */
+  .row-xs-12.pt-4.pl-5.text-center.icons {
+    padding-left: 1rem !important;
+  }
+
+  /* Removes a bunch of padding/margins in the content of the main page when at smaller screen sizes in order to make it easier to read */
   #media {
     flex-direction: column;
     align-items: center;
     margin: 0px -15px !important;
   }
-}
 
-/* Recenters icons in footer (previously they were off by a small amount at small screen sizes) */
-@media (max-width: 767px) {
-  .row-xs-12.pt-4.pl-5.text-center.icons {
-    padding-left: 1rem !important;
-  }
   /* Makes Twitter widget shorter  at mobile sizes */
   #twitter-widget-0 {
-    height: 450px !important;
+    height: 70vh !important;
   }
 }
 
-@media (min-width: 768px) {
-  #twitter-widget-0 {
-    height: 95% !important;
-  }
-}
 
 /* Fixes weird navbar wrapping on small screen size*/
 img.logo {
@@ -476,7 +475,6 @@ img.logo {
   color: var(--white);
   width: 100%;
   position: absolute;
-  text-align: center;
 }
 
 #banner-text h1 {
@@ -660,7 +658,8 @@ img.logo {
   background-size: contain;
 }
 #game-logo-20 {
-  background: url("img/about/2020/InfiniteRecharge_white.png"), rgba(180, 180, 35, 1); /* for browsers that don't support CSS gradients */
+  background: url("img/about/2020/InfiniteRecharge_white.png"),
+    rgba(180, 180, 35, 1); /* for browsers that don't support CSS gradients */
   background: url("img/about/2020/InfiniteRecharge_white.png"),
     linear-gradient(180deg, rgba(180, 180, 35, 1), rgba(35, 35, 180, 1));
   background-repeat: no-repeat;
@@ -677,30 +676,6 @@ img.logo {
       rgba(57, 124, 56, 0.9) 30%,
       rgba(166, 203, 17, 0.9) 40%,
       rgba(208, 228, 134, 0.9) 50%
-    );
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-}
-#game-logo-23 {
-  background: url("img/about/2023/CHARGED_UP_Logo_Horiz_RGB_FullColor-removebg-preview.png"), rgba(255, 255, 255, 1); /* for browsers that don't support CSS gradients */
-  background: url("img/about/2023/CHARGED_UP_Logo_Horiz_RGB_FullColor-removebg-preview.png"),
-    radial-gradient(
-      rgba(255, 182, 0, 1) 2%,
-      rgba(255, 255, 255, 1) 35%,
-      rgba(104, 195, 228, 1) 100%
-    );
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-}
-#game-logo-24 {
-  background: url("img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.png"), rgba(5, 154, 86, 1); /* for browsers that don't support CSS gradients */
-  background: url("img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.png"),
-  radial-gradient(
-      rgba(0, 0, 0, 1) 2%,
-      rgba(5, 154, 86, 1) 35%,
-      rgba(92, 203, 131, 0.5) 100%
     );
   background-repeat: no-repeat;
   background-position: center center;
