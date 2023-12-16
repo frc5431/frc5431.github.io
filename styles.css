@@ -694,16 +694,13 @@ img.logo {
   background-size: contain;
 }
 #game-logo-24 {
-  background: url("img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.png"), rgba(92, 203, 131, 0.9); /* for browsers that don't support CSS gradients */
+  background: url("img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.png"), rgba(5, 154, 86, 1); /* for browsers that don't support CSS gradients */
   background: url("img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.png"),
-  repeating-conic-gradient(
-    from 90deg at 50% 100%,
-    rgba(92, 203, 131, 0.9) 0%,
-    rgba(5, 154, 86, 0.7) 20%,
-    rgba(145, 121, 97, 0.9) 30%,
-    rgba(108, 190, 220, 0.9) 40%,
-    rgba(243, 224, 152, 0.9) 50%
-  );
+  radial-gradient(
+      rgba(0, 0, 0, 1) 2%,
+      rgba(5, 154, 86, 1) 35%,
+      rgba(92, 203, 131, 0.5) 100%
+    );
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
