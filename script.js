@@ -15,7 +15,7 @@ const errorMessage = document.querySelector('.error-message');
 const sentMessage = document.querySelector('.sent-message');
 
 contactForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevent the default form submission
 
     const recaptchaResponse = document.getElementById('g-recaptcha-response').value;
 
@@ -35,7 +35,7 @@ contactForm.addEventListener('submit', function (event) {
     fetch(url, {
         method: 'POST',
         headers: {
-            'Content-Type': 'text/plain;charset=utf-8',
+            'Content-Type': 'application/json', // Update content type
         },
         body: JSON.stringify(data),
     })
