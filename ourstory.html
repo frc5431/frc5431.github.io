@@ -10,46 +10,15 @@
 
   <!--Bootstrap-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="styles.css"/>
 
   <link rel="icon" type="image/png" href="/img/universal/titlelesslogo.png"/>
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico"/>
-
-  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-  <script src="rellax.min.js"></script>
-  <script src="script.js"></script>
 </head>
 
 <body>
-  <script>
-    $(document).ready(function () {
-      var years = $("*[id*=sidenav-20]:visible").toArray(); //each year
-      var dividers = $("*[id*=divider]:visible").toArray(); //each divider
-      var offsets = []; //will contain how far each year is from the top
-      var adjustment = $(window).height() / 7.5; /*makes the visual effect more accurate, there's probably a better way to do this but idc it kinda works*/
-      $("*[id*=anchor-20]:visible").each(function (value) {
-        offsets.push($(this).offset().top - adjustment); //building the offsets array
-      });
-      $(window).scroll(function () {
-        var scrollTop = $(window).scrollTop(); //how far down the user has scrolled
-        $(offsets).each(function (index, value) {
-          var aboveNext =
-            typeof offsets[index + 1] === "undefined"
-              ? true
-              : scrollTop < offsets[index + 1];
-          if (scrollTop >= value && aboveNext) {
-            $(years[index]).addClass("pos");
-          } else {
-            $(years[index]).removeClass("pos");
-          }
-        });
-      });
-    });
-  </script>
-
   <!--Navigation bar-->
   <div id="navbar"></div>
 
@@ -627,6 +596,39 @@
       <div id="footer"></div>
     </section>
   </main>
+
+  <!--JS files-->
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="rellax.min.js"></script>
+  <script src="script.js"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function () {
+      var years = $("*[id*=sidenav-20]:visible").toArray(); //each year
+      var dividers = $("*[id*=divider]:visible").toArray(); //each divider
+      var offsets = []; //will contain how far each year is from the top
+      var adjustment = $(window).height() / 7.5; /*makes the visual effect more accurate, there's probably a better way to do this but idc it kinda works*/
+      $("*[id*=anchor-20]:visible").each(function (value) {
+        offsets.push($(this).offset().top - adjustment); //building the offsets array
+      });
+      $(window).scroll(function () {
+        var scrollTop = $(window).scrollTop(); //how far down the user has scrolled
+        $(offsets).each(function (index, value) {
+          var aboveNext =
+            typeof offsets[index + 1] === "undefined"
+              ? true
+              : scrollTop < offsets[index + 1];
+          if (scrollTop >= value && aboveNext) {
+            $(years[index]).addClass("pos");
+          } else {
+            $(years[index]).removeClass("pos");
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
