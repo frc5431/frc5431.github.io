@@ -57,7 +57,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item text-wrap" href="https://titanroboticsbc.wixsite.com/home/" target="_blank">Booster Club</a>
             <a class="dropdown-item text-wrap" href="https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system" target="_blank">Season Materials</a>
-            <a class="dropdown-item text-wrap" href="https://firstfrc.blob.core.windows.net/frc2023/Manual/2023FRCGameManual.pdf" target="_blank">2023 FRC Game Manual</a>
+            <a class="dropdown-item text-wrap" id="gameManualLink" href="#" target="_blank">FRC Game Manual</a>
             <a class="dropdown-item text-wrap" href="https://www.firstinspires.org/sites/default/files/uploads/frc/EventRulesManual.pdf" target="_blank">Event Rules</a>
             <a class="dropdown-item text-wrap" href="https://www.firstinspires.org/robotics/frc/playing-field" target="_blank">Playing Field Assets</a>
             <a class="dropdown-item text-wrap" href="https://docs.wpilib.org/en/stable/" target="_blank">WPILib Docs</a>
@@ -76,31 +76,40 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
   <script>
-  const $dropdown = $(".dropdown");
-  const $dropdownToggle = $(".dropdown-toggle");
-  const $dropdownMenu = $(".dropdown-menu");
-  const showClass = "show";
-  $(window).on("load resize", function() {
-    if (this.matchMedia("(min-width: 768px)").matches) {
-      $dropdown.hover(
-        function() {
-          const $this = $(this);
-          $this.addClass(showClass);
-          $this.find($dropdownToggle).attr("aria-expanded", "true");
-          $this.find($dropdownMenu).addClass(showClass);
-        },
-        function() {
-          const $this = $(this);
-          $this.removeClass(showClass);
-          $this.find($dropdownToggle).attr("aria-expanded", "false");
-          $this.find($dropdownMenu).removeClass(showClass);
-        }
-      );
-    } else {
-      $dropdown.off("mouseenter mouseleave");
-    }
-  });
-  </script>
+    const $dropdown = $(".dropdown");
+    const $dropdownToggle = $(".dropdown-toggle");
+    const $dropdownMenu = $(".dropdown-menu");
+    const showClass = "show";
+    $(window).on("load resize", function() {
+      if (this.matchMedia("(min-width: 768px)").matches) {
+        $dropdown.hover(
+          function() {
+            const $this = $(this);
+            $this.addClass(showClass);
+            $this.find($dropdownToggle).attr("aria-expanded", "true");
+            $this.find($dropdownMenu).addClass(showClass);
+          },
+          function() {
+            const $this = $(this);
+            $this.removeClass(showClass);
+            $this.find($dropdownToggle).attr("aria-expanded", "false");
+            $this.find($dropdownMenu).removeClass(showClass);
+          }
+        );
+      } else {
+        $dropdown.off("mouseenter mouseleave");
+      }
+    });
+
+    // Get the current year
+    var currentYear = new Date().getFullYear();
+    // Get the link element by its ID
+    var linkElement = document.getElementById('gameManualLink');
+    // Update the href attribute with the current year
+    linkElement.href = 'https://firstfrc.blob.core.windows.net/frc' + currentYear + '/Manual/' + currentYear + 'FRCGameManual.pdf';
+    // Set the link text with the current year
+    linkElement.textContent = currentYear + ' FRC Game Manual';
+</script>
 </body>
 
 </html>
