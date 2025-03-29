@@ -1,0 +1,1067 @@
+/*TODO: organize mess*/
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap");
+
+:root {
+  --black: #212121;
+  --white: #fefefe;
+  --grey: #dedede;
+  /* The only reason I haven't added variables for the Titan-themed purple, blue, and navy is that I always end up using different
+    alpha values/opacities in different contexts. The RGB values for these colors remain consistent, however:
+        Titan purple: rgb(139, 31, 234)
+        Titan blue: rgb(29, 175, 234)
+        Titan navy: rgb(10, 60, 100)
+    */
+}
+
+html,
+body,
+section,
+main {
+  height: 100%;
+  scroll-behavior: smooth !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background: var(--grey);
+}
+
+html,
+body {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.wrapper {
+  perspective: 2px;
+}
+
+.page-content {
+  position: absolute;
+  top: 80vh;
+}
+
+.btn-primary {
+  /* used in oursponsors.html and contactus.html; otherwise a generic blue */
+  background-color: rgba(
+    139,
+    31,
+    234,
+    0.7
+  ) !important; /* for browsers that don't support CSS gradients */
+
+  /* gradient below added just for fun, could be deleted */
+  /* background: linear-gradient(to right, rgba(139,31,234, 1) -30%, rgba(10, 60, 100, 1) 71%, rgba(139,31,234, 1) 140%) !important; */
+  /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
+  border-color: rgba(0, 0, 0, 0) !important;
+}
+
+/*
+CSS parallax works but messes up navbar >:C
+.parallax {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.parallax__layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.parallax__layer--base {
+    transform: translateZ(0);
+}
+.parallax__layer--back {
+    transform: translateZ(-1px) scale(2.1);
+}
+*/
+
+/*Navbar*/
+.navbar {
+  top: 0;
+}
+.navbar .nav-item:not(:last-child) {
+  margin-right: 5px;
+}
+
+.dropdown-toggle::after {
+  transition: transform 0.15s linear;
+}
+
+.show.dropdown .dropdown-toggle::after {
+  transform: translateY(3px);
+}
+
+.dropdown-menu {
+  margin-top: 0;
+}
+
+.navbar-custom {
+  background: var(--black);
+}
+
+.navbar-custom img {
+  width: 40%;
+}
+
+.navbar-custom .nav-link {
+  color: var(--white);
+}
+
+.navbar-custom .nav-link:hover {
+  opacity: 0.7;
+}
+
+.navbar-custom .dropdown-item {
+  color: var(--black);
+  opacity: 0.6;
+}
+.navbar-custom .dropdown-item:active {
+  background: var(--grey);
+  color: var(--black);
+}
+.navbar-custom .dropdown-item:hover {
+  opacity: 1;
+}
+
+/*End of navbar*/
+
+/*Footer*/
+.bottom-logo img {
+  width: 25vh;
+  height: auto;
+}
+.page-footer {
+  background: var(--black);
+  color: var(--white);
+}
+.icons {
+  line-height: 1.25em;
+}
+.icons a {
+  color: var(--white);
+  text-decoration: none;
+}
+.icons a i:hover {
+  color: var(--white);
+  opacity: 0.7;
+  text-decoration: none;
+}
+.icons a:hover {
+  color: var(--white);
+  opacity: 1;
+  text-decoration: none;
+}
+/*End of footer*/
+
+/*Index*/
+section {
+  position: relative;
+  width: 100%;
+}
+
+section::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  /* width: 100%; messes up the form in contactus.html for some reason, don't know the original purpose of this line */
+  height: 80%;
+}
+
+#index-banner-image {
+  top: 0px;
+  background: url(".assets/img/universal/banner4.png") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+/* MOBILE FIXES START HERE */
+/* Switches to an image with a different aspect ratio at smaller screen sizes */
+@media (max-width: 1199px) {
+  #index-banner-image {
+    background: url("./assets/img/universal/mobile-splash.png") center no-repeat;
+    background-size: cover;
+  }
+
+  /* Makes Twitter widget shorter at tablet sizes */
+  #twitter-widget-0 {
+    height: 700px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Recenters icons in footer (previously they were off by a small amount at small screen sizes) */
+  .row-xs-12.pt-4.pl-5.text-center.icons {
+    padding-left: 1rem !important;
+  }
+
+  /* Removes a bunch of padding/margins in the content of the main page when at smaller screen sizes in order to make it easier to read */
+  #media {
+    flex-direction: column;
+    align-items: center;
+    margin: 0px -15px !important;
+  }
+
+  /* Makes Twitter widget shorter  at mobile sizes */
+  #twitter-widget-0 {
+    height: 70vh !important;
+  }
+}
+
+
+/* Fixes weird navbar wrapping on small screen size*/
+img.logo {
+  width: 80px;
+}
+
+/* MOBILE FIXES END HERE */
+
+/*Arrow code that I copied*/
+#arrowdown a {
+  padding-top: 60px;
+  text-decoration: none;
+  text-decoration-color: none;
+}
+#arrowdown a span {
+  position: absolute;
+  /* Changed from 7vh (which put it too low) to 3vh, which looks about right */
+  top: 3vh;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb04 2s infinite;
+  animation: sdb04 2s infinite;
+  box-sizing: border-box;
+}
+@-webkit-keyframes sdb04 {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+  }
+}
+@keyframes sdb04 {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+}
+/*End of arrow*/
+
+@media (max-width: 1199px) {
+  #zoomer .carousel-inner {
+    height: 65vh !important;
+  }
+  .item-inner {
+    height: 65vh;
+  }
+}
+
+@media (min-width: 1199px) {
+  .item-inner {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 575px) {
+  carousel-item.active .item-inner {
+    transition: all 6.2s linear;
+    background-size: 100% auto;
+  }
+}
+
+@media (min-width: 576px) {
+  .carousel-item.active .item-inner {
+    transition: all 6.2s linear;
+    background-size: 110% auto;
+  }
+}
+
+.item-inner {
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: all 6.2s linear;
+  overflow: hidden;
+}
+
+#slider {
+  overflow: hidden;
+  clear: both;
+  background: var(--grey);
+}
+
+#index-content {
+  clear: both;
+  background: var(--grey);
+  min-height: 100%;
+  position: absolute;
+  /* This line was removed as it left a weird space when an image was collapsed on mobile */
+  /* top: 180vh; */
+}
+
+#slider::after,
+#index-content::after {
+  content: none !important;
+}
+
+#arrowdown a {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: var(--white);
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+#arrowdown a:hover {
+  opacity: 0.5;
+}
+
+.card {
+  border: none !important;
+}
+
+#media {
+  background: var(--white);
+}
+
+#titan-blue h2,
+#titan-navy h2,
+#titan-purple h2 {
+  font-family: "Libre Baskerville";
+}
+
+#titan-blue {
+  background: rgba(29, 175, 234, 0.3);
+  color: var(--black);
+}
+#titan-blue .line {
+  background: rgba(33, 33, 33, 0.8);
+}
+
+#titan-navy {
+  background: rgba(2, 32, 78, 0.6);
+  color: var(--white);
+}
+#titan-navy h2 ~ p ~ h3 > a {
+  opacity: 0.7;
+}
+#titan-navy h3 > a {
+  color: var(--white);
+  opacity: 0.9;
+}
+#titan-navy .line {
+  background: rgba(254, 254, 254, 0.7);
+}
+
+#titan-purple {
+  background: rgba(139, 31, 234, 0.3);
+  color: var(--black);
+}
+#titan-purple .line {
+  background: rgba(33, 33, 33, 0.8);
+}
+
+@media (max-width: 991px) {
+  #index-content .card img {
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+  }
+  #index-content .card p {
+    font-weight: 400;
+  }
+}
+
+@media (min-width: 992px) {
+  #index-content .card img {
+    opacity: 0.75;
+  }
+  #index-content .card:hover img {
+    opacity: 1;
+  }
+  #titan-purple img {
+    mix-blend-mode: luminosity; /*Makes image more purply*/
+  }
+}
+
+#titan-blue h3 > a,
+#titan-purple h3 > a {
+  color: var(--black);
+}
+
+.line {
+  height: 2px;
+  width: 90px;
+}
+
+.container-fluid {
+  z-index: 1000;
+  margin-top: 0;
+  background: var(--grey);
+}
+
+.container-fluid h2 {
+  font-weight: 600;
+}
+
+/* .container-fluid .row .col-md .text-center .img-fluid {
+        max-height: 30vh;
+    }
+
+    .container-fluid .row .col-md p {
+        font-size: 18px;
+        font-weight: 200;
+    }
+
+    .container-fluid .row .col-md h3 {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .container-fluid h2 {
+        margin-top: 5px;
+        font-weight: 600;
+    } */
+
+.twitter-timeline {
+  text-align: right;
+}
+
+@media (max-width: 991px) {
+  #index-content h2 {
+    font-size: 23px;
+  }
+}
+@media (min-width: 992px) {
+  #index-content h2 {
+    font-size: 33px;
+  }
+}
+
+/*End of index*/
+
+/*Our team*/
+
+#banner-text {
+  top: 32%;
+  margin: auto;
+  color: var(--white);
+  width: 100%;
+  position: absolute;
+  text-align: center;
+}
+
+#banner-text h1 {
+  font-size: 50px;
+  font-weight: 500;
+  margin: auto;
+}
+
+#banner-text h3 {
+  font-weight: 300;
+  margin: auto;
+}
+
+#ourteam-banner-image {
+  top: 0px;
+  background: url("./assets/img/universal/team-cheering-2.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
+
+#ourteams-content h1,
+#oursponsors-content h1 {
+  font-weight: 400;
+  font-size: 35;
+}
+
+#subteams .card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+#subteams .card .card-body {
+  background: var(--white);
+}
+
+#subteams .card .card-body h2 {
+  font-weight: 400;
+}
+
+#subteams .card .card-body p {
+  font-weight: 200;
+}
+
+@media (max-width: 991px) {
+  #subteams .card-body h2 {
+    font-size: 23px;
+  }
+}
+@media (min-width: 992px) {
+  #subteams .card-body h2 {
+    font-size: 33px;
+  }
+}
+
+/*End of our team*/
+
+/*Our story*/
+#ourstory-banner-image {
+  top: 0px;
+  background: linear-gradient(rgba(50, 50, 50, 0.25), rgba(50, 50, 50, 0.25)),
+    url("./assets/img/universal/construction.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+}
+
+.carousel-inner {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.team img,
+.bot img {
+  height: 25vh;
+  width: 100vw;
+  object-fit: cover;
+  overflow: hidden;
+}
+.carousel-inner {
+  display: flex;
+  height: 100%;
+}
+.carousel-inner img {
+  margin: auto;
+}
+@media (max-width: 575px) {
+  .carousel-inner {
+    height: 25vh !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 1199px) {
+  .carousel-inner {
+    height: 50vh !important;
+  }
+  .team img,
+  .bot img {
+    height: 50vh;
+    width: 100vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .carousel-inner {
+    height: 80vh !important;
+  }
+  .team img,
+  .bot img {
+    height: 80vh;
+    width: 100vw;
+  }
+}
+
+/*Game Logos*/
+#game-logo-15 {
+  background: url("./assets/img/about/2015/RecycleRush.png"), rgba(50, 200, 160, 1); /* for browsers that don't support CSS gradients */
+  background: url("./assets/img/about/2015/RecycleRush.png"),
+    linear-gradient(
+      90deg,
+      rgba(30, 210, 120, 1) 0%,
+      rgba(50, 200, 160, 1) 35%,
+      rgba(50, 160, 200, 1) 100%
+    );
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+#game-logo-16 {
+  background: url("./assets/img/about/2016/Stronghold.png"), rgba(170, 110, 160, 1); /* for browsers that don't support CSS gradients */
+  background: url("./assets/img/about/2016/Stronghold.png"),
+    radial-gradient(
+      rgba(230, 100, 60, 1) 5%,
+      rgba(170, 110, 160, 1) 65%,
+      rgba(130, 120, 220, 1) 100%
+    );
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+#game-logo-17 {
+  background: url("./assets/img/about/2017/Steamworks.png"), rgba(160, 140, 20, 1); /* for browsers that don't support CSS gradients */
+  background: url("./assets/img/about/2017/Steamworks.png"),
+    linear-gradient(
+      90deg,
+      rgba(160, 140, 20, 1) 0%,
+      rgba(140, 150, 70, 1) 35%,
+      rgba(120, 140, 100, 1) 100%
+    );
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+#game-logo-18 {
+  background: url("./assets/img/about/2018/PowerUp.png"), rgba(205, 205, 100, 1); /* for browsers that don't support CSS gradients */
+  background: url("./assets/img/about/2018/PowerUp.png"),
+    linear-gradient(
+      -45deg,
+      rgba(235, 100, 100, 1) 0%,
+      rgba(205, 205, 100, 1) 50%,
+      rgba(100, 100, 235, 1) 100%
+    );
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+#game-logo-19 {
+  background: url("./assets/img/about/2019/DeepSpace_white.png"), rgba(10, 70, 110, 1); /* for browsers that don't support CSS gradients */
+  background: url("./assets/img/about/2019/DeepSpace_white.png"),
+    radial-gradient(
+      rgba(20, 90, 150, 1) 2%,
+      rgba(10, 70, 110, 1) 35%,
+      rgba(5, 15, 30, 1) 100%
+    );
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+#game-logo-20 {
+  background: url("./assets/img/about/2020/InfiniteRecharge_white.png"),
+    rgba(180, 180, 35, 1); /* for browsers that don't support CSS gradients */
+  background: url("./assets/img/about/2020/InfiniteRecharge_white.png"),
+    linear-gradient(180deg, rgba(180, 180, 35, 1), rgba(35, 35, 180, 1));
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+#game-logo-22 {
+  background: url("./assets/img/about/2022/Rapid\ React.png"), rgba(57, 124, 56, 0.7); /* for browsers that don't support CSS gradients */
+  background: url("./assets/img/about/2022/Rapid\ React.png"),
+    repeating-conic-gradient(
+      from 90deg at 50% 100%,
+      rgba(24, 90, 170, 0.9) 0%,
+      rgba(0, 0, 0, 0.7) 20%,
+      rgba(57, 124, 56, 0.9) 30%,
+      rgba(166, 203, 17, 0.9) 40%,
+      rgba(208, 228, 134, 0.9) 50%
+    );
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+#game-logo-23 {
+  background: url("./assets/img/about/2023/CHARGED_UP_Logo_Horiz_RGB_FullColor-removebg-preview.png"), rgba(255, 255, 255, 1); /* for browsers that don't support CSS gradients */
+  background: url("./assets/img/about/2023/CHARGED_UP_Logo_Horiz_RGB_FullColor-removebg-preview.png"),
+    radial-gradient(
+      rgba(255, 182, 0, 1) 2%,
+      rgba(255, 255, 255, 1) 35%,
+      rgba(104, 195, 228, 1) 100%
+    );
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+#game-logo-24 {
+  background: url("./assets/img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.png"), rgba(5, 154, 86, 1); /* for browsers that don't support CSS gradients */
+  background: url("./assets/img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.png"),
+  radial-gradient(
+      rgba(0, 0, 0, 1) 2%,
+      rgba(5, 154, 86, 1) 35%,
+      rgba(92, 203, 131, 0.5) 100%
+    );
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+/*End of game logos*/
+
+.carousel-caption {
+  left: 5% !important;
+  right: auto !important;
+  text-align: left !important;
+}
+@media (max-width: 767px) {
+  .carousel-caption {
+    top: 55% !important;
+  }
+}
+@media (min-width: 768px) {
+  .carousel-caption {
+    top: 81%;
+  }
+}
+.carousel-caption h5 {
+  display: inline-block;
+  font-weight: 300;
+  font-size: 2em;
+  padding: 8px;
+  background: rgba(80, 80, 80, 0.4);
+}
+
+.carousel ol li {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 30px !important;
+  width: 30px !important;
+}
+
+a.carousel-control-next {
+  justify-content: flex-end !important;
+}
+
+a.carousel-control-prev {
+  justify-content: flex-start !important;
+}
+
+.ourstory-sidenav {
+  top: 580vh;
+  position: absolute;
+}
+ul.years {
+  list-style: none;
+}
+ul.years > li a {
+  text-decoration: none;
+  color: darkgrey;
+  font-size: 1em;
+}
+ul.years > li a.pos {
+  font-size: 1.6em;
+  color: rgba(10, 60, 100, 0.8);
+  font-weight: 500;
+}
+
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+}
+ul.timeline:before {
+  content: " ";
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline > li {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+ul.timeline > li:before {
+  content: " ";
+  background: var(--white);
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid rgba(10, 60, 100, 0.8);
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}
+.hr {
+  height: 1px;
+  width: 37px;
+  background: rgba(20, 50, 80, 0.2);
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+/*End of our story*/
+
+/*Our values*/
+#ourvalues-banner-image {
+  top: 0px;
+  background: linear-gradient(rgba(50, 50, 50, 0.25), rgba(50, 50, 50, 0.25)),
+    url("./assets/img/universal/5431\ flag\ cropped.jpg"), center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+}
+#values {
+  background: var(--grey);
+}
+
+#values .card-body h2 {
+  font-weight: 400;
+  font-family: "Libre Baskerville";
+}
+#values .card-body p {
+  font-weight: 200;
+}
+
+@media (max-width: 767px) {
+  #values .card-deck h2 {
+    font-size: 25px;
+  }
+}
+@media (min-width: 768px) {
+  #values .card-deck h2 {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  #values .card-deck {
+    background: var(--white);
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  #values .card-deck .card-body h2 {
+    font-size: 33px;
+  }
+}
+
+/*Before the purple had an opacity of 0.8, whereas now the opacity is at 1.
+With an opacity of 1 the purple cards overpower the blue ones, but the text
+is less painful to read.*/
+@media (max-width: 575px) {
+  .titan-purple-xl {
+    background: rgba(139, 31, 234) !important;
+    color: var(--white);
+  }
+  .titan-blue-xl {
+    background: rgba(29, 175, 234, 0.3) !important;
+    color: var(--black);
+  }
+}
+
+@media (min-width: 576px) and (max-width: 1199px) {
+  .titan-purple-sm {
+    background: rgba(139, 31, 234) !important;
+    color: var(--white);
+  }
+  .titan-blue-sm {
+    background: rgba(29, 175, 234, 0.3) !important;
+    color: var(--black);
+  }
+}
+
+@media (min-width: 1200px) {
+  .titan-purple-xl {
+    background: rgb(139, 31, 234) !important;
+    color: var(--white);
+  }
+  .titan-blue-xl {
+    background: rgba(29, 175, 234, 0.3) !important;
+    color: var(--black);
+  }
+}
+
+/*End of our values*/
+
+/*Our sponsors*/
+#oursponsors-banner-image {
+  top: 0px;
+  background: linear-gradient(rgba(50, 50, 50, 0.25), rgba(50, 50, 50, 0.25)),
+    url("./assets/img/universal/team\ spirit.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: contain;
+}
+
+@media (max-width: 1199px) {
+  .card-img-top {
+    height: 20vw !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .card-img-top {
+    height: 25vw !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .card-img-top {
+    height: 40vw !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 50vw !important;
+  }
+}
+
+/*End of our sponsors*/
+
+/*Events*/
+#events-banner-image {
+  top: 0px;
+  background: url("./assets/img/universal/frc\ panorama.jpg") top no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+}
+/*End of events*/
+
+/*Contact us*/
+#contactus-banner-image {
+  top: 0px;
+  background: url("./assets/img/about/2020/Hyperion\ competing.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+}
+#contact-info .row {
+  background: var(--white);
+}
+#contact-info h2 {
+  font-weight: 400;
+}
+
+#contact-info .email-form {
+  width: 100%;
+  background: #fff;
+}
+
+#contact-info .email-form .form-group {
+  padding-bottom: 8px;
+}
+
+#contact-info .email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+#contact-info .email-form .error-message br+br {
+  margin-top: 25px;
+}
+
+#contact-info .email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+#contact-info .email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+#contact-info .email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  animation: animate-loading 1s linear infinite;
+}
+
+#contact-info .email-form input,
+#contact-info .email-form textarea {
+  border-radius: 4px;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+#contact-info .email-form input {
+  height: 44px;
+}
+
+#contact-info .email-form textarea {
+  padding: 10px 12px;
+}
+
+#contact-info .email-form button[type=submit] {
+  background: #0563bb;
+  border: 0;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+#contact-info .email-form button[type=submit]:hover {
+  background: #0678e3;
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.anchor {
+  padding-top: 90px;
+}
+
+/* .form-control:valid {
+  border-color: var(--grey) !important;
+  background-image: none !important;
+} */
+/*End of contact us*/
