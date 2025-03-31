@@ -7,6 +7,7 @@
   --black: #212121;
   --white: #fefefe;
   --grey: #dedede;
+  overflow-x: hidden;
   /* The only reason I haven't added variables for the Titan-themed purple, blue, and navy is that I always end up using different
     alpha values/opacities in different contexts. The RGB values for these colors remain consistent, however:
         Titan purple: rgb(139, 31, 234)
