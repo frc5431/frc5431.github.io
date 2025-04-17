@@ -179,7 +179,7 @@ section::after {
 
 #index-banner-image {
   top: 0px;
-  background: url(".assets/img/universal/banner4.png") center no-repeat;
+  background: url("assets/img/universal/banner4.png") center no-repeat;
   background-size: cover;
   width: 100%;
   height: 100vh;
@@ -189,7 +189,7 @@ section::after {
 /* Switches to an image with a different aspect ratio at smaller screen sizes */
 @media (max-width: 1199px) {
   #index-banner-image {
-    background: url("./assets/img/universal/mobile-splash.png") center no-repeat;
+    background: url("assets/img/universal/mobile-splash.png") center no-repeat;
     background-size: cover;
   }
 
@@ -493,7 +493,7 @@ img.logo {
 
 #ourteam-banner-image {
   top: 0px;
-  background: url("./assets/img/universal/team-cheering-2.jpg") center no-repeat;
+  background: url("assets/img/universal/team-cheering-2.jpg") center no-repeat;
   background-size: cover;
   width: 100%;
   height: 80vh;
@@ -541,7 +541,7 @@ img.logo {
 #ourstory-banner-image {
   top: 0px;
   background: linear-gradient(rgba(50, 50, 50, 0.25), rgba(50, 50, 50, 0.25)),
-    url("./assets/img/universal/construction.jpg") center no-repeat;
+    url("assets/img/universal/construction.jpg") center no-repeat;
   background-size: cover;
   width: 100%;
   height: 80vh;
@@ -598,8 +598,8 @@ img.logo {
 
 /*Game Logos*/
 #game-logo-15 {
-  background: url("./assets/img/about/2015/RecycleRush.png"), rgba(50, 200, 160, 1); /* for browsers that don't support CSS gradients */
-  background: url("./assets/img/about/2015/RecycleRush.png"),
+  background: url("assets/img/about/2015/RecycleRush.png"), rgba(50, 200, 160, 1); /* for browsers that don't support CSS gradients */
+  background: url("assets/img/about/2015/RecycleRush.png"),
     linear-gradient(
       90deg,
       rgba(30, 210, 120, 1) 0%,
@@ -611,8 +611,8 @@ img.logo {
   background-size: contain;
 }
 #game-logo-16 {
-  background: url("./assets/img/about/2016/Stronghold.png"), rgba(170, 110, 160, 1); /* for browsers that don't support CSS gradients */
-  background: url("./assets/img/about/2016/Stronghold.png"),
+  background: url("assets/img/about/2016/Stronghold.png"), rgba(170, 110, 160, 1); /* for browsers that don't support CSS gradients */
+  background: url("assets/img/about/2016/Stronghold.png"),
     radial-gradient(
       rgba(230, 100, 60, 1) 5%,
       rgba(170, 110, 160, 1) 65%,
@@ -623,8 +623,8 @@ img.logo {
   background-size: contain;
 }
 #game-logo-17 {
-  background: url("./assets/img/about/2017/Steamworks.png"), rgba(160, 140, 20, 1); /* for browsers that don't support CSS gradients */
-  background: url("./assets/img/about/2017/Steamworks.png"),
+  background: url("assets/img/about/2017/Steamworks.png"), rgba(160, 140, 20, 1); /* for browsers that don't support CSS gradients */
+  background: url("assets/img/about/2017/Steamworks.png"),
     linear-gradient(
       90deg,
       rgba(160, 140, 20, 1) 0%,
@@ -636,8 +636,8 @@ img.logo {
   background-size: contain;
 }
 #game-logo-18 {
-  background: url("./assets/img/about/2018/PowerUp.png"), rgba(205, 205, 100, 1); /* for browsers that don't support CSS gradients */
-  background: url("./assets/img/about/2018/PowerUp.png"),
+  background: url("assets/img/about/2018/PowerUp.png"), rgba(205, 205, 100, 1); /* for browsers that don't support CSS gradients */
+  background: url("assets/img/about/2018/PowerUp.png"),
     linear-gradient(
       -45deg,
       rgba(235, 100, 100, 1) 0%,
@@ -649,8 +649,8 @@ img.logo {
   background-size: contain;
 }
 #game-logo-19 {
-  background: url("./assets/img/about/2019/DeepSpace_white.png"), rgba(10, 70, 110, 1); /* for browsers that don't support CSS gradients */
-  background: url("./assets/img/about/2019/DeepSpace_white.png"),
+  background: url("assets/img/about/2019/DeepSpace_white.png"), rgba(10, 70, 110, 1); /* for browsers that don't support CSS gradients */
+  background: url("assets/img/about/2019/DeepSpace_white.png"),
     radial-gradient(
       rgba(20, 90, 150, 1) 2%,
       rgba(10, 70, 110, 1) 35%,
@@ -661,17 +661,17 @@ img.logo {
   background-size: contain;
 }
 #game-logo-20 {
-  background: url("./assets/img/about/2020/InfiniteRecharge_white.png"),
+  background: url("assets/img/about/2020/InfiniteRecharge_white.png"),
     rgba(180, 180, 35, 1); /* for browsers that don't support CSS gradients */
-  background: url("./assets/img/about/2020/InfiniteRecharge_white.png"),
+  background: url("assets/img/about/2020/InfiniteRecharge_white.png"),
     linear-gradient(180deg, rgba(180, 180, 35, 1), rgba(35, 35, 180, 1));
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
 }
 #game-logo-22 {
-  background: url("./assets/img/about/2022/Rapid\ React.png"), rgba(57, 124, 56, 0.7); /* for browsers that don't support CSS gradients */
-  background: url("./assets/img/about/2022/Rapid\ React.png"),
+  background: url("assets/img/about/2022/Rapid\ React.png"), rgba(57, 124, 56, 0.7); /* for browsers that don't support CSS gradients */
+  background: url("assets/img/about/2022/Rapid\ React.png"),
     repeating-conic-gradient(
       from 90deg at 50% 100%,
       rgba(24, 90, 170, 0.9) 0%,
@@ -685,8 +685,8 @@ img.logo {
   background-size: contain;
 }
 #game-logo-23 {
-  background: url("./assets/img/about/2023/CHARGED_UP_Logo_Horiz_RGB_FullColor-removebg-preview.png"), rgba(255, 255, 255, 1); /* for browsers that don't support CSS gradients */
-  background: url("./assets/img/about/2023/CHARGED_UP_Logo_Horiz_RGB_FullColor-removebg-preview.png"),
+  background: url("assets/img/about/2023/CHARGED_UP_Logo_Horiz_RGB_FullColor-removebg-preview.png"), rgba(255, 255, 255, 1); /* for browsers that don't support CSS gradients */
+  background: url("assets/img/about/2023/CHARGED_UP_Logo_Horiz_RGB_FullColor-removebg-preview.png"),
     radial-gradient(
       rgba(255, 182, 0, 1) 2%,
       rgba(255, 255, 255, 1) 35%,
@@ -697,8 +697,8 @@ img.logo {
   background-size: contain;
 }
 #game-logo-24 {
-  background: url("./assets/img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.png"), rgba(5, 154, 86, 1); /* for browsers that don't support CSS gradients */
-  background: url("./assets/img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.png"),
+  background: url("assets/img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.png"), rgba(5, 154, 86, 1); /* for browsers that don't support CSS gradients */
+  background: url("assets/img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.png"),
   radial-gradient(
       rgba(0, 0, 0, 1) 2%,
       rgba(5, 154, 86, 1) 35%,
@@ -814,7 +814,7 @@ ul.timeline > li:before {
 #ourvalues-banner-image {
   top: 0px;
   background: linear-gradient(rgba(50, 50, 50, 0.25), rgba(50, 50, 50, 0.25)),
-    url("./assets/img/universal/5431\ flag\ cropped.jpg"), center no-repeat;
+    url("assets/img/universal/5431\ flag\ cropped.jpg"), center no-repeat;
   background-size: cover;
   width: 100%;
   height: 80vh;
@@ -900,7 +900,7 @@ is less painful to read.*/
 #oursponsors-banner-image {
   top: 0px;
   background: linear-gradient(rgba(50, 50, 50, 0.25), rgba(50, 50, 50, 0.25)),
-    url("./assets/img/universal/team\ spirit.jpg") center no-repeat;
+    url("assets/img/universal/team\ spirit.jpg") center no-repeat;
   background-size: cover;
   width: 100%;
   height: 80vh;
@@ -943,7 +943,7 @@ is less painful to read.*/
 /*Events*/
 #events-banner-image {
   top: 0px;
-  background: url("./assets/img/universal/frc\ panorama.jpg") top no-repeat;
+  background: url("assets/img/universal/frc\ panorama.jpg") top no-repeat;
   background-size: cover;
   width: 100%;
   height: 80vh;
@@ -955,7 +955,7 @@ is less painful to read.*/
 /*Contact us*/
 #contactus-banner-image {
   top: 0px;
-  background: url("./assets/img/about/2020/Hyperion\ competing.jpg") center no-repeat;
+  background: url("assets/img/about/2020/Hyperion\ competing.jpg") center no-repeat;
   background-size: cover;
   width: 100%;
   height: 80vh;

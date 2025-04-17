@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import logo from '../assets/img/universal/5431Logo.png';
 
 const Header: React.FC = () => {
   useEffect(() => {
@@ -53,7 +54,7 @@ const Header: React.FC = () => {
     <nav className="navbar fixed-top navbar-expand-lg navbar-custom">
       {/* Side Logo */}
       <a href="index.html" className="navbar-brand">
-        <img src="img/universal/5431Logo.png" alt="5431" className="logo" draggable="false" />
+        <img src={logo} alt="5431" draggable="false" style={{width:'80px', marginLeft:'1vw'}}/>
       </a>
 
       <button

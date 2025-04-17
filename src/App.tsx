@@ -60,7 +60,7 @@ function App() {
 
         {/* Carousel - using React state instead of jQuery */}
         <div id="slider" className="carousel slide carousel-fade d-none d-md-block">
-          <div className="carousel-inner">
+          <div className="carousel-inner">  
             {carouselItems.map((item) => (
               <div 
                 key={item.id} 
