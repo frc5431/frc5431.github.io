@@ -1,7 +1,7 @@
 ﻿import React, {} from "react";
 import "./styles.css";
 
-const events: React.FC = () => {
+const Events: React.FC = () => {
   
 
   return (
@@ -47,4 +47,4 @@ const events: React.FC = () => {
   );
 };
 
-export default events;
+export default Events;
