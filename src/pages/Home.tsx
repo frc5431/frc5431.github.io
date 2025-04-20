@@ -11,7 +11,7 @@ import hatConstruction from '../assets/img/universal/hat construction.jpg'
 import universal5431NumberSign from '../assets/img/universal/5431 number sign.jpg'
 import frcEvent from '../assets/img/universal/frc event.jpg'
 import hyperionShooting from '../assets/img/about/2020/Hyperion shooting.jpg'
-import Header from '../components/Header';
+import Header from '../components/header';
 
 // Define TypeScript interfaces
 interface CarouselItem {
@@ -45,8 +45,6 @@ function Home() {
 
   return (
     <div className="app-container">
-      <Header/>
-       <div id="navbar"></div>
 
       <main>  
         {/* Top banner */}
