@@ -7,8 +7,6 @@ const Events: React.FC = () => {
   return (
     <>
       {/* Navigation bar - assuming you'll load this component separately */}
-      <div id="navbar"></div>
-
       <main>
         {/* Top banner */}
         <section id="events-banner">
@@ -23,7 +21,7 @@ const Events: React.FC = () => {
         <section className="page-content" id="events-content">
           <div className="container-fluid py-xs-0 py-md-4 px-lg-5 px-xs-0" id="calendar">
             <div className="row p-4">
-              <div className="col">
+              <div className="col" style={{display: 'flex', justifyContent: 'center'}}>
                 <div className="embed-responsive embed-responsive-16by9">
                   <iframe 
                     className="embed-responsive-item" 

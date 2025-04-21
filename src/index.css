@@ -127,6 +127,7 @@ CSS parallax works but messes up navbar >:C
 .navbar-custom .dropdown-item:active {
   background: var(--grey);
   color: var(--black);
+  
 }
 .navbar-custom .dropdown-item:hover {
   opacity: 1;
@@ -964,6 +965,7 @@ is less painful to read.*/
 }
 #contact-info .row {
   background: var(--white);
+  border-radius: 10px;
 }
 #contact-info h2 {
   font-weight: 400;
