@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
             <div 
               className={`nav-link ${headerData === "event" ? "active" : ""}`} 
               onClick={() => setHeaderData("event")} 
-              style={{cursor: 'pointer'}}
+              role="button"
             >
               Events
             </div>
@@ -105,7 +105,7 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
             <div 
               className={`nav-link ${headerData === "contact" ? "active" : ""}`} 
               onClick={() => setHeaderData("contact")} 
-              style={{cursor: 'pointer'}}
+              role="button"
             >
               Contact
             </div>
