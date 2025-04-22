@@ -110,6 +110,17 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
               Contact
             </div>
           </li>
+
+          {/* Memories */}
+          <li className="nav-item">
+            <div 
+              className={`nav-link ${headerData === "memories" ? "active" : ""}`} 
+              onClick={() => setHeaderData("memories")} 
+              role="button"
+            >
+              Memories
+            </div>
+          </li>
         </ul>
       </div>
     </nav>

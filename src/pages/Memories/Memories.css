@@ -1,0 +1,22 @@
+
+.memories-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.year-title {
+    font-size: 5rem;
+    color: #333;
+    text-align: center;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.year-selector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

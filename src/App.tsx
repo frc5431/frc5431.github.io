@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./pages/Home";
 import Events from "./pages/Events/Events";
 import Contacts from "./pages/Contact/contactus";
+import Memories from "./pages/Memories/memories";
 import { useEffect, useState } from "react";
 import Header from "./components/header";
 
@@ -25,6 +26,7 @@ function App() {
     {page === "home" && <Home/>}
     {page === "event" && <Events/>}
     {page === "contact" && <Contacts/>}
+    {page === "memories" && <Memories/>}
 
     </>
   );
