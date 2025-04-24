@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 // Make sure this path is correct for your project structure
 import logo from '../assets/img/universal/5431Logo.png';
 
@@ -9,12 +9,38 @@ export interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const [resourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
+  
+  const aboutDropdownRef = useRef<HTMLLIElement>(null);
+  const resourcesDropdownRef = useRef<HTMLLIElement>(null);
 
   // Toggle navbar collapse for mobile
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+
+  // Toggle dropdown menus
+  const toggleAboutDropdown = () => setAboutDropdownOpen(!aboutDropdownOpen);
+  const toggleResourcesDropdown = () => setResourcesDropdownOpen(!resourcesDropdownOpen);
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (aboutDropdownRef.current && !aboutDropdownRef.current.contains(event.target as Node)) {
+        setAboutDropdownOpen(false);
+      }
+      if (resourcesDropdownRef.current && !resourcesDropdownRef.current.contains(event.target as Node)) {
+        setResourcesDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
   
   return (
-    <nav className="navbar fixed-top navbar-expand-lg navbar-custom">
+    <nav className="navbar fixed-top navbar-expand-lg navbar-custom" style={{borderBottomLeftRadius: '10px', borderBottomRightRadius: '10px'}}>
       {/* Logo */}
       <div className="navbar-brand" onClick={() => setHeaderData("home")} style={{cursor: 'pointer'}}>
         <img src={logo} alt="5431" draggable="false" style={{width:'80px', marginLeft:'1vw'}}/>
@@ -45,22 +71,22 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
           </li>
           
           {/* About dropdown */}
-          <li className="nav-item dropdown">
+          <li className="nav-item dropdown" ref={aboutDropdownRef}>
             <div
-              className="nav-link dropdown-toggle"
+              className={`nav-link dropdown-toggle ${aboutDropdownOpen ? 'show' : ''}`}
               role="button"
-              data-toggle="dropdown"
+              onClick={toggleAboutDropdown}
               aria-haspopup="true"
-              aria-expanded="false"
+              aria-expanded={aboutDropdownOpen}
               style={{cursor: 'pointer'}}
             >
               About
             </div>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <div className="dropdown-item" onClick={() => setHeaderData("ourteam")} style={{cursor: 'pointer'}}>Our Team</div>
-              <div className="dropdown-item" onClick={() => setHeaderData("ourstory")} style={{cursor: 'pointer'}}>Our Story</div>
-              <div className="dropdown-item" onClick={() => setHeaderData("ourvalues")} style={{cursor: 'pointer'}}>Our Values</div>
-              <div className="dropdown-item" onClick={() => setHeaderData("oursponsors")} style={{cursor: 'pointer'}}>Our Sponsors</div>
+            <div className={`dropdown-menu ${aboutDropdownOpen ? 'show' : ''}`} aria-labelledby="navbarDropdown">
+              <div className="dropdown-item" onClick={() => {setHeaderData("ourteam"); setAboutDropdownOpen(false);}} style={{cursor: 'pointer'}}>Our Team</div>
+              <div className="dropdown-item" onClick={() => {setHeaderData("ourstory"); setAboutDropdownOpen(false);}} style={{cursor: 'pointer'}}>Our Story</div>
+              <div className="dropdown-item" onClick={() => {setHeaderData("ourvalues"); setAboutDropdownOpen(false);}} style={{cursor: 'pointer'}}>Our Values</div>
+              <div className="dropdown-item" onClick={() => {setHeaderData("oursponsors"); setAboutDropdownOpen(false);}} style={{cursor: 'pointer'}}>Our Sponsors</div>
             </div>
           </li>
           
@@ -69,6 +95,7 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
             <div 
               className={`nav-link ${headerData === "event" ? "active" : ""}`} 
               onClick={() => setHeaderData("event")} 
+              style={{cursor: 'pointer'}}
               role="button"
             >
               Events
@@ -76,25 +103,25 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
           </li>
           
           {/* Resources dropdown */}
-          <li className="nav-item dropdown">
+          <li className="nav-item dropdown" ref={resourcesDropdownRef}>
             <div
-              className="nav-link dropdown-toggle"
+              className={`nav-link dropdown-toggle ${resourcesDropdownOpen ? 'show' : ''}`}
               role="button"
-              data-toggle="dropdown"
+              onClick={toggleResourcesDropdown}
               aria-haspopup="true"
-              aria-expanded="false"
+              aria-expanded={resourcesDropdownOpen}
               style={{cursor: 'pointer'}}
             >
               Resources
             </div>
-            <div className="dropdown-menu" aria-labelledby="resourcesDropdown">
-              <a className="dropdown-item" href="https://titanroboticsbc.wixsite.com/home/" target="_blank" rel="noopener noreferrer">
+            <div className={`dropdown-menu ${resourcesDropdownOpen ? 'show' : ''}`} aria-labelledby="resourcesDropdown">
+              <a className="dropdown-item" href="https://titanroboticsbc.wixsite.com/home/" target="_blank" rel="noopener noreferrer" onClick={() => setResourcesDropdownOpen(false)}>
                 Booster Club
               </a>
-              <a className="dropdown-item" href="https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system" target="_blank" rel="noopener noreferrer">
+              <a className="dropdown-item" href="https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system" target="_blank" rel="noopener noreferrer" onClick={() => setResourcesDropdownOpen(false)}>
                 Season Materials
               </a>
-              <a className="dropdown-item" href="https://docs.wpilib.org/en/stable/" target="_blank" rel="noopener noreferrer">
+              <a className="dropdown-item" href="https://docs.wpilib.org/en/stable/" target="_blank" rel="noopener noreferrer" onClick={() => setResourcesDropdownOpen(false)}>
                 WPILib Docs
               </a>
             </div>
@@ -105,6 +132,7 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
             <div 
               className={`nav-link ${headerData === "contact" ? "active" : ""}`} 
               onClick={() => setHeaderData("contact")} 
+              style={{cursor: 'pointer'}}
               role="button"
             >
               Contact
@@ -116,6 +144,7 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
             <div 
               className={`nav-link ${headerData === "memories" ? "active" : ""}`} 
               onClick={() => setHeaderData("memories")} 
+              style={{cursor: 'pointer'}}
               role="button"
             >
               Memories
