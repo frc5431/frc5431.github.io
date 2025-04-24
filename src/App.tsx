@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./pages/Home";
 import Events from "./pages/Events/Events";
 import Contacts from "./pages/Contact/contactus";
-import Memories from "./pages/Memories/memories";
+import Memories from "./pages/Memories/Memories";
 import { useEffect, useState } from "react";
 import Header from "./components/header";
 
@@ -13,7 +13,7 @@ function App() {
   return (
     
     // <BrowserRouter>
-    //   <Routes>
+    //   <Rout es>
     //     <Route path="/" element={<Home />}>
     //       <Route index element={<Events />} />
     //     </Route>
