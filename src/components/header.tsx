@@ -53,6 +53,7 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
         onClick={handleNavCollapse}
         aria-expanded={!isNavCollapsed}
         aria-label="Toggle navigation"
+        style={{marginRight:'3vw'}}
       >
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -123,6 +124,9 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
               </a>
               <a className="dropdown-item" href="https://docs.wpilib.org/en/stable/" target="_blank" rel="noopener noreferrer" onClick={() => setResourcesDropdownOpen(false)}>
                 WPILib Docs
+              </a>
+              <a className="dropdown-item" role="button" rel="noopener noreferrer" onClick={() => setResourcesDropdownOpen(false)}>
+                Website Credit
               </a>
             </div>
           </li>

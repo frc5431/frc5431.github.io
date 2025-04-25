@@ -1,10 +1,14 @@
-#root {
+:root {
+    --background-img: '';
+  }
+  
+  #root {
     /* background: black; */
     touch-action: manipulation;
-    background-image: url("src/assets/img/universal/background memories.jpg");
+    background-image: var(--background-img);
     background-repeat: repeat;
     background-size: contain;
-}
+  }
 
 .memories-container {
     display: flex;
@@ -99,4 +103,11 @@
 
 .button-container {
     margin-top: 20px;
+}
+
+.returnbutton {
+    position:absolute;
+    left:0;
+    bottom:0;
+    margin:1vw;
 }
