@@ -13,14 +13,16 @@ import game2020_21 from '../../assets/img/about/2020/Infinite_Recharge.jpg'
 import game2022 from '../../assets/img/about/2022/Rapid React.png'
 import game2023 from '../../assets/img/about/2023/CHARGED_UP_Logo_Horiz_RGB_FullColor-removebg-preview.png'
 import game2024 from '../../assets/img/about/2024/CrescendoLogo.png'
+import game2025 from '../../assets/img/about/2025/reefscape from team 254.png'
 
 
 const Memories: React.FC = () => {
-    const [year, setYear] = useState(2025);
-    const [yearMax] = useState(2025);
-    const [yearMin] = useState(2015);
     const [traveled, toggleTravel] = useState(false);
 
+    // year related stuff
+    const [year, setYear] = useState(2025);
+    const yearMax = 2025;
+    const yearMin = 2015;
     const progressPercentage = ((year - yearMin) / (yearMax - yearMin)) * 100;
 
     useEffect(() => {
@@ -68,62 +70,62 @@ const Memories: React.FC = () => {
             {traveled &&
                 <>
                     {year === 2015 &&
-                        <div>
-                            <img src={game2015}></img>
+                        <div className="gameImageContainer">
+                            <img src={game2015} className="gameImage"></img>
                         </div>
                     }
 
                     {year === 2016 &&
-                        <div>
-                            <img src={game2016}></img>
+                        <div className="gameImageContainer">
+                            <img src={game2016} className="gameImage"></img>
                         </div>
                     }
 
                     {year === 2017 &&
-                        <div>
-                            <img src={game2017}></img>
+                        <div className="gameImageContainer">
+                            <img src={game2017} className="gameImage"></img>
                         </div>
                     }
 
                     {year === 2018 &&
-                        <div>
-                            <img src={game2018}></img>
+                        <div className="gameImageContainer">
+                            <img src={game2018} className="gameImage"></img>
                         </div>
                     }
 
                     {year === 2019 &&
-                        <div>
-                            <img src={game2019}></img>
+                        <div className="gameImageContainer">
+                            <img src={game2019} className="gameImage"></img>
                         </div>
                     }
 
                     {(year === 2020 || year === 2021) &&
-                        <div>
-                            <img src={game2020_21}></img>
+                        <div className="gameImageContainer">
+                            <img src={game2020_21} className="gameImage"></img>
                         </div>
                     }
 
                     {year === 2022 &&
-                        <div>
-                            <img src={game2022}></img>
+                        <div className="gameImageContainer">
+                            <img src={game2022} className="gameImage"></img>
                         </div>
                     }
 
                     {year === 2023 &&
-                        <div>
-                            <img src={game2023}></img>
+                        <div className="gameImageContainer">
+                            <img src={game2023} className="gameImage"></img>
                         </div>
                     }
 
                     {year === 2024 &&
-                        <div>
-                            <img src={game2024}></img>
+                        <div className="gameImageContainer">
+                            <img src={game2024} className="gameImage"></img>
                         </div>
                     }
 
                     {year === 2025 &&
-                        <div>
-                            {/* <img src={game2025}></img> */}
+                        <div className="gameImageContainer">
+                            <img src={game2025} className="gameImage"></img>
                         </div>
                     }
 

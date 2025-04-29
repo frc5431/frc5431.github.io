@@ -126,7 +126,7 @@ CSS parallax works but messes up navbar >:C
 }
 .navbar-custom .dropdown-item:active {
   background: var(--grey);
-  color: var(--black);
+  color: var(--white);
   
 }
 .navbar-custom .dropdown-item:hover {
