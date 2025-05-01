@@ -3,7 +3,7 @@ import './memories.css';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-{/* Lots of Image Imports */ }
+// Lots of Image Imports 
 import game2015 from '../../assets/img/about/2015/RecycleRush.png'
 import game2016 from '../../assets/img/about/2016/Stronghold.png'
 import game2017 from '../../assets/img/about/2017/Steamworks.png'
@@ -15,6 +15,11 @@ import game2023 from '../../assets/img/about/2023/CHARGED_UP_Logo_Horiz_RGB_Full
 import game2024 from '../../assets/img/about/2024/CrescendoLogo.png'
 import game2025 from '../../assets/img/about/2025/reefscape from team 254.png'
 
+//2015 imports
+import botPerformance2015 from '../../assets/img/about/2015/BotDoingStuff.jpg'
+import IrvingTeam from '../../assets/img/about/2015/IrvingTeam.jpg'
+import NewBotOnTheBlock from '../../assets/img/about/2015/NewBotOnTheBlock.jpg'
+import Working2015 from '../../assets/img/about/2015/Working.jpg'
 
 const Memories: React.FC = () => {
     const [traveled, toggleTravel] = useState(false);
@@ -70,9 +75,15 @@ const Memories: React.FC = () => {
             {traveled &&
                 <>
                     {year === 2015 &&
+                    <div>
                         <div className="gameImageContainer">
                             <img src={game2015} className="gameImage"></img>
                         </div>
+                        <img src={botPerformance2015}></img>
+                        <img src={IrvingTeam}></img>
+                        <img src={NewBotOnTheBlock}></img>
+                        <img src={Working2015}></img>
+                    </div>
                     }
 
                     {year === 2016 &&
