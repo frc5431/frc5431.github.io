@@ -6,7 +6,7 @@
     --light-bg: rgba(255, 255, 255, 0.9);
     --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-  
+
 #root {
     touch-action: manipulation;
     background-image: var(--background-img);
@@ -43,7 +43,8 @@
 }
 
 .travelbutton {
-    background: linear-gradient(135deg, #3182ce, #2c5282); /* Blue gradient */
+    background: linear-gradient(135deg, #3182ce, #2c5282);
+    /* Blue gradient */
     border: none;
     border-radius: 16px;
     color: white;
@@ -143,12 +144,12 @@
 .gameImage {
     display: flex;
     max-width: 80vw;
-    max-height: 40vh; 
+    max-height: 70vh;
     border-radius: 20px;
-    border: 2px solid black; 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    border: 2px solid black;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
-    padding: 15px; 
+    padding: 15px;
 }
 
 .gameImage:hover {
@@ -291,15 +292,15 @@
     .memory-gallery {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
-    
+
     .year-description h2 {
         font-size: 1.75rem;
     }
-    
+
     .year-description p {
         font-size: 1rem;
     }
-    
+
     .memory-image {
         height: 180px;
     }
@@ -309,11 +310,11 @@
     .memory-gallery {
         grid-template-columns: 1fr;
     }
-    
+
     .memory-image {
         height: 200px;
     }
-    
+
     .year-title {
         font-size: 3.5rem;
     }
@@ -341,12 +342,24 @@
     animation: fadeIn 0.3s ease;
 }
 
-.modal-image {
-    max-width: 100%;
-    max-height: 90vh;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+@media (max-width: 768px) {
+    .modal-image {
+        max-width: 100%;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@media (min-width:769px) {
+    .modal-image {
+        max-width: 100%;
+        max-height: 70vh;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    }
 }
 
 .modal-close {
@@ -376,6 +389,7 @@
         opacity: 0;
         transform: scale(0.9);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -394,29 +408,23 @@
 a {
     color: inherit;
     text-decoration: none;
-  }
-  
-  a {
+}
+
+a {
     background:
-      linear-gradient(
-        to right,
-        rgba(100, 200, 200, 1),
-        rgba(100, 200, 200, 1)
-      ),
-      linear-gradient(
-        to left,
-        rgba(139, 31, 234, 1),
-        rgba(43, 2, 80, 1),
-        rgba(2, 32, 78, 1)
-    );
+        linear-gradient(to right,
+            rgba(100, 200, 200, 1),
+            rgba(100, 200, 200, 1)),
+        linear-gradient(to left,
+            rgba(139, 31, 234, 1),
+            rgba(43, 2, 80, 1),
+            rgba(2, 32, 78, 1));
     background-size: 100% 3px, 0 3px;
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
     transition: background-size 400ms;
-  }
-  
-  a:hover {
-    background-size: 0 3px, 100% 3px;
-  }
+}
 
-  
+a:hover {
+    background-size: 0 3px, 100% 3px;
+}

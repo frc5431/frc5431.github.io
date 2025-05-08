@@ -93,7 +93,7 @@ const Memories: React.FC = () => {
                         <div className="gameImageContainer">
                             <img 
                                 src={game2015} 
-                                className="gameImage clickable-image" 
+                                className="gameImage" 
                                 alt="2015 Recycle Rush Game" 
                               
                             />
