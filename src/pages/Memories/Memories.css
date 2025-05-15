@@ -335,13 +335,6 @@
     backdrop-filter: blur(5px);
 }
 
-.modal-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
-    animation: fadeIn 0.3s ease;
-}
-
 @media (max-width: 768px) {
     .modal-image {
         max-width: 100%;
