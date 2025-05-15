@@ -24,14 +24,9 @@ interface ImageModalProps {
 const ImageModal: React.FC<ImageModalProps> = ({ imageSrc, onClose }) => {
   if (!imageSrc) return null;
 
-  // This function stops the click event from bubbling up
-  const handleContentClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-  };
-
   return (
     <div className="image-modal" onClick={onClose}>
-      <div className="modal-content" onClick={handleContentClick}>
+      <div className="modal-content">
         <button className="modal-close" onClick={onClose}>
           <CloseIcon />
         </button>

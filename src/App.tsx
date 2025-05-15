@@ -1,25 +1,15 @@
-import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./pages/Home";
 import Events from "./pages/Events/Events";
 import Contacts from "./pages/Contact/contactus";
 import Memories from "./pages/Memories/Memories";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Header from "./components/header";
 
 function App() {
   const [page, setPage] = useState("home");
 
-
   return (
-    
-    // <BrowserRouter>
-    //   <Rout es>
-    //     <Route path="/" element={<Home />}>
-    //       <Route index element={<Events />} />
-    //     </Route>
-    //   </Routes>
-    // </BrowserRouter>
-    <>  
+    <>
     <Header headerData={page} setHeaderData={setPage}/>
     <div id="navbar"></div>
 
@@ -27,7 +17,6 @@ function App() {
     {page === "event" && <Events/>}
     {page === "contact" && <Contacts/>}
     {page === "memories" && <Memories/>}
-
     </>
   );
 }

@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-// Make sure this path is correct for your project structure
 import logo from '../assets/img/universal/5431Logo.png';
 
 export interface HeaderProps {
@@ -11,7 +10,7 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [resourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
-  
+
   const aboutDropdownRef = useRef<HTMLLIElement>(null);
   const resourcesDropdownRef = useRef<HTMLLIElement>(null);
 
