@@ -65,10 +65,23 @@ const MemoriesYear: React.FC<MemoriesYearProps> = ({year, description: discripti
     document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
   };
 
-  // Function to close modal
+  // Function to close modal with smooth exit animation
   const closeImageModal = () => {
-    setModalImage(null);
-    document.body.style.overflow = 'auto'; // Re-enable scrolling
+    // Add closing class for exit animation
+    const modal = document.querySelector('.image-modal');
+    if (modal) {
+      modal.classList.add('closing');
+      
+      // Remove after animation completes
+      setTimeout(() => {
+        setModalImage(null);
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+      }, 250);
+    } else {
+      // Fallback if modal element not found
+      setModalImage(null);
+      document.body.style.overflow = 'auto';
+    }
   };
 
   return (
@@ -112,4 +125,3 @@ const MemoriesYear: React.FC<MemoriesYearProps> = ({year, description: discripti
 }
 
 export default MemoriesYear
-

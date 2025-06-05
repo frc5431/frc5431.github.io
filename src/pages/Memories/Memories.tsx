@@ -3,6 +3,8 @@ import './memories.css';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
+import transitionLogo from '../../assets/img/Logos/5431 Three Titan Heads Logo transition.png'
+
 // Lots of Image Imports 
 import game2015 from '../../assets/img/about/2015/RecycleRush.png'
 import game2016 from '../../assets/img/about/2016/Stronghold.png'
@@ -25,6 +27,7 @@ import { MemoryItemType } from '../../components/MemoriesYear';
 
 const Memories: React.FC = () => {
     const [traveled, toggleTravel] = useState(false);
+    const [isTransitioning, setIsTransitioning] = useState(false);
 
     // year related stuff
     const [year, setYear] = useState(2025);
@@ -134,6 +137,24 @@ const Memories: React.FC = () => {
         },
     };
 
+    const handleTravel = () => {
+        setIsTransitioning(true);
+        
+        setTimeout(() => {
+            toggleTravel(true);
+            setIsTransitioning(false);
+        }, 1000);
+    };
+
+    const handleReturn = () => {
+        setIsTransitioning(true);
+        
+        setTimeout(() => {
+            toggleTravel(false);
+            setIsTransitioning(false);
+        }, 1000);
+    };
+
     useEffect(() => {
         const rootElement = document.getElementById('root');
         if (rootElement) {
@@ -144,7 +165,25 @@ const Memories: React.FC = () => {
 
     return (
         <>
-            {!traveled && (
+            {isTransitioning && (
+                <div className="transition-overlay">
+                    <div className="transition-content">
+                        <div className="time-machine">
+                            
+                                <img src={transitionLogo} className="time-machine-placeholder"></img>
+                            
+                        </div>
+                        <div className="transition-text">
+                            {traveled ? 'Returning to Present...' : `Traveling to ${year}...`}
+                        </div>
+                        <div className="loading-bar">
+                            <div className="loading-progress"></div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {!traveled && !isTransitioning && (
                 <div className="memories-container">
                     <div className="year-selector">
                         <button
@@ -176,14 +215,14 @@ const Memories: React.FC = () => {
                     </div>
 
                     <div>
-                        <button className="travelbutton" onClick={() => toggleTravel(!traveled)}>
+                        <button className="travelbutton" onClick={handleTravel}>
                             Travel to {year}!
                         </button>
                     </div>
                 </div>
             )}
             
-            {traveled && (
+            {traveled && !isTransitioning && (
                 <>
                     {/* Use our MemoriesYear component for all years */}
                     {yearContent[year as keyof typeof yearContent] && (
@@ -198,7 +237,7 @@ const Memories: React.FC = () => {
                     )}
 
                     <div className="returnbutton">
-                        <button onClick={() => toggleTravel(!traveled)}>Return to Present</button>
+                        <button onClick={handleReturn}>Return to Present</button>
                     </div>
                 </>
             )}
