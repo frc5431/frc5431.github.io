@@ -26,7 +26,7 @@ const Events: React.FC = () => {
                   <iframe 
                     className="embed-responsive-item" 
                     src="https://calendar.google.com/calendar/embed?src=pisd.edu_57n5cfp52bltnua0aegb3mnr18%40group.calendar.google.com&ctz=America%2FChicago" 
-                    style={{ border: 0 }} 
+                    style={{ border: 0, width: '80vw', height: '60vw' }} 
                     width="800" 
                     height="600" 
                     frameBorder="0" 

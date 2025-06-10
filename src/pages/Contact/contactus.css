@@ -1,0 +1,7 @@
+#root {
+    --required: indianred;
+}
+
+.required{
+    color: var(--required);
+}

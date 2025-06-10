@@ -3,8 +3,6 @@ import './memories.css';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-import transitionLogo from '../../assets/img/Logos/5431 Three Titan Heads Logo transition.png'
-
 // Lots of Image Imports 
 import game2015 from '../../assets/img/about/2015/RecycleRush.png'
 import game2016 from '../../assets/img/about/2016/Stronghold.png'
@@ -16,6 +14,7 @@ import game2022 from '../../assets/img/about/2022/Rapid React.png'
 import game2023 from '../../assets/img/about/2023/CHARGED_UP_Logo_Horiz_RGB_FullColor-removebg-preview.png'
 import game2024 from '../../assets/img/about/2024/CrescendoLogo.png'
 import game2025 from '../../assets/img/about/2025/reefscape from team 254.png'
+import transitionLogo from '../../assets/img/Logos/5431 Three Titan Heads Logo transition.png'
 
 // 2015 imports
 import botPerformance2015 from '../../assets/img/about/2015/BotDoingStuff.jpg'

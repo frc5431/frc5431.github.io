@@ -113,7 +113,7 @@ const MemoriesYear: React.FC<MemoriesYearProps> = ({year, description: discripti
       </div>
       <footer className="footer">
         {/* Apparently rel="noopener noreferrer" is some security stuff */}
-        <a href={learnMoreLink} target="_blank" rel="noopener noreferrer">
+        <a className="learn-more-link" href={learnMoreLink} target="_blank" rel="noopener noreferrer">
           Learn More About The {year} Season
         </a>
       </footer>

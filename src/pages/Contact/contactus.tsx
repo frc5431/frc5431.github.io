@@ -1,4 +1,5 @@
 ﻿import React, { useState } from 'react';
+import './contactus.css'
 
 const contactus: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -84,7 +85,7 @@ const contactus: React.FC = () => {
               <h2>How Can We Help?</h2>
               <form className="email-form" id="contact-form" onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label htmlFor="name">Name*</label>
+                  <label htmlFor="name">Name<span className="required">*</span></label>
                   <input 
                     type="text" 
                     id="name" 
@@ -97,7 +98,7 @@ const contactus: React.FC = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="email">Email*</label>
+                  <label htmlFor="email">Email<span className="required">*</span></label>
                   <input 
                     type="email" 
                     id="email" 
@@ -122,7 +123,7 @@ const contactus: React.FC = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="subject">Subject*</label>
+                  <label htmlFor="subject">Subject<span className="required">*</span></label>
                   <input 
                     type="text" 
                     id="subject" 
@@ -135,7 +136,7 @@ const contactus: React.FC = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="message">Message*</label>
+                  <label htmlFor="message">Message<span className="required">*</span></label>
                   <textarea 
                     id="message" 
                     name="message" 
