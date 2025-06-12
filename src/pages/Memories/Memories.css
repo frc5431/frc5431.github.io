@@ -8,6 +8,7 @@
     --brand-purple: #2B0250;
     --light-bg: rgba(255, 255, 255, 0.9);
     --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
 }
 
 #root {
@@ -24,6 +25,7 @@
     flex-direction: column;
     height: 100vh;
     width: 100vw;
+    background: radial-gradient(circle, rgba(0,0,0,0) 20%, rgba(39, 4, 71, 0.5) 100%);
 }
 
 /* Transition Animation Styles */
