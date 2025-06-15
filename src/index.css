@@ -37,6 +37,12 @@ body {
   padding-top: 0;
 }
 
+/* highlighted text selection  */
+::selection {
+  color: #2B0250;
+  background: #1DAFEA;
+}
+
 .wrapper {
   perspective: 2px;
 }
