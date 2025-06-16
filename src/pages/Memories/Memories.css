@@ -73,6 +73,19 @@
     align-items: center;
 }
 
+.memories-descriptor {
+    position: absolute;
+    margin-top: 5vh;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color:var(--secondary-color);
+    bottom: 0;
+    margin-bottom: 2vh;
+    text-align: center;
+    width: 90vw;
+    
+}
+
 .time-machine-placeholder {
     height: 200px;
     display: flex;
