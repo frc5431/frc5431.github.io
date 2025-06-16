@@ -1,49 +1,53 @@
 .carousel {
-  position: relative;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  width: 600px;
-  height: 400px;
+  position: relative; /* Important so absolute buttons position properly */
+  overflow: hidden; /* Prevent images from overflowing */
 }
+.carousel img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+@media (max-width: 1199px) {
+  .carousel img {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+  }
 
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .carousel {
+    height: 100%; /* or a responsive value like 50vh */
   }
 }
-
-
-.slide {
-  border-radius: 0.5rem;
-  box-shadow: 0px 0px 7px #666;
-  width: 100%;
-  height: 100%;
-}
-
-#master {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0; 
-}
-
-.carosuel-arrow {
+.carousel-button {
   position: absolute;
-  filter: drop-shadow(0px 0px 5px #555);
-  width: 2rem;
-  height: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
   color: white;
-}
-
-.carosuel-arrow:hover {
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 50px;
   cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  opacity: 0.7;
+
+  transition: opacity 0.5s ease-in-out;
 }
 
-.arrow-left {
+.carousel-button.left {
   left: 1rem;
 }
 
-.arrow-right {
+.carousel-button.right {
   right: 1rem;
 }

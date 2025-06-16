@@ -169,12 +169,12 @@ function Home() {
             {/* Media section */}
             <div className="px-xl-5 px-md-3 px-0">
               <div className="row mt-3 mx-lg-3 mx-md-2 mx-0 px-xl-5 px-md-4 px-2 py-md-4 py-3" id="media">
-                <div className="col col-lg-8 col-md-7 center">
+                <div className="col col-lg-8 col-md-7 center center-element">
                   <h2 className='center-text'>5431 Chairman's Video</h2>
-                  <div className="embed-responsive embed-responsive-16by9">
+                  <div className="yt-container">
                     <iframe 
-                      width="700" 
-                      height="394" 
+                     
+                      title="Chairman's Video 2019-2020"
                       src="https://www.youtube.com/embed/V_4pVFlNjqI" 
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                       allowFullScreen={true}
@@ -186,10 +186,10 @@ function Home() {
                     education, and covers how we do it!
                   </p>
                   <h2 className='center-text'>About FIRST</h2>
-                  <div className="embed-responsive embed-responsive-16by9">
+                  <div className="yt-container">
                     <iframe 
-                      width="700" 
-                      height="394" 
+                
+                      title="About FIRST"
                       src="https://www.youtube.com/embed/K_PuWjr7qcM" 
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                       allowFullScreen={true}

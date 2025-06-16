@@ -32,90 +32,26 @@ function Carosuel({ data }: CarouselProps) {
   };
 
   return (
-    <div style={{ 
-      position: 'relative', 
-      minHeight: '100vh',
-      width: '100vw',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center'
-    }}>
+  <div className="carousel">
+      <img
+        src={getCurrentImage()}
+        key={getCurrentImage()}
+        alt={`Image ${currentImageIndex + 1}`}
+      />
       
-      <div style={{ 
-        width: '95vw',
-        height: '80vh',
-        position: 'relative',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: '0 auto'
-      }}>
-        <img
-          src={getCurrentImage()}
-          alt={`Image ${currentImageIndex + 1}`}
-          style={{
-            position: 'absolute',
-            left: '50%',
-            top: '50%',
-            transform: 'translate(-50%, -50%)',
-            maxWidth: '95%',
-            maxHeight: '80vh',
-            objectFit: 'contain',
-            borderRadius: '8px',
-          }}
-        />
-        
-        <button 
-          onClick={previousImage}
-          style={{
-            left: '1rem',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            background: '#333',
-            color: 'white',
-            border: 'none',
-            borderRadius: '50%',
-            width: '40px',
-            height: '50px',
-            cursor: 'pointer',
-            fontSize: '20px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 10,
-            opacity: 0.7,
-            transition: 'opacity 0.2s',
-            
-          }}
-        >
-          ←
-        </button>
+      <button 
+        onClick={previousImage}
+        className='carousel-button left'
+      >
+        ←
+      </button>
 
-        <button 
-          onClick={nextImage}
-          style={{
-            right: '10rem',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            background: '#333',
-            color: 'white',
-            border: 'none',
-            borderRadius: '50%',
-            width: '40px',
-            height: '50px',
-            cursor: 'pointer',
-            fontSize: '20px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 10,
-            opacity: 0.7,
-            transition: 'opacity 0.2s',
-          }}
-        >
-          →
-        </button>
-      </div>
+      <button 
+        onClick={nextImage}
+        className='carousel-button right'
+      >
+        →
+      </button>
     </div>
   )
 }
