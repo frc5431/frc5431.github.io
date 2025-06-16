@@ -1,0 +1,53 @@
+
+/*Navbar*/
+.Z {
+  top: 0;
+}
+.navbar .nav-item:not(:last-child) {
+  margin-right: 5px;
+}
+
+.dropdown-toggle::after {
+  transition: transform 0.15s linear;
+}
+
+.show.dropdown .dropdown-toggle::after {
+  transform: translateY(3px);
+}
+
+.dropdown-menu {
+  margin-top: 0;
+}
+
+.navbar-custom {
+  background: var(--black);
+}
+
+.navbar-custom:hover {
+  box-shadow: 0px 1px 5px rgb(70, 70, 70);
+}
+
+.navbar-custom img {
+  width: 40%;
+}
+
+.navbar-custom .nav-link {
+  color: var(--white);
+}
+
+.navbar-custom .nav-link:hover {
+  opacity: 0.7;
+}
+
+.navbar-custom .dropdown-item {
+  color: var(--black);
+  opacity: 0.6;
+}
+.navbar-custom .dropdown-item:active {
+  background: var(--grey);
+  color: var(--white);
+  
+}
+.navbar-custom .dropdown-item:hover {
+  opacity: 1;
+}

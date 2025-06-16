@@ -1,0 +1,49 @@
+.carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 400px;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+
+.slide {
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 7px #666;
+  width: 100%;
+  height: 100%;
+}
+
+#master {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
+}
+
+.carosuel-arrow {
+  position: absolute;
+  filter: drop-shadow(0px 0px 5px #555);
+  width: 2rem;
+  height: 2rem;
+  color: white;
+}
+
+.carosuel-arrow:hover {
+  cursor: pointer;
+}
+
+.arrow-left {
+  left: 1rem;
+}
+
+.arrow-right {
+  right: 1rem;
+}

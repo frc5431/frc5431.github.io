@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import logo from '../assets/img/universal/5431Logo.png';
+import logo from '../../assets/img/universal/5431Logo.png';
+import './Header.css';
 
 export interface HeaderProps {
   headerData: string;

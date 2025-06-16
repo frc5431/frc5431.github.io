@@ -2,46 +2,33 @@ import { useState, useEffect } from 'react';
 
 // Import Bootstrap CSS (you'll need to install it with npm first)
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FRClogo from '../assets/img/Logos/FRC.png'
-import FRCcondensedLogo from '../assets/img/Logos/FRC_condensed.png'
-import PAHSHelmetLogo from '../assets/img/Logos/PAHS_helmet.png'
-import NTXLogo from '../assets/img/Logos/NTX.png'
-import NTXnotext from '../assets/img/Logos/FRC_condensed.png'
-import hatConstruction from '../assets/img/universal/hat construction.jpg' 
-import universal5431NumberSign from '../assets/img/universal/5431 number sign.jpg'
-import frcEvent from '../assets/img/universal/frc event.jpg'
-import hyperionShooting from '../assets/img/about/2020/Hyperion shooting.jpg'
-import Header from '../components/header';
+import FRClogo from '../../assets/img/Logos/FRC.png'
+import FRCcondensedLogo from '../../assets/img/Logos/FRC_condensed.png'
+import PAHSHelmetLogo from '../../assets/img/Logos/PAHS_helmet.png'
+import NTXLogo from '../../assets/img/Logos/NTX.png'
+import NTXnotext from '../../assets/img/Logos/FRC_condensed.png'
+import hatConstruction from '../../assets/img/universal/hat construction.jpg' 
+import universal5431NumberSign from '../../assets/img/universal/5431 number sign.jpg'
+import frcEvent from '../../assets/img/universal/frc event.jpg'
+import hyperionShooting from '../../assets/img/about/2020/Hyperion shooting.jpg'
+import Header from '../../components/Header/Header';
 
-// Define TypeScript interfaces
-interface CarouselItem {
+import './Home.css'; 
+import Carousel from '../../components/Carosuel/Carousel';
+
+export interface CarouselItem {
   id: number;
   imagePath: string;
-  isActive: boolean;
+  alt: string;
 }
 
 function Home() {
-  const [carouselItems] = useState<CarouselItem[]>([
-    { id: 1, imagePath: universal5431NumberSign, isActive: true },
-    { id: 2, imagePath: frcEvent, isActive: false },
-    { id: 3, imagePath: hyperionShooting, isActive: false },
-    { id: 4, imagePath: hatConstruction, isActive: false }
-  ]);
-
-  // Replace jQuery carousel functionality
-  useEffect(() => {
-    // Set up carousel interval (replaces the jQuery script)
-    const interval = setInterval(() => {
-      // Find the current active index
-      const activeIndex = carouselItems.findIndex(item => item.isActive);
-      const nextIndex = (activeIndex + 1) % carouselItems.length;
-      
-      // In a real implementation, you would use setState to update the active item
-      // This is just to demonstrate the concept - use a proper carousel component in production
-    }, 6000);
-
-    return () => clearInterval(interval);
-  }, [carouselItems]);
+  const carouselItems : CarouselItem[] = [
+    { id: 1, imagePath: universal5431NumberSign, alt: "team holding sign" },
+    { id: 2, imagePath: frcEvent, alt: "sfs" },
+    { id: 3, imagePath: hyperionShooting, alt: "fs" },
+    { id: 4, imagePath: hatConstruction, alt: "" },
+  ];
 
   return (
     <div className="app-container">
@@ -54,29 +41,9 @@ function Home() {
             <a href="#slider"><span></span></a>
           </div>
         </section>
-
-        {/* Carousel - using React state instead of jQuery */}
-        <div id="slider" className="carousel slide carousel-fade d-none d-md-block">
-          <div className="carousel-inner">  
-            {carouselItems.map((item) => (
-              <div 
-                key={item.id} 
-                className={`carousel-item ${item.isActive ? 'active' : ''}`} 
-                id={item.id === 1 ? "activeOnLoad" : undefined}
-              >
-                <div 
-                  className="item-inner" 
-                  style={{ backgroundImage:item.imagePath}}
-                ></div>
-              </div>
-            ))}
-          </div>
-          <a className="carousel-control-prev" href="#slider" role="button">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          </a>
-          <a className="carousel-control-next" href="#slider" role="button">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          </a>
+        
+        <div className="carousel-container">
+          <Carousel data={carouselItems} />
         </div>
 
         {/* Content section */}
@@ -202,8 +169,8 @@ function Home() {
             {/* Media section */}
             <div className="px-xl-5 px-md-3 px-0">
               <div className="row mt-3 mx-lg-3 mx-md-2 mx-0 px-xl-5 px-md-4 px-2 py-md-4 py-3" id="media">
-                <div className="col col-lg-8 col-md-7">
-                  <h2>5431 Chairman's Video</h2>
+                <div className="col col-lg-8 col-md-7 center">
+                  <h2 className='center-text'>5431 Chairman's Video</h2>
                   <div className="embed-responsive embed-responsive-16by9">
                     <iframe 
                       width="700" 
@@ -218,7 +185,7 @@ function Home() {
                     our drive and passion for spreading the seeds of STEM
                     education, and covers how we do it!
                   </p>
-                  <h2>About FIRST</h2>
+                  <h2 className='center-text'>About FIRST</h2>
                   <div className="embed-responsive embed-responsive-16by9">
                     <iframe 
                       width="700" 
@@ -234,14 +201,6 @@ function Home() {
                     around the world preparing them for the future through fun
                     challenges.
                   </p>
-                </div>
-                <div className="col col-lg-4 col-md-5">
-                  <h2>Stay Up to Date!</h2>
-                  {/* Twitter timeline would need a React Twitter component */}
-                  <div className="twitter-timeline-container">
-                    {/* Replace with a React Twitter component */}
-                    <p>Twitter timeline will be integrated here using a React component</p>
-                  </div>
                 </div>
               </div>
             </div>
