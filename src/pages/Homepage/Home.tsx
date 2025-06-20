@@ -42,8 +42,8 @@ function Home() {
           </div>
         </section>
         
-        <div className="carousel-container">
-          <Carousel data={carouselItems} />
+        <div className="carousel-container" id="slider">
+          <Carousel data={carouselItems}/>
         </div>
 
         {/* Content section */}

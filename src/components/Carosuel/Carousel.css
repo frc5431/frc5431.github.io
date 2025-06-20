@@ -6,13 +6,85 @@
   position: relative; /* Important so absolute buttons position properly */
   overflow: hidden; /* Prevent images from overflowing */
 }
-.carousel img {
+
+.carousel-track {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.carousel-image {
   width: 100%;
   height: auto;
   object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
+
+.carousel-image.current {
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-image.next {
+  z-index: 3;
+}
+
+.carousel-image.slide-out-right {
+  animation: slideOutRight 0.6s ease-in-out forwards;
+}
+
+.carousel-image.slide-out-left {
+  animation: slideOutLeft 0.6s ease-in-out forwards;
+}
+
+.carousel-image.slide-in-right {
+  animation: slideInRight 0.6s ease-in-out forwards;
+}
+
+.carousel-image.slide-in-left {
+  animation: slideInLeft 0.6s ease-in-out forwards;
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 1199px) {
-  .carousel img {
+  .carousel-image {
     width: auto;
     height: 100%;
     object-fit: contain;
@@ -26,21 +98,41 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #333;
+  background: rgba(0, 0, 0, 0.6);
   color: white;
-  border: none;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  width: 40px;
+  width: 50px;
   height: 50px;
   cursor: pointer;
-  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
-  opacity: 0.7;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
 
-  transition: opacity 0.5s ease-in-out;
+.carousel-button:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-button:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-button svg {
+  transition: transform 0.2s ease;
+}
+
+.carousel-button:hover svg {
+  transform: scale(1.2);
 }
 
 .carousel-button.left {
@@ -49,4 +141,43 @@
 
 .carousel-button.right {
   right: 1rem;
+}
+
+/* Hide buttons on very small screens */
+@media (max-width: 480px) {
+  .carousel-button {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .carousel-button.left {
+    left: 0.5rem;
+  }
+  
+  .carousel-button.right {
+    right: 0.5rem;
+  }
+}
+.carousel-button.left {
+  left: 1rem;
+}
+
+.carousel-button.right {
+  right: 1rem;
+}
+
+/* Hide buttons on very small screens */
+@media (max-width: 480px) {
+  .carousel-button {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .carousel-button.left {
+    left: 0.5rem;
+  }
+  
+  .carousel-button.right {
+    right: 0.5rem;
+  }
 }
