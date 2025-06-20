@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
           {/* About dropdown */}
           <li className="nav-item dropdown" ref={aboutDropdownRef}>
             <div
-              className={`nav-link dropdown-toggle ${aboutDropdownOpen ? 'show' : ''}`}
+              className={`nav-link dropdown-toggle ${aboutDropdownOpen ? 'active show' : ''}`}
               role="button"
               onClick={toggleAboutDropdown}
               aria-haspopup="true"
@@ -106,7 +106,7 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
           {/* Resources dropdown */}
           <li className="nav-item dropdown" ref={resourcesDropdownRef}>
             <div
-              className={`nav-link dropdown-toggle ${resourcesDropdownOpen ? 'show' : ''}`}
+              className={`nav-link dropdown-toggle ${resourcesDropdownOpen ? 'active show' : ''}`}
               role="button"
               onClick={toggleResourcesDropdown}
               aria-haspopup="true"

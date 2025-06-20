@@ -37,6 +37,7 @@ function Carosuel({ data }: CarouselProps) {
         src={getCurrentImage()}
         key={getCurrentImage()}
         alt={`Image ${currentImageIndex + 1}`}
+        className="carousel-image"
       />
       
       <button 
