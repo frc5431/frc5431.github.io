@@ -6,6 +6,9 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header/Header";
 import OurTeam from "./pages/About/OurTeam/OurTeam";
 import OurSponsors from "./pages/About/OurSponsors";
+import { Routes, Route } from 'react-router-dom';
+import Credit from "./pages/Credit/Credit";
+import NotFound from "./pages/404/404";
 
 function App() {
   const [page, setPage] = useState("home");
@@ -30,12 +33,17 @@ function App() {
     <>
       <Header headerData={page} setHeaderData={setPage} />
 
-      {page === "home" && <Home />}
-      {page === "ourteam" && <OurTeam/>}
-      {page === "oursponsors" && <OurSponsors/>}
-      {page === "event" && <Events />}
-      {page === "contact" && <Contacts />}
-      {page === "memories" && <Memories />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/memories" element={<Memories />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/contact" element={<Contacts />} />
+        <Route path="/about/ourteam" element={<OurTeam />} />
+        <Route path="/about/oursponsors" element={<OurSponsors />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/resources/websitecredit" element={<Credit />} />
+      </Routes>
+
     </>
   );
 }

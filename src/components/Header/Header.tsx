@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import logo from '../../assets/img/universal/5431Logo.png';
 import './Header.css';
-
+import { NavLink, useNavigate } from "react-router-dom";
 export interface HeaderProps {
   headerData: string;
   setHeaderData: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
+const Header: React.FC<HeaderProps> = () => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [resourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
@@ -39,10 +39,11 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
     };
   }, []);
   
+  const navigate = useNavigate();
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-custom" style={{borderBottomLeftRadius: '10px', borderBottomRightRadius: '10px'}}>
       {/* Logo */}
-      <div className="navbar-brand" onClick={() => setHeaderData("home")} style={{cursor: 'pointer'}}>
+      <div className="navbar-brand" onClick={() => navigate("/")} style={{cursor: 'pointer'}}>
         <img src={logo} alt="5431" draggable="false" style={{width:'80px', marginLeft:'1vw'}}/>
       </div>
 
@@ -61,15 +62,16 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
       {/* Navbar links */}
       <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarSupportedContent">
         <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <div 
-              className={`nav-link ${headerData === "home" ? "active" : ""}`} 
-              onClick={() => setHeaderData("home")} 
+          {/* <li className="nav-item">
+            <NavLink 
+              className={({ isActive }) => "nav-link" + (isActive ? " active" : " default")}  
               style={{cursor: 'pointer'}}
+              to={"/"}
+              role='button'
             >
               Home
-            </div>
-          </li>
+            </NavLink>
+          </li> */}
           
           {/* About dropdown */}
           <li className="nav-item dropdown" ref={aboutDropdownRef}>
@@ -84,23 +86,51 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
               About
             </div>
             <div className={`dropdown-menu ${aboutDropdownOpen ? 'show' : ''}`} aria-labelledby="navbarDropdown">
-              <div className="dropdown-item" onClick={() => {setHeaderData("ourteam"); setAboutDropdownOpen(false);}} style={{cursor: 'pointer'}}>Our Team</div>
-              <div className="dropdown-item" onClick={() => {setHeaderData("ourstory"); setAboutDropdownOpen(false);}} style={{cursor: 'pointer'}}>Our Story</div>
-              <div className="dropdown-item" onClick={() => {setHeaderData("ourvalues"); setAboutDropdownOpen(false);}} style={{cursor: 'pointer'}}>Our Values</div>
-              <div className="dropdown-item" onClick={() => {setHeaderData("oursponsors"); setAboutDropdownOpen(false);}} style={{cursor: 'pointer'}}>Our Sponsors</div>
+              <NavLink
+                className="dropdown-item"
+                to="/about/ourteam"
+                onClick={() => setAboutDropdownOpen(false)}
+                style={{cursor: 'pointer'}}
+              >
+                Our Team
+              </NavLink>
+              <NavLink
+                className="dropdown-item"
+                to="/about/ourstory"
+                onClick={() => setAboutDropdownOpen(false)}
+                style={{cursor: 'pointer'}}
+              >
+                Our Story
+              </NavLink>
+              <NavLink
+                className="dropdown-item"
+                to="/about/ourvalues"
+                onClick={() => setAboutDropdownOpen(false)}
+                style={{cursor: 'pointer'}}
+              >
+                Our Values
+              </NavLink>
+              <NavLink
+                className="dropdown-item"
+                to="/about/oursponsors"
+                onClick={() => setAboutDropdownOpen(false)}
+                style={{cursor: 'pointer'}}
+              >
+                Our Sponsors
+              </NavLink>
             </div>
           </li>
           
           {/* Events link */}
           <li className="nav-item">
-            <div 
-              className={`nav-link ${headerData === "event" ? "active" : ""}`} 
-              onClick={() => setHeaderData("event")} 
+            <NavLink 
+              className={({ isActive }) => "nav-link" + (isActive ? " active" : " default")}  
               style={{cursor: 'pointer'}}
-              role="button"
+              to={"/events"}
+              role='button'
             >
               Events
-            </div>
+            </NavLink>
           </li>
           
           {/* Resources dropdown */}
@@ -133,26 +163,25 @@ const Header: React.FC<HeaderProps> = ({ headerData, setHeaderData }) => {
           
           {/* Contact link */}
           <li className="nav-item">
-            <div 
-              className={`nav-link ${headerData === "contact" ? "active" : ""}`} 
-              onClick={() => setHeaderData("contact")} 
+            <NavLink 
+              className={({ isActive }) => "nav-link" + (isActive ? " active" : " default")}  
               style={{cursor: 'pointer'}}
-              role="button"
+              to={"/contact"}
+              role='button'
             >
               Contact
-            </div>
+            </NavLink>
           </li>
 
           {/* Memories */}
           <li className="nav-item">
-            <div 
-              className={`nav-link ${headerData === "memories" ? "active" : ""}`} 
-              onClick={() => setHeaderData("memories")} 
+            <NavLink 
+              className={({ isActive }) => "nav-link" + (isActive ? " active" : " default")}
               style={{cursor: 'pointer'}}
-              role="button"
+              to={"/memories"}
             >
               Memories
-            </div>
+            </NavLink>
           </li>
         </ul>
       </div>
