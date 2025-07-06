@@ -7,14 +7,23 @@ import FRCcondensedLogo from '../../assets/img/Logos/FRC_condensed.png'
 import PAHSHelmetLogo from '../../assets/img/Logos/PAHS_helmet.png'
 import NTXLogo from '../../assets/img/Logos/NTX.png'
 import NTXnotext from '../../assets/img/Logos/FRC_condensed.png'
-import hatConstruction from '../../assets/img/universal/hat construction.jpg' 
+import hatConstruction from '../../assets/img/universal/hat construction.jpg'
 import universal5431NumberSign from '../../assets/img/universal/5431 number sign.jpg'
 import frcEvent from '../../assets/img/universal/frc event.jpg'
 import hyperionShooting from '../../assets/img/about/2020/Hyperion shooting.jpg'
+import titanRoboticsLogo from '../../assets/img/Logos/Titan_Robotics.png'
+import teamLogo from '../../assets/img/universal/5431Logo.png'
+import teamLogoBlack from '../../assets/img/universal/5431LogoBlackvector.svg'
+import robotCloseup from '../../assets/img/universal/robot closeup.jpg'
+import teamSpirit from '../../assets/img/universal/team spirit.jpg'
 import Header from '../../components/Header/Header';
 
-import './Home.css'; 
+import './Home.css';
 import Carousel from '../../components/Carosuel/Carousel';
+
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 export interface CarouselItem {
   id: number;
@@ -23,7 +32,7 @@ export interface CarouselItem {
 }
 
 function Home() {
-  const carouselItems : CarouselItem[] = [
+  const carouselItems: CarouselItem[] = [
     { id: 1, imagePath: universal5431NumberSign, alt: "team holding sign" },
     { id: 2, imagePath: frcEvent, alt: "sfs" },
     { id: 3, imagePath: hyperionShooting, alt: "fs" },
@@ -33,41 +42,50 @@ function Home() {
   return (
     <div className="app-container">
 
-      <main>  
+      <main>
         {/* Top banner */}
         <section id="banner">
           <div id="index-banner-image" className="rellax" data-rellax-speed="-1"></div>
           <div id="arrowdown">
-            <a href="#slider"><span></span></a>
+            <a href="#content"><span></span></a>
           </div>
         </section>
-        
-        <div className="carousel-container" id="slider">
+
+        {/* <div className="carousel-container" id="slider">
           <Carousel data={carouselItems}/>
-        </div>
+        </div> */}
 
         {/* Content section */}
         <section id="index-content">
+          <div id="content" className="content-container">
+            <img src={teamLogoBlack} alt="Team 5431 Logo" className="team-number" />
+            <Carousel data={carouselItems} />
+            <div className="social-container">
+              <a href="https://www.instagram.com/frc5431/" target='_blank'><InstagramIcon fontSize='large' className="social-icon" /></a>
+              <a href="https://www.facebook.com/frc5431/" target='_blank'><FacebookIcon fontSize='large' className="social-icon" /></a>
+              <a href="https://www.youtube.com/@frc5431/" target='_blank'><YouTubeIcon fontSize='large' className="social-icon" /></a>
+            </div>
+          </div>
           <div className="container-fluid pb-0 pb-md-4">
             {/* Three info cards */}
             <div className="card-group pt-3">
               <div className="card p-2 p-lg-4" id="titan-blue">
                 <div className="mt-1">
-                  <img 
+                  <img
                     className="card-img-overlay d-block d-md-none mh-100 mw-100"
                     src={FRCcondensedLogo}
                     alt="FIRST Robotics (FRC)"
                   />
-                  <img 
-                    className="card-img-overlay d-none d-md-flex ml-md-auto d-lg-none mh-100 mw-100" 
-                    src={FRClogo} 
-                    alt="FIRST Robotics (FRC)" 
+                  <img
+                    className="card-img-overlay d-none d-md-flex ml-md-auto d-lg-none mh-100 mw-100"
+                    src={FRClogo}
+                    alt="FIRST Robotics (FRC)"
                   />
                   <a href="https://www.firstinspires.org/robotics/frc" target="_blank" rel="noopener noreferrer">
-                    <img 
-                      className="card-img-top d-none d-lg-block" 
-                      src={FRClogo} 
-                      alt="FIRST Robotics (FRC)" 
+                    <img
+                      className="card-img-top d-none d-lg-block"
+                      src={FRClogo}
+                      alt="FIRST Robotics (FRC)"
                     />
                   </a>
                 </div>
@@ -89,21 +107,21 @@ function Home() {
                   </h3>
                 </div>
               </div>
-              
+
               <div className="w-100 pt-3 d-none d-sm-block d-lg-none"></div>
-              
+
               <div className="card p-2 p-lg-4" id="titan-navy">
                 <div className="mt-1">
-                  <img 
-                    className="card-img-overlay d-block d-md-flex ml-md-auto d-lg-none mh-100 mw-100" 
-                    src={PAHSHelmetLogo} 
-                    alt="Plano ISD Academy High School (AHS)" 
+                  <img
+                    className="card-img-overlay d-block d-md-flex ml-md-auto d-lg-none mh-100 mw-100"
+                    src={PAHSHelmetLogo}
+                    alt="Plano ISD Academy High School (AHS)"
                   />
                   <a href="https://www.pisd.edu/academy" target="_blank" rel="noopener noreferrer">
-                    <img 
-                      className="card-img-top d-none d-lg-block" 
-                      src={PAHSHelmetLogo} 
-                      alt="Plano ISD Academy High School (AHS)" 
+                    <img
+                      className="card-img-top d-none d-lg-block"
+                      src={PAHSHelmetLogo}
+                      alt="Plano ISD Academy High School (AHS)"
                     />
                   </a>
                 </div>
@@ -124,26 +142,26 @@ function Home() {
                   </h3>
                 </div>
               </div>
-              
+
               <div className="w-100 pt-3 d-none d-sm-block d-lg-none"></div>
-              
+
               <div className="card p-2 p-lg-4" id="titan-purple">
                 <div className="mt-1">
-                  <img 
-                    className="card-img-overlay d-block d-md-none mh-100 mw-100" 
-                    src={NTXnotext} 
-                    alt="North Texas Robotics (NTX)" 
+                  <img
+                    className="card-img-overlay d-block d-md-none mh-100 mw-100"
+                    src={NTXnotext}
+                    alt="North Texas Robotics (NTX)"
                   />
-                  <img 
-                    className="card-img-overlay d-none d-md-flex ml-md-auto d-lg-none mh-100 mw-100" 
-                    src={NTXLogo} 
-                    alt="North Texas Robotics (NTX)" 
+                  <img
+                    className="card-img-overlay d-none d-md-flex ml-md-auto d-lg-none mh-100 mw-100"
+                    src={NTXLogo}
+                    alt="North Texas Robotics (NTX)"
                   />
                   <a href="https://www.ntxrobotics.com/" target="_blank" rel="noopener noreferrer">
-                    <img 
-                      className="card-img-top d-none d-lg-block" 
-                      src={NTXLogo} 
-                      alt="North Texas Robotics (NTX)" 
+                    <img
+                      className="card-img-top d-none d-lg-block"
+                      src={NTXLogo}
+                      alt="North Texas Robotics (NTX)"
                     />
                   </a>
                 </div>
@@ -172,11 +190,11 @@ function Home() {
                 <div className="col col-lg-8 col-md-7 center center-element">
                   <h2 className='center-text'>5431 Chairman's Video</h2>
                   <div className="yt-container">
-                    <iframe 
-                     
+                    <iframe
+
                       title="Chairman's Video 2019-2020"
-                      src="https://www.youtube.com/embed/V_4pVFlNjqI" 
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                      src="https://www.youtube.com/embed/V_4pVFlNjqI"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen={true}
                     ></iframe>
                   </div>
@@ -187,11 +205,11 @@ function Home() {
                   </p>
                   <h2 className='center-text'>About FIRST</h2>
                   <div className="yt-container">
-                    <iframe 
-                
+                    <iframe
+
                       title="About FIRST"
-                      src="https://www.youtube.com/embed/K_PuWjr7qcM" 
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                      src="https://www.youtube.com/embed/K_PuWjr7qcM"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen={true}
                     ></iframe>
                   </div>

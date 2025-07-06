@@ -88,6 +88,7 @@
 
 .time-machine-placeholder {
     height: 200px;
+    width: 220px;
     display: flex;
     margin-bottom: 2rem;
     justify-content: center;

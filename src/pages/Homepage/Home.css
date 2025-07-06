@@ -1,3 +1,15 @@
+:root {
+  --primary-color: #8B1FEA;
+  --secondary-color: #3c0370;
+  --accent-color: #02204E;
+  --brand-blue: #1DAFEA;
+  --brand-navy: #02204E;
+  --brand-purple: #2B0250;
+  --light-bg: rgba(255, 255, 255, 0.9);
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
 .carousel-container {
   height: 100vh;
   display: flex;
@@ -21,7 +33,7 @@
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .yt-container iframe {
@@ -31,4 +43,92 @@
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.team-number {
+  width: 25vw;
+  filter: drop-shadow(0 12px 64px var(--brand-blue)) drop-shadow(0 4px 24px var(--brand-purple)) drop-shadow(0 0px 0px white);
+  margin-bottom: 1vh;
+  padding-top: 10vh;
+}
+
+@media (max-width: 768px) {
+  .team-number {
+    width: 50vw;
+  }
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 769px) {
+  .content-container {
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+}
+
+.content-container::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg,
+      transparent,
+      rgba(2, 32, 78, 0.3),
+      rgba(29, 175, 234, 0.4),
+      transparent,
+      transparent,
+      rgba(2, 32, 78, 0.25),
+      rgba(29, 175, 234, 0.35),
+      transparent);
+  border-radius: 20px;
+  z-index: -1;
+}
+
+@keyframes pulseGlow {
+  from {
+    box-shadow:
+      0 0 10px rgba(2, 32, 78, 0.2),
+      0 0 20px rgba(29, 175, 234, 0.15);
+  }
+
+  to {
+    box-shadow:
+      0 0 15px rgba(2, 32, 78, 0.3),
+      0 0 30px rgba(29, 175, 234, 0.25),
+      0 0 45px rgba(29, 175, 234, 0.1);
+  }
+}
+
+.social-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: -2vh;
+  background: white;
+  padding: 0.6rem;
+  border-radius: 20px;
+  z-index: 10;
+  border: 2px solid var(--primary-color);
+}
+
+@media (min-width: 769px) {
+  .social-container {
+    align-self: flex-start;
+    margin-left: 6vw;
+    margin-top: -4vh;
+  }
+}
+
+.social-icon {
+  color: var(--primary-color);
+}
+
+.social-icon:hover {
+  color: var(--brand-purple);
 }

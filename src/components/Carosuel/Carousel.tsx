@@ -74,17 +74,21 @@ function Carosuel({ data }: CarouselProps) {
   return (
   <div className="carousel">
       <div className="carousel-track">
-        <img
-          src={getCurrentImage()}
-          alt={`Image ${currentImageIndex + 1}`}
-          className={`carousel-image current ${isTransitioning ? `slide-out-${slideDirection}` : ''}`}
-        />
-        {isTransitioning && (
+        <div className={`carousel-image-wrapper current ${isTransitioning ? `slide-out-${slideDirection}` : ''}`}>
           <img
-            src={getNextImage()}
-            alt={`Next image`}
-            className={`carousel-image next slide-in-${slideDirection}`}
+            src={getCurrentImage()}
+            alt={`Image ${currentImageIndex + 1}`}
+            className="carousel-image"
           />
+        </div>
+        {isTransitioning && (
+          <div className={`carousel-image-wrapper next slide-in-${slideDirection}`}>
+            <img
+              src={getNextImage()}
+              alt={`Next image`}
+              className="carousel-image"
+            />
+          </div>
         )}
       </div>
       
