@@ -47,7 +47,10 @@
 
 .team-number {
   width: 25vw;
-  filter: drop-shadow(0 12px 64px var(--brand-blue)) drop-shadow(0 4px 24px var(--brand-purple)) drop-shadow(0 0px 0px white);
+  filter: 
+    drop-shadow(0 2px 8px rgba(139, 31, 234, 0.3))
+    drop-shadow(0 4px 16px rgba(29, 175, 234, 0.2))
+    drop-shadow(0 8px 24px rgba(2, 32, 78, 0.1));
   margin-bottom: 1vh;
   padding-top: 10vh;
 }

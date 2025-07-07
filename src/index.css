@@ -158,7 +158,12 @@ section::after {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  /* Force navbar to full width on mobile */
+  .navbar.fixed-top {
+    width: 100vw !important;
+  }
+
   /* Recenters icons in footer (previously they were off by a small amount at small screen sizes) */
   .row-xs-12.pt-4.pl-5.text-center.icons {
     padding-left: 1rem !important;

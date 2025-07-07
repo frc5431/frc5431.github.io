@@ -77,6 +77,12 @@ import teamSide2022 from '../../assets/img/about/2022/team_ios.jpg'
 import brontesAction from '../../assets/img/about/2023/brontes action.jpg'
 import team2023 from '../../assets/img/about/2023/2023team (1).jpg'
 
+//2025 imports 
+import irisinblue from '../../assets/img/about/2025/irisinblue.jpg'
+import layingdowniris from '../../assets/img/about/2025/layingdowniris.jpg'
+import placingcoral from '../../assets/img/about/2025/placingdowncoraliris.jpg'
+import irisbeingworkedon from '../../assets/img/about/2025/irisbeingworkedon.jpg'
+
 
 const Memories: React.FC = () => {
     const [traveled, toggleTravel] = useState(false);
@@ -374,7 +380,28 @@ const Memories: React.FC = () => {
             gameName: 'Reefscape',
             imageURL: game2025,
             description: 'In 2025, our team is competing in the FIRST Reefscape challenge.',
-            memoryImages: [] as MemoryItemType[],
+            memoryImages: [
+                {
+                    imageSrc: irisinblue,
+                    altText: 'Iris in Blue',
+                    caption: 'A photo of Iris in Blue, our 2025 robot'
+                },
+                {
+                    imageSrc: layingdowniris,
+                    altText: 'Iris Laying Down',
+                    caption: 'A photo of Iris laying down, showing off its components'
+                },
+                {
+                    imageSrc: placingcoral,
+                    altText: 'Placing Coral',
+                    caption: 'A photo of Iris placing down a coral game piece'
+                },
+                {
+                    imageSrc: irisbeingworkedon,
+                    altText: 'Iris being worked on',
+                    caption: 'A photo of Iris being worked on by our team members'
+                }
+            ],
             learnMoreLink: 'https://www.thebluealliance.com/team/5431/2025'
         },
     };
