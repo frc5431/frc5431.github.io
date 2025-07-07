@@ -2,12 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import logo from '../../assets/img/universal/5431Logo.png';
 import './Header.css';
 import { NavLink, useNavigate } from "react-router-dom";
-export interface HeaderProps {
-  headerData: string;
-  setHeaderData: React.Dispatch<React.SetStateAction<string>>;
-}
 
-const Header: React.FC<HeaderProps> = () => {
+
+const Header = () => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [resourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
@@ -40,6 +37,9 @@ const Header: React.FC<HeaderProps> = () => {
   }, []);
   
   const navigate = useNavigate();
+
+  const currentYear = new Date().getFullYear();
+  const currentGameManual = "https://firstfrc.blob.core.windows.net/frc" + currentYear + "/Manual/" + currentYear + "GameManual.pdf"; 
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-custom" style={{borderBottomLeftRadius: '10px', borderBottomRightRadius: '10px'}}>
       {/* Logo */}
@@ -149,15 +149,24 @@ const Header: React.FC<HeaderProps> = () => {
               <a className="dropdown-item" href="https://titanroboticsbc.wixsite.com/home/" target="_blank" rel="noopener noreferrer" onClick={() => setResourcesDropdownOpen(false)}>
                 Booster Club
               </a>
+              <a className="dropdown-item" href={currentGameManual} target="_blank" rel="noopener noreferrer" onClick={() => setResourcesDropdownOpen(false)}>
+                FRC Game Manual
+              </a>
               <a className="dropdown-item" href="https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system" target="_blank" rel="noopener noreferrer" onClick={() => setResourcesDropdownOpen(false)}>
+                Playing Field
+              </a>
+              <a className="dropdown-item" href="https://www.firstinspires.org/robotics/frc/playing-field" target="_blank" rel="noopener noreferrer" onClick={() => setResourcesDropdownOpen(false)}>
                 Season Materials
               </a>
+
               <a className="dropdown-item" href="https://docs.wpilib.org/en/stable/" target="_blank" rel="noopener noreferrer" onClick={() => setResourcesDropdownOpen(false)}>
                 WPILib Docs
               </a>
               <a className="dropdown-item" role="button" rel="noopener noreferrer" onClick={() => setResourcesDropdownOpen(false)}>
                 Website Credit
               </a>
+
+              
             </div>
           </li>
           
