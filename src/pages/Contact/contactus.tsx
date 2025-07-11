@@ -1,11 +1,22 @@
 ﻿import React, { useState } from 'react';
 import './contactus.css'
+import teamNumber from '../../assets/img/universal/5431LogoBlackvector.svg'
 
 const contactus: React.FC = () => {
 
 
   return (<>
-  
+    <section id="contactus-banner"  style={{ background: 'transparent'}}>
+      <div className="rellax" id="contactus-banner-image"></div>
+      <div id="banner-text">
+        <h1 className="title-text-contactus"> CONTACT <img src={teamNumber} className="team-number-contact"></img></h1>
+        <h3 className="subtext-contactus">Any questions? Email frc5431@gmail.com or fill out the form below!</h3>
+      </div>
+      <div>
+        <p>Where are we?</p>
+      </div>
+    </section>
+
   </>);
 
   // const [formData, setFormData] = useState({
@@ -15,7 +26,7 @@ const contactus: React.FC = () => {
   //   subject: '',
   //   message: ''
   // });
-  
+
   // const [formStatus, setFormStatus] = useState({
   //   loading: false,
   //   error: false,
@@ -33,13 +44,13 @@ const contactus: React.FC = () => {
   // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   //   e.preventDefault();
   //   setFormStatus({ loading: true, error: false, sent: false });
-    
+
   //   // Simulate form submission
   //   setTimeout(() => {
   //     // Here you would normally send the data to a server
   //     console.log('Form data submitted:', formData);
   //     setFormStatus({ loading: false, error: false, sent: true });
-      
+
   //     // Reset form after successful submission
   //     setFormData({
   //       name: '',

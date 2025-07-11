@@ -433,7 +433,8 @@ const Memories: React.FC = () => {
     }, [traveled]);
 
     return (
-        <>
+        <div className="memories-page">
+            
             {isTransitioning && (
                 <div className="transition-overlay">
                     <div className="transition-content">
@@ -513,7 +514,7 @@ const Memories: React.FC = () => {
                     </div>
                 </>
             )}
-        </>
+        </div>
     );
 };
 

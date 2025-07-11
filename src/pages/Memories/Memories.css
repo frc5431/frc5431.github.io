@@ -11,9 +11,9 @@
     
 }
 
-#root {
-    touch-action: manipulation;
+.memories-page {
     background-image: var(--background-img);
+    touch-action: manipulation;
     background-repeat: repeat;
     background-size: contain;
 }
