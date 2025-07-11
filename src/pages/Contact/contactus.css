@@ -10,12 +10,14 @@
 /*Contact us*/
 #contactus-banner-image {
   top: 0px;
-  background: black center no-repeat;
+  background: url("../../assets/img/about/2024/orpheusoffseasonNTX.jpg") center no-repeat;
   background-size: cover;
   width: 100%;
   height: 80vh;
   filter: blur(3px);
   -webkit-filter: blur(3px);
+  background-blend-mode: multiply;
+  background-color: rgba(128, 0, 128, 0.2);
 }
 
 #contact-info .row {
@@ -116,11 +118,19 @@
   justify-content: center;
   gap: 3vw;
   font-size: 5rem !important;
+  filter: 
+    drop-shadow(0 2px 8px rgba(0, 174, 239, 0.4))
+    drop-shadow(0 4px 16px rgba(128, 0, 128, 0.25)) 
+    drop-shadow(0 8px 24px rgba(255, 255, 255, 0.12)); 
 }
 
 .subtext-contactus {
   margin-left: 2vw !important;
   margin-right: 2vw !important;
+  filter: 
+    drop-shadow(0 2px 8px rgba(0, 174, 239, 0.4))
+    drop-shadow(0 4px 16px rgba(128, 0, 128, 0.25)) 
+    drop-shadow(0 8px 24px rgba(255, 255, 255, 0.12)); 
 }
 
 @media (max-width: 768px) {
@@ -129,4 +139,58 @@
     gap: 0;
     margin-bottom: 2vh !important;
   }
+}
+
+.cards-contactus {
+  display: flex;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 2vh;
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-container-contactus {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  margin: 2vw;
+}
+
+@media (max-width: 768px) {
+  .card-container-contactus {
+    flex-direction: column;
+    gap: 1vh;
+  }
+}
+
+.card-findus {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.card-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.google-map-embed {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  flex-grow: 1;
+  min-height: 300px;
+}
+
+.footer-contactus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 20px;
+  font-size: 1rem;
 }
