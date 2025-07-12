@@ -905,15 +905,6 @@ is less painful to read.*/
 /*End of our sponsors*/
 
 /*Events*/
-#events-banner-image {
-  top: 0px;
-  background: url("assets/img/universal/frc panorama.jpg") top no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 80vh;
-  filter: blur(3px);
-  -webkit-filter: blur(3px);
-}
 /*End of events*/
 
 @keyframes animate-loading {
