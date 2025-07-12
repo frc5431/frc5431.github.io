@@ -63,7 +63,7 @@ const contactus: React.FC = () => {
             <h2>Find FRC 5431 - Titan Robotics</h2>
             <address>
               <p className="mb-1">1701 Alma Dr, Plano, TX 75075</p>
-              <a href="mailto:frc5431@gmail.com" target='_blank'><p>Email Us</p></a>
+              <p><a href="mailto:frc5431@gmail.com" target='_blank'>Email Us</a></p>
             </address>
             <div>
               <iframe

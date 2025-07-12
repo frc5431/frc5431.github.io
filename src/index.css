@@ -190,7 +190,14 @@ img.logo {
 
 /* MOBILE FIXES END HERE */
 
-/*Arrow code that I copied*/
+/* Mobile header spacing */
+@media (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Arrow code that I copied*/
 #arrowdown a {
   padding-top: 60px;
   text-decoration: none;
