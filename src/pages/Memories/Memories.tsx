@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import './memories.css';
+import { useState } from 'react';
+import './Memories.css';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
@@ -54,7 +54,6 @@ import newGroupPic from '../../assets/img/about/2019/newestgrouppic.jpg'
 import pregame2019 from '../../assets/img/about/2019/Robots.jpg'
 
 //2020 imports
-import group2020 from '../../assets/img/about/2020/5431group2020.jpg'
 import hyperionCompete from '../../assets/img/about/2020/Hyperion competing.jpg'
 import hyperionShoot from '../../assets/img/about/2020/Hyperion shooting.jpg'
 import hyperionFlag from '../../assets/img/about/2020/Hyperion with flag.jpg'
@@ -424,13 +423,7 @@ const Memories: React.FC = () => {
         }, 1000);
     };
 
-    useEffect(() => {
-        const rootElement = document.getElementById('root');
-        if (rootElement) {
-          rootElement.style.setProperty('--background-img',
-            !traveled ? `url("src/assets/img/universal/background memories.jpg")` : '');
-        }
-    }, [traveled]);
+ 
 
     return (
         <div className="memories-page">

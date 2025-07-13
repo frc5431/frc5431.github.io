@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 
 import hatConstruction from '../../../assets/img/universal/hat construction.jpg' 
 import universal5431NumberSign from '../../../assets/img/universal/5431 number sign.jpg'

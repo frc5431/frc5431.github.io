@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 
 // Import Bootstrap CSS (you'll need to install it with npm first)
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,12 +10,7 @@ import hatConstruction from '../../assets/img/universal/hat construction.jpg'
 import universal5431NumberSign from '../../assets/img/universal/5431 number sign.jpg'
 import frcEvent from '../../assets/img/universal/frc event.jpg'
 import hyperionShooting from '../../assets/img/about/2020/Hyperion shooting.jpg'
-import titanRoboticsLogo from '../../assets/img/Logos/Titan_Robotics.png'
-import teamLogo from '../../assets/img/universal/5431Logo.png'
 import teamLogoBlack from '../../assets/img/universal/5431LogoBlackvector.svg'
-import robotCloseup from '../../assets/img/universal/robot closeup.jpg'
-import teamSpirit from '../../assets/img/universal/team spirit.jpg'
-import Header from '../../components/Header/Header';
 
 import './Home.css';
 import Carousel from '../../components/Carosuel/Carousel';

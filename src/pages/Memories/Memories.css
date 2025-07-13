@@ -1,15 +1,15 @@
-:root {
-    --background-img: '';
-    --primary-color: #8B1FEA;
-    --secondary-color: #3c0370;
-    --accent-color: #02204E;
-    --brand-blue: #1DAFEA;
-    --brand-navy: #02204E;
-    --brand-purple: #2B0250;
-    --light-bg: rgba(255, 255, 255, 0.9);
-    --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    
-}
+    :root {
+        --background-img: url("/assets/img/universal/background memories.jpg");
+        --primary-color: #8B1FEA;
+        --secondary-color: #3c0370;
+        --accent-color: #02204E;
+        --brand-blue: #1DAFEA;
+        --brand-navy: #02204E;
+        --brand-purple: #2B0250;
+        --light-bg: rgba(255, 255, 255, 0.9);
+        --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        
+    }
 
 .memories-page {
     background-image: var(--background-img);
