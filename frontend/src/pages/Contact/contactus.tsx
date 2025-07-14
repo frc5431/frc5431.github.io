@@ -1,8 +1,10 @@
 ﻿import React, { useState } from 'react';
 import './contactus.css'
 import teamNumber from '../../assets/img/universal/5431LogoBlackvector.svg'
+import axios from 'axios';
 
 const contactus: React.FC = () => {
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
   const [formData, setFormData] = useState({
     name: '',
@@ -33,16 +35,24 @@ const contactus: React.FC = () => {
     // Simulate form submission
     setTimeout(() => {
       // Here you would normally send the data to a server
-      console.log('Form data submitted:', formData);
-      setFormStatus({ loading: false, error: false, sent: true });
+      console.log("backend URL:", import.meta.env.VITE_BACKEND_URL);
+      axios.post(backendUrl, formData)
+      .then((res) => {
+        console.log("Response from server:", res.data);
+        setFormStatus({ loading: false, error: false, sent: true });
 
-      // Reset form after successful submission
-      setFormData({
-        name: '',
-        email: '',
-        teamNumber: '',
-        subject: '',
-        message: ''
+        // Reset form data
+        setFormData({
+          name: '',
+          email: '',
+          teamNumber: '',
+          subject: '',
+          message: ''
+        });
+      })
+      .catch((error) => {
+        console.error("Error sending form:", error);
+        setFormStatus({ loading: false, error: true, sent: false });
       });
     }, 1500);
   };
