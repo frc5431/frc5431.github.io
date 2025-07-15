@@ -37,7 +37,10 @@ RUN npm install -g serve
 COPY --from=build /usr/src/app/frontend/dist ./dist
 
 # Expose the port serve will use
-EXPOSE 3000
+ARG PORT=3000
+ENV PORT=$PORT
+
+EXPOSE ${PORT}
 
 # Start serving the static files
-CMD ["serve", "-s", "dist", "-l", "3000"]
+CMD serve -s dist -l $PORT

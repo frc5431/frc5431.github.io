@@ -1,23 +1,26 @@
-# Comments are provided throughout this file to help you get started.
-# If you need more help, visit the Docker Compose reference guide at
-# https://docs.docker.com/go/compose-spec-reference/
-
 services:
   frc-site:
-    image: micw1417/frc5431.com:website
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     restart: unless-stopped
-    container_name: frc-site
+    env_file:
+      - ./frontend/.env
     environment:
       NODE_ENV: production
+      PORT: ${FRONTEND_PORT}
     ports:
-      - 3000:3000
-  backend:
-    image: micw1417/frc5431.com:backend
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
 
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     restart: unless-stopped
-    ports:
-      - "3001:3001"
     env_file:
       - ./backend/.env
     environment:
       NODE_ENV: production
+      PORT: ${BACKEND_PORT}
+    ports:
+      - "${BACKEND_PORT}:${BACKEND_PORT}"

@@ -36,7 +36,8 @@ COPY --from=build /usr/src/app/backend/dist ./dist
 USER node
 
 # Expose port your app listens on
-EXPOSE 3001
+ENV PORT=${PORT}
+EXPOSE ${PORT}
 
 # Run the compiled app
 CMD ["node", "dist/server.js"]
