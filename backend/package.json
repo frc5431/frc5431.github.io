@@ -1,0 +1,43 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Express API for contact form",
+  "keywords": [
+    "express",
+    "api",
+    "nodejs",
+    "backend"
+  ],
+  "homepage": "https://github.com/frc5431/frc5431.github.io#readme",
+  "bugs": {
+    "url": "https://github.com/frc5431/frc5431.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/frc5431/frc5431.github.io.git"
+  },
+  "license": "MIT",
+  "author": "frc5431.com",
+  "type": "module",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.5",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/nodemailer": "^6.4.17"
+  }
+}
