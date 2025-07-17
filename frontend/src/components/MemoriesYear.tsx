@@ -7,12 +7,18 @@ export interface MemoryItemType {
   caption: string;
 }
 
+export interface YouTubeVideoType {
+  videoId: string;
+  title: string;
+}
+
 export interface MemoriesYearProps {
   year: number;
   gameName: string;
   imageURL: string;
   description: string;
   memoryImages: MemoryItemType[];
+  youtubeVideos?: YouTubeVideoType[];
   learnMoreLink: string;
 }
 
@@ -31,6 +37,25 @@ const ImageModal: React.FC<ImageModalProps> = ({ imageSrc, onClose }) => {
           <CloseIcon />
         </button>
         <img src={imageSrc} alt="Enlarged view" className="modal-image"/>
+      </div>
+    </div>
+  );
+};
+
+// YouTube Video component
+const YouTubeVideo: React.FC<YouTubeVideoType> = ({ videoId, title }) => {
+  return (
+    <div className="memory-item youtube-video-item">
+      <div className="memory-caption">{title}</div>
+      <div className="youtube-video-container">
+        <iframe
+          src={`https://www.youtube.com/embed/${videoId}`}
+          title={title}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className="youtube-video"
+        />
       </div>
     </div>
   );
@@ -56,7 +81,7 @@ const MemoryItem: React.FC<MemoryItemType & { onOpenModal: (src: string) => void
   );
 };
 
-const MemoriesYear: React.FC<MemoriesYearProps> = ({year, description: discription, gameName, imageURL, memoryImages, learnMoreLink}: MemoriesYearProps) => {
+const MemoriesYear: React.FC<MemoriesYearProps> = ({year, description: discription, gameName, imageURL, memoryImages, youtubeVideos, learnMoreLink}: MemoriesYearProps) => {
   const [modalImage, setModalImage] = useState<string | null>(null);
 
   // Function to open image in modal
@@ -97,17 +122,46 @@ const MemoriesYear: React.FC<MemoriesYearProps> = ({year, description: discripti
         <p>{discription}</p>
       </div>
 
-      <div className="memory-gallery">
-        {memoryImages.map((memory, index) => (
-          <MemoryItem
-            key={index}
-            imageSrc={memory.imageSrc}
-            altText={memory.altText}
-            caption={memory.caption}
-            onOpenModal={openImageModal}
-          />
-        ))}
-      </div>
+      {memoryImages.length > 0 && (
+        <>
+          <div className="content-divider">
+            <div className="divider-line"></div>
+            <div className="divider-text">{memoryImages.length > 1 ? 'Photos' : 'Photo'}</div>
+            <div className="divider-line"></div>
+          </div>
+          <div className="memory-gallery">
+            {memoryImages.map((memory, index) => (
+              <MemoryItem
+                key={index}
+                imageSrc={memory.imageSrc}
+                altText={memory.altText}
+                caption={memory.caption}
+                onOpenModal={openImageModal}
+              />
+            ))}
+          </div>
+        </>
+      )}
+
+      {youtubeVideos && youtubeVideos.length > 0 && (
+        <>
+          <div className="content-divider">
+            <div className="divider-line"></div>
+            <div className="divider-text">{youtubeVideos.length > 1 ? 'Videos' : 'Video'}</div>
+            <div className="divider-line"></div>
+          </div>
+          <div className="memory-gallery">
+            {youtubeVideos.map((video, index) => (
+              <YouTubeVideo
+                key={index}
+                videoId={video.videoId}
+                title={video.title}
+              />
+            ))}
+          </div>
+        </>
+      )}
+      
       <footer className="footer">
         {/* Apparently rel="noopener noreferrer" is some security stuff */}
         <a className="learn-more-link" href={learnMoreLink} target="_blank" rel="noopener noreferrer">

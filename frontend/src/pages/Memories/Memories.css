@@ -1,4 +1,4 @@
-    :root {
+:root {
         --background-img: url("/assets/img/universal/background memories.jpg");
         --primary-color: #8B1FEA;
         --secondary-color: #3c0370;
@@ -16,6 +16,10 @@
     touch-action: manipulation;
     background-repeat: repeat;
     background-size: contain;
+}
+
+.memories-page.traveled {
+    background: white;
 }
 
 .memories-container {
@@ -86,8 +90,8 @@
 }
 
 .time-machine-placeholder {
-    height: 200px;
-    width: 220px;
+    width: 17vw;
+    height: 17vw;
     display: flex;
     margin-bottom: 2rem;
     justify-content: center;
@@ -96,6 +100,14 @@
     font-size: 12px;
     text-align: center;
     animation: placeholderPulse 1s ease-in-out infinite alternate;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .time-machine-placeholder {
+        width: 40vw !important;
+        height: 40vw !important;
+    }
 }
 
 .transition-text {
@@ -193,12 +205,6 @@
     .time-machine {
         width: 100px;
         height: 100px;
-    }
-    
-    .time-machine-placeholder {
-        width: 80px;
-        height: 80px;
-        font-size: 10px;
     }
     
     .loading-bar {
@@ -677,4 +683,149 @@
 
 .learn-more-link:hover {
     background-size: 0 3px, 100% 3px;
+}
+
+/* Content Divider Styles */
+.content-divider {
+    display: flex;
+    align-items: center;
+    margin: 3rem 0 2rem 0;
+    width: 100%;
+}
+
+.divider-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--brand-navy), transparent);
+}
+
+.divider-text {
+    padding: 0 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--brand-navy);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* YouTube Video Styles */
+.youtube-video-container {
+    position: relative;
+    width: calc(100% - 20px); /* Make video smaller than card */
+    height: 0;
+    padding-bottom: calc(56.25% - 11.25px); /* Maintain 16:9 aspect ratio with reduced width */
+    margin: 10px auto; /* Center the video with margin */
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.youtube-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 6px;
+}
+
+/* Special styling for YouTube video memory items */
+.memory-item.youtube-video-item {
+    width: 100%; /* Take full available width */
+    min-width: 0; /* Allow shrinking */
+}
+
+.memory-item.youtube-video-item:hover {
+    transform: none; /* Remove hover effect for YouTube videos */
+    box-shadow: var(--shadow); /* Keep original shadow */
+}
+
+.memory-item.youtube-video-item .memory-caption {
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    line-height: 1.4;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    min-height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* When there's only one video, make the font even larger */
+.memory-gallery:has(.youtube-video-item):has(.memory-item:only-child) .memory-caption {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    padding: 1rem 1.5rem;
+    min-height: 3.5rem;
+}
+
+/* Dynamic grid for YouTube videos - adapts to number of videos */
+.memory-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* Special grid behavior for YouTube videos only */
+.memory-gallery:has(.youtube-video-item) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 100%;
+}
+
+/* Limit to max 3 videos per row on large screens */
+@media (min-width: 1200px) {
+    .memory-gallery:has(.youtube-video-item) {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        max-width: 1200px;
+        margin: 2rem auto;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .memory-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .memory-gallery:has(.youtube-video-item) {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .year-description h2 {
+        font-size: 1.75rem;
+    }
+
+    .year-description p {
+        font-size: 1rem;
+    }
+
+    .memory-image {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .memory-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .memory-gallery:has(.youtube-video-item) {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-image {
+        height: 200px;
+    }
+
+    .year-title {
+        font-size: 3.5rem;
+    }
 }

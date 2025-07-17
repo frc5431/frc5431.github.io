@@ -4,7 +4,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import MemoriesYear from '../../components/MemoriesYear';
-import { MemoryItemType } from '../../components/MemoriesYear';
+import { MemoryItemType, YouTubeVideoType } from '../../components/MemoriesYear';
 
 // Lots of Image Imports 
 import game2015 from '../../assets/img/about/2015/RecycleRush.png'
@@ -121,6 +121,7 @@ const Memories: React.FC = () => {
                     caption: 'Team members collaborating on robot construction'
                 }
             ],
+            youtubeVideos: [] as YouTubeVideoType[],
             learnMoreLink: 'https://www.thebluealliance.com/team/5431/2015'
         },
 
@@ -143,6 +144,32 @@ const Memories: React.FC = () => {
                     imageSrc: team2016,
                     altText: '5431 FRC Team Members',
                     caption: 'Our 5431 team members who competed in Stronghold'
+                }
+            ],
+            youtubeVideos: [
+                {
+                    videoId: 'cMAuTgTAwrw',
+                    title: 'Robot Reveal'
+                },
+                {
+                    videoId: 'Q3xPHAWWcGk',
+                    title: 'Dallas Regional Highlights'
+                },
+                {
+                    videoId: 'rRg1EyxbB30',
+                    title: 'Lone Star Highlights'
+                },
+                {
+                    videoId: '8D_nAEDjk-8',
+                    title: '5431 Stronghold Intro'
+                },
+                {
+                    videoId: 'xNhPUWHPIa4',
+                    title: 'FedEx Video Challenge'
+                },
+                {
+                    videoId: 'oM7NFkiq8Rk',
+                    title: 'Team Promo'
                 }
             ],
             learnMoreLink: 'https://www.thebluealliance.com/team/5431/2016'
@@ -174,6 +201,24 @@ const Memories: React.FC = () => {
                     caption: 'A moving shot of Thrice in the heat of Steamworks'
                 }
             ],
+            youtubeVideos: [
+                {
+                    videoId: 'a0z1fHPkfvQ',
+                    title: 'Outreach Video'
+                },
+                {
+                    videoId: 'kuyqmsIt-qk',
+                    title: 'Digital Animation'
+                },
+                {
+                    videoId: 'bQhIOTP_3yw',
+                    title: 'Shaping The Future Video Challenge'
+                },
+                {
+                    videoId: 'uFmzfNvx20o',
+                    title: 'FedEx Challenge'
+                }
+            ],
             learnMoreLink: 'https://www.thebluealliance.com/team/5431/2017'
         },
 
@@ -196,6 +241,20 @@ const Memories: React.FC = () => {
                     imageSrc: Scropius,
                     altText: 'Scropius',
                     caption: 'Scropius, our first design, in the aftermath of a PowerUp game',
+                }
+            ],
+            youtubeVideos: [
+                {
+                    videoId: 'KIa34UR6wdM',
+                    title: 'Digital Animation'
+                },
+                {
+                    videoId: 'G_y56UbJ0oQ',
+                    title: 'Safety Animation'
+                },
+                {
+                    videoId: 'orHl21nmNug',
+                    title: 'Chairman Award Video'
                 }
             ],
             learnMoreLink: 'https://www.thebluealliance.com/team/5431/2018'
@@ -257,6 +316,16 @@ const Memories: React.FC = () => {
                     caption: 'A Pre Game of Astraeus on the field loaded up'
                 }
             ],
+            youtubeVideos: [
+                {
+                    videoId: '_0Yb7wm28_Y',
+                    title: 'Robot Reveal'
+                },
+                {
+                    videoId: '2ovLUgdbsNI',
+                    title: 'Robot Trailer'
+                }
+            ],
             learnMoreLink: 'https://www.thebluealliance.com/team/5431/2019'
         },
 
@@ -286,6 +355,16 @@ const Memories: React.FC = () => {
                     caption: 'Our team on the first day in our first comp during 2020'
                 }
             ],
+            youtubeVideos: [
+                {
+                    videoId: 'V_4pVFlNjqI',
+                    title: 'Chairman Video'
+                },
+                {
+                    videoId: '2n23Zoa1P0o',
+                    title: 'Digital Animation'
+                }
+            ],
             learnMoreLink: 'https://www.thebluealliance.com/team/5431/2020'
         },
 
@@ -305,6 +384,7 @@ const Memories: React.FC = () => {
                     caption: 'Our team in a zoom call meeting during the COVID-19 pandemic'
                 }
             ],
+            youtubeVideos: [] as YouTubeVideoType[],
             learnMoreLink: 'https://www.thebluealliance.com/team/5431/2021'
         },
         2022: {
@@ -348,6 +428,12 @@ const Memories: React.FC = () => {
                     caption: 'A photo taken from the side of our team 5431'
                 }
             ],
+            youtubeVideos: [
+                {
+                    videoId: '9hXSSjPN05A',
+                    title: 'Season Recap'
+                }
+            ],
             learnMoreLink: 'https://www.thebluealliance.com/team/5431/2022'
         },
         2023: {
@@ -366,6 +452,12 @@ const Memories: React.FC = () => {
                     caption: 'A photo of Brontes putting down a Charged Up game piece'
                 }
             ],
+            youtubeVideos: [
+                {
+                    videoId: 'B9k3U41nR9Q',
+                    title: 'Robot Reveal'
+                }
+            ],
             learnMoreLink: 'https://www.thebluealliance.com/team/5431/2023'
         },
         2024: {
@@ -373,6 +465,12 @@ const Memories: React.FC = () => {
             imageURL: game2024,
             description: 'In 2024, our team participated in the FIRST Crescendo competition.',
             memoryImages: [] as MemoryItemType[],
+            youtubeVideos: [
+                {
+                    videoId: 'hmgaGmgWFc4',
+                    title: 'Impact Video'
+                }
+            ],
             learnMoreLink: 'https://www.thebluealliance.com/team/5431/2024'
         },
         2025: {
@@ -401,6 +499,12 @@ const Memories: React.FC = () => {
                     caption: 'A photo of Iris being worked on by our team members'
                 }
             ],
+            youtubeVideos: [
+                {
+                    videoId: '5uDEDaYIoMk',
+                    title: 'Impact Video'
+                }
+            ],
             learnMoreLink: 'https://www.thebluealliance.com/team/5431/2025'
         },
     };
@@ -426,7 +530,7 @@ const Memories: React.FC = () => {
  
 
     return (
-        <div className="memories-page">
+        <div className={`memories-page ${traveled ? 'traveled' : ''}`}>
             
             {isTransitioning && (
                 <div className="transition-overlay">
@@ -498,6 +602,7 @@ const Memories: React.FC = () => {
                             imageURL={yearContent[year as keyof typeof yearContent].imageURL}
                             description={yearContent[year as keyof typeof yearContent].description}
                             memoryImages={yearContent[year as keyof typeof yearContent].memoryImages}
+                            youtubeVideos={yearContent[year as keyof typeof yearContent].youtubeVideos}
                             learnMoreLink={yearContent[year as keyof typeof yearContent].learnMoreLink}
                         />
                     )}
