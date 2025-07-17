@@ -153,7 +153,7 @@ const Memories: React.FC = () => {
                 },
                 {
                     videoId: 'Q3xPHAWWcGk',
-                    title: 'Dallas Regional Highlights'
+                    title: 'Dallas Highlights'
                 },
                 {
                     videoId: 'rRg1EyxbB30',
@@ -212,7 +212,7 @@ const Memories: React.FC = () => {
                 },
                 {
                     videoId: 'bQhIOTP_3yw',
-                    title: 'Shaping The Future Video Challenge'
+                    title: 'Shaping The Future'
                 },
                 {
                     videoId: 'uFmzfNvx20o',
