@@ -5,11 +5,20 @@ import Memories from "./pages/Memories/Memories";
 import Header from "./components/Header/Header";
 import OurTeam from "./pages/About/OurTeam/OurTeam";
 import OurSponsors from "./pages/About/OurSponsors";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Credit from "./pages/Credit/Credit";
 import NotFound from "./pages/404/404";
 
 function App() {
+
+  // removes bug of scroll position being kept when navigating between pages
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <>
       <Header/>

@@ -62,7 +62,6 @@ const MemoriesYear: React.FC<MemoriesYearProps> = ({year, description: discripti
   // Function to open image in modal
   const openImageModal = (imageSrc: string) => {
     setModalImage(imageSrc);
-    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
   };
 
   // Function to close modal with smooth exit animation
@@ -75,12 +74,10 @@ const MemoriesYear: React.FC<MemoriesYearProps> = ({year, description: discripti
       // Remove after animation completes
       setTimeout(() => {
         setModalImage(null);
-        document.body.style.overflow = 'auto'; // Re-enable scrolling
       }, 250);
     } else {
       // Fallback if modal element not found
       setModalImage(null);
-      document.body.style.overflow = 'auto';
     }
   };
 
