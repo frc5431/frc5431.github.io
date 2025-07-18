@@ -4,7 +4,7 @@ import teamNumber from '../../assets/img/universal/5431LogoBlackvector.svg'
 import axios from 'axios';
 
 const contactus: React.FC = () => {
-  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  const backendUrl: string = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
 
   const [formData, setFormData] = useState({
     name: '',
@@ -73,7 +73,7 @@ const contactus: React.FC = () => {
             <h2>Find FRC 5431 - Titan Robotics</h2>
             <address>
               <p className="mb-1">1701 Alma Dr, Plano, TX 75075</p>
-              <p><a href="mailto:frc5431@gmail.com" target='_blank'>Email Us</a></p>
+              <p><a href="mailto:frc5431@gmail.com" target='_blank' rel="noreferrer">Email Us</a></p>
             </address>
             <div>
               <iframe
