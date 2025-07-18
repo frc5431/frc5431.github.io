@@ -12,32 +12,29 @@ export default defineConfig({
       algorithms: ['brotli', 'gzip'],
    }),
    viteImagemin({
-        gifsicle: {
-          optimizationLevel: 1,
-          interlaced: false,
-        },
-        optipng: {
-          optimizationLevel: 3,
-        },
-        mozjpeg: {
-          quality: 20,
-        },
-        pngquant: {
-          quality: [0.9, 0.9],
-          speed: 8,
-        },
-        svgo: {
-          plugins: [
-            {
-              name: 'removeViewBox',
-            },
-            {
-              name: 'removeEmptyAttrs',
-              active: false,
-            },
-         ],
+      optipng: {
+        optimizationLevel: 3,
       },
-   }),
+      mozjpeg: {
+        quality: 20,
+      },
+      pngquant: {
+        quality: [0.9, 0.9],
+        speed: 8,
+      },
+      svgo: {
+        plugins: [
+          {
+            name: 'removeViewBox',
+            active: false,
+          },
+          {
+            name: 'removeEmptyAttrs',
+            active: false,
+          },
+        ],
+      },
+    }),
  ],
  preview: {
   port: 8080,
