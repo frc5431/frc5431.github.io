@@ -14,13 +14,7 @@ RUN npm ci
 # Copy all source files
 COPY . .
 
-# Accept build arg for VITE_BACKEND_URL
-ARG VITE_BACKEND_URL
-ARG HOST
 
-# Set it as env var so Vite can replace import.meta.env.VITE_BACKEND_URL during build
-ENV VITE_BACKEND_URL=$VITE_BACKEND_URL
-ENV HOST=${HOST}
 ENV DOCKER=true
 
 # Build your app with the injected env var

@@ -90,35 +90,6 @@ CSS parallax works but messes up navbar >:C
 }
 */
 
-
-/*Footer*/
-.bottom-logo img {
-  width: 25vh;
-  height: auto;
-}
-.page-footer {
-  background: var(--black);
-  color: var(--white);
-}
-.icons {
-  line-height: 1.25em;
-}
-.icons a {
-  color: var(--white);
-  text-decoration: none;
-}
-.icons a i:hover {
-  color: var(--white);
-  opacity: 0.7;
-  text-decoration: none;
-}
-.icons a:hover {
-  color: var(--white);
-  opacity: 1;
-  text-decoration: none;
-}
-/*End of footer*/
-
 /*Index*/
 section {
   position: relative;

@@ -3,9 +3,6 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-      args:
-        HOST: ${HOST}
-        VITE_BACKEND_URL: ${VITE_BACKEND_URL}
     restart: unless-stopped
     environment:
       NODE_ENV: production

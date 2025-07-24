@@ -18,6 +18,7 @@ import Carousel from '../../components/Carosuel/Carousel';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import Footer from '../../components/Footer/Footer';
 
 export interface CarouselItem {
   id: number;
@@ -217,7 +218,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <div id="footer"></div>
+          <Footer/>
         </section>
       </main>
     </div>

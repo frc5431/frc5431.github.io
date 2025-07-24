@@ -1,5 +1,6 @@
 ﻿import React, {} from "react";
 import "./Events.css";
+import Footer from "../../components/Footer/Footer";
 
 
 const Events: React.FC = () => {
@@ -51,11 +52,11 @@ const Events: React.FC = () => {
               </div>
             </div>
           </div>
-          <div id="footer"></div>
+        </section>
+        <section>
+          <Footer/>
         </section>
       </main>
-
-      {/* Script for jQuery and Bootstrap can be added to your _app.tsx or index.html */}
     </>
   );
 };

@@ -1,6 +1,6 @@
 import Home from "./pages/Homepage/Home";
 import Events from "./pages/Events/Events";
-import Contacts from "./pages/Contact/contactus";
+import Contacts from "./pages/Contact/Contactus";
 import Memories from "./pages/Memories/Memories";
 import Header from "./components/Header/Header";
 import OurTeam from "./pages/About/OurTeam/OurTeam";
