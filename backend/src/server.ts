@@ -100,7 +100,7 @@ app.post('/send-email', async (req, res) => {
 
 
 // `${name} <${senderEmail}>`
-const PORT = process.env.PORT || 3005;
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

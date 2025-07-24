@@ -3,7 +3,7 @@
 ARG NODE_VERSION=24.2.0
 
 # Stage 1: Build the frontend app
-FROM node:${NODE_VERSION}-alpine AS build
+FROM node:${NODE_VERSION} AS build
 
 WORKDIR /usr/src/app/frontend
 
@@ -16,17 +16,18 @@ COPY . .
 
 # Accept build arg for VITE_BACKEND_URL
 ARG VITE_BACKEND_URL
+ARG HOST
 
 # Set it as env var so Vite can replace import.meta.env.VITE_BACKEND_URL during build
 ENV VITE_BACKEND_URL=$VITE_BACKEND_URL
-
+ENV HOST=${HOST}
 ENV DOCKER=true
 
 # Build your app with the injected env var
 RUN npm run build
 
 # Stage 2: Serve the built app with a lightweight server
-FROM node:${NODE_VERSION}-alpine AS serve
+FROM node:${NODE_VERSION} AS serve
 
 WORKDIR /usr/src/app/frontend
 

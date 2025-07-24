@@ -4,7 +4,10 @@ import teamNumber from '../../assets/img/universal/5431LogoBlackvector.svg'
 import axios from 'axios';
 
 const contactus: React.FC = () => {
-  const backendUrl: string = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
+  const backendUrl = import.meta.env.VITE_BACKEND_URL as string | undefined;
+  if (!backendUrl) {
+    throw new Error('VITE_BACKEND_URL environment variable is not defined');
+  }
 
   const [formData, setFormData] = useState({
     name: '',
