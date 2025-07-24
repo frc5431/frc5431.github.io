@@ -178,16 +178,6 @@
     color: var(--accent-color);
 }
 
-/* Footer */
-.footer-sponsor {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f8f9fa;
-    padding: 20px;
-    font-size: 1rem;
-}
-
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .sponsor-description {

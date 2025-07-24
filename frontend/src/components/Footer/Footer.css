@@ -1,0 +1,21 @@
+/* Footer sits at the bottom of the page, not sticky on scroll */
+.sticky-footer {
+  position: static;
+  width: 100%;
+  margin-top: auto;
+}
+
+.page-footer {
+  background: var(--black, #181818);
+  color: var(--white, #fff);
+  width: 100%;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  font-size: 1rem;
+}

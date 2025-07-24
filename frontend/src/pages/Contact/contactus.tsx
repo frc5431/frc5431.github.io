@@ -1,13 +1,11 @@
 ﻿import React, { useState } from 'react';
-import './contactus.css'
+import './Contactus.css'
 import teamNumber from '../../assets/img/universal/5431LogoBlackvector.svg'
 import axios from 'axios';
+import Footer from '../../components/Footer/Footer';
 
-const contactus: React.FC = () => {
-  const backendUrl = import.meta.env.VITE_BACKEND_URL as string | undefined;
-  if (!backendUrl) {
-    throw new Error('VITE_BACKEND_URL environment variable is not defined');
-  }
+const Contactus: React.FC = () => {
+  const backendUrl = "https://api.frc5431.wucode.org/send-email";
 
   const [formData, setFormData] = useState({
     name: '',
@@ -38,7 +36,7 @@ const contactus: React.FC = () => {
     // Simulate form submission
     setTimeout(() => {
       // Here you would normally send the data to a server
-      console.log("backend URL:", import.meta.env.VITE_BACKEND_URL);
+      console.log("backend URL:", backendUrl);
       axios.post(backendUrl, formData)
       .then((res) => {
         console.log("Response from server:", res.data);
@@ -170,13 +168,10 @@ const contactus: React.FC = () => {
         </div>
       </div>
     </section>
-    <section id="footer">
-      <div className="footer-contactus">
-        <p>&copy; {new Date().getFullYear()} FRC 5431 - Titan Robotics. All rights reserved.</p>
-      </div>
-    </section>
+    
+    <Footer/>
   </>);
 
 };
 
-export default contactus;
+export default Contactus;

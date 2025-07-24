@@ -1,10 +1,10 @@
 import React from 'react';
 import "./OurTeam.css";
-import { CarouselItem } from '../../Homepage/Home'
 import buildTeamImage from '../../../assets/img/universal/teamdescphoto/BuildTeam.png';
 import controlSystemsImage from '../../../assets/img/universal/teamdescphoto/ControlSystemTeam.png';
 import scoutingImage from '../../../assets/img/universal/teamdescphoto/SNSteam.png';
 import businessTeamImage from '../../../assets/img/universal/teamdescphoto/BusinessTeam.png';
+import Footer from '../../../components/Footer/Footer';
 
 const OurTeam = () => {
   const subteams = [
@@ -35,7 +35,7 @@ const OurTeam = () => {
   ];
 
   return (
-    <div className="main">
+    <div className='main'>
       <section id="ourteam-banner" style={{ background: 'transparent' }}>
         <div className="rellax" id="ourteam-banner-image"></div>
         <div id="banner-text">
@@ -78,11 +78,7 @@ const OurTeam = () => {
         </div>
       </section>
 
-      <section id="footer">
-        <div className="footer-ourteam">
-          <p>&copy; {new Date().getFullYear()} FRC 5431 - Titan Robotics. All rights reserved.</p>
-        </div>
-      </section>
+     <Footer/>
     </div>
   )
 }

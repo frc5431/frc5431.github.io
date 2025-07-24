@@ -1,3 +1,13 @@
+/* Sticky footer layout for page-root */
+.page-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main, .main, .content {
+  flex: 1 0 auto;
+}
 :root {
     --primary-color: #8B1FEA;
     --secondary-color: #3c0370;
