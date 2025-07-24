@@ -1,7 +1,258 @@
-.main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+:root {
+    --primary-color: #8B1FEA;
+    --secondary-color: #3c0370;
+    --accent-color: #02204E;
+    --brand-blue: #1DAFEA;
+    --brand-navy: #02204E;
+    --brand-purple: #2B0250;
+    --light-bg: rgba(255, 255, 255, 0.9);
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Banner Styling */
+#ourteam-banner-image {
+    top: 0px;
+    background: url("../../../assets/img/universal/dallasgroup.JPG") center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 80vh;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    background-color: rgba(10, 60, 100, 0.3);
+    background-blend-mode: overlay;
+}
+
+.title-text-ourteam {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+    font-size: 5rem !important;
+    font-weight: 600;
+    color: white;
+    filter: 
+        drop-shadow(0 2px 8px rgba(139, 31, 234, 0.25))
+        drop-shadow(0 4px 16px rgba(139, 31, 234, 0.15)) 
+        drop-shadow(0 8px 24px rgba(255, 255, 255, 0.12)); 
+}
+
+.subtext-ourteam {
+    margin-left: 2vw !important;
+    margin-right: 2vw !important;
+    filter: 
+        drop-shadow(0 2px 8px rgba(139, 31, 234, 0.25))
+        drop-shadow(0 4px 16px rgba(139, 31, 234, 0.15)) 
+        drop-shadow(0 8px 24px rgba(255, 255, 255, 0.12)); 
+}
+
+@media (max-width: 768px) {
+    .title-text-ourteam {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 2vh !important;
+        font-size: 4.4rem !important;
+    }
+}
+
+/* Description Section */
+.ourteam-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    max-width: 900px;
+    margin: 2rem auto;
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.ourteam-description h2 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    width: 100%;
+}
+
+.ourteam-description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Subteams Content */
+.subteams-content {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, rgba(29, 175, 234, 0.03) 50%, rgba(139, 31, 234, 0.03) 100%);
+}
+
+.subteams-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.subteams-section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #02204E 0%, #2B0250 25%, #8B1FEA 75%, #1DAFEA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subteams-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Subteam Cards - Horizontal Layout */
+.subteam-card {
+    display: flex;
+    background: linear-gradient(45deg, var(--light-bg), rgba(29, 175, 234, 0.05), rgba(139, 31, 234, 0.05));
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    align-items: center;
+    min-height: 200px;
+}
+
+.subteam-card:hover {
+    background: linear-gradient(45deg, var(--light-bg), rgba(29, 175, 234, 0.1), rgba(139, 31, 234, 0.1));
+    box-shadow: 0 6px 16px rgba(139, 31, 234, 0.15), 0 2px 8px rgba(29, 175, 234, 0.1);
+    transform: translateY(-2px);
+    border-color: rgba(139, 31, 234, 0.2);
+}
+
+.subteam-image-container {
+    width: 270px;
+    height: 220px;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.subteam-card:hover .subteam-image-container {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 12px rgba(139, 31, 234, 0.15);
+}
+
+.subteam-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.subteam-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subteam-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.subteam-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
+/* Footer */
+.footer-ourteam {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .ourteam-description {
+        padding: 1rem;
+    }
+    
+    .ourteam-description h2 {
+        font-size: 1.8rem;
+    }
+    
+    .ourteam-description p {
+        font-size: 1rem;
+    }
+    
+    .subteams-content {
+        padding: 2rem 1rem;
+    }
+    
+    .subteam-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .subteam-image-container {
+        width: 100%;
+        height: 360px;
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+    
+    .subteam-name {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .subteam-description {
+        font-size: 1rem;
+    }
+    
+    .subteams-section-title {
+        font-size: 2rem;
+    }
+    
+    .subteam-card:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .subteam-card {
+        padding: 1rem;
+    }
+    
+    .subteam-image-container {
+        height: 280px;
+    }
+    
+    .subteam-name {
+        font-size: 1.3rem;
+    }
+    
+    .subteam-description {
+        font-size: 0.95rem;
+    }
 }

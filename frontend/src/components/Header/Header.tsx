@@ -96,14 +96,6 @@ const Header = () => {
               </NavLink>
               <NavLink
                 className="dropdown-item"
-                to="/about/ourstory"
-                onClick={() => setAboutDropdownOpen(false)}
-                style={{cursor: 'pointer'}}
-              >
-                Our Story
-              </NavLink>
-              <NavLink
-                className="dropdown-item"
                 to="/about/ourvalues"
                 onClick={() => setAboutDropdownOpen(false)}
                 style={{cursor: 'pointer'}}
