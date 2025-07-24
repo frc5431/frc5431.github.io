@@ -11,7 +11,20 @@ function Carosuel({ data }: CarouselProps) {
   const [isAutoPaused, setIsAutoPaused] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('right');
+  const [isMobile, setIsMobile] = useState(false);
   const numberOfImages = data.length - 1;
+
+  // Check if device is mobile
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
 
   // Auto-pan functionality
   useEffect(() => {
@@ -71,10 +84,18 @@ function Carosuel({ data }: CarouselProps) {
     return data[nextIndex]?.imagePath || '';
   };
 
+  const getAnimationClass = (type: 'out' | 'in') => {
+    if (isMobile) {
+      return type === 'out' ? 'fade-out' : 'fade-in';
+    } else {
+      return type === 'out' ? `slide-out-${slideDirection}` : `slide-in-${slideDirection}`;
+    }
+  };
+
   return (
   <div className="carousel">
       <div className="carousel-track">
-        <div className={`carousel-image-wrapper current ${isTransitioning ? `slide-out-${slideDirection}` : ''}`}>
+        <div className={`carousel-image-wrapper current ${isTransitioning ? getAnimationClass('out') : ''}`}>
           <img
             src={getCurrentImage()}
             alt={`Image ${currentImageIndex + 1}`}
@@ -82,7 +103,7 @@ function Carosuel({ data }: CarouselProps) {
           />
         </div>
         {isTransitioning && (
-          <div className={`carousel-image-wrapper next slide-in-${slideDirection}`}>
+          <div className={`carousel-image-wrapper next ${getAnimationClass('in')}`}>
             <img
               src={getNextImage()}
               alt={`Next image`}

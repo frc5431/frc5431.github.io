@@ -1,9 +1,24 @@
-﻿import React, {} from "react";
+﻿import React, { useState, useEffect } from "react";
 import "./Events.css";
 
 
 const Events: React.FC = () => {
-  
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
+  const calendarSrc = isMobile 
+    ? "https://calendar.google.com/calendar/embed?src=pisd.edu_57n5cfp52bltnua0aegb3mnr18%40group.calendar.google.com&ctz=America%2FChicago&mode=AGENDA"
+    : "https://calendar.google.com/calendar/embed?src=pisd.edu_57n5cfp52bltnua0aegb3mnr18%40group.calendar.google.com&ctz=America%2FChicago";
 
   return (
     <>
@@ -34,7 +49,7 @@ const Events: React.FC = () => {
                 }}>
                   <iframe 
                     className="embed-responsive-item" 
-                    src="https://calendar.google.com/calendar/embed?src=pisd.edu_57n5cfp52bltnua0aegb3mnr18%40group.calendar.google.com&ctz=America%2FChicago" 
+                    src={calendarSrc}
                     style={{ 
                       border: 0, 
                       width: '100%', 

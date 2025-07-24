@@ -224,4 +224,9 @@
   .navbar-custom .nav-link:hover {
     transform: none !important;
   }
+  
+  .navbar-custom .nav-link,
+  .navbar-custom .navbar-nav .nav-link {
+    margin-left: 1vw;
+  }
 }

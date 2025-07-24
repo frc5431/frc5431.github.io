@@ -125,6 +125,47 @@
   }
 }
 
+/* Mobile fade animations */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile-specific fade classes */
+@media (max-width: 768px) {
+  .carousel-image-wrapper.fade-out {
+    animation: fadeOut 0.6s ease-in-out forwards;
+  }
+
+  .carousel-image-wrapper.fade-in {
+    animation: fadeIn 0.6s ease-in-out forwards;
+  }
+
+  /* Override slide animations on mobile */
+  .carousel-image-wrapper.slide-out-right,
+  .carousel-image-wrapper.slide-out-left {
+    animation: fadeOut 0.6s ease-in-out forwards;
+  }
+
+  .carousel-image-wrapper.slide-in-right,
+  .carousel-image-wrapper.slide-in-left {
+    animation: fadeIn 0.6s ease-in-out forwards;
+  }
+}
+
 .carousel-button {
   position: absolute;
   top: 50%;
