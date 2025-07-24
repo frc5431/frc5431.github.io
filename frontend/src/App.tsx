@@ -4,7 +4,7 @@ import Contacts from "./pages/Contact/contactus";
 import Memories from "./pages/Memories/Memories";
 import Header from "./components/Header/Header";
 import OurTeam from "./pages/About/OurTeam/OurTeam";
-import OurSponsors from "./pages/About/OurSponsors";
+import Sponsor from "./pages/Sponsor/Sponsor";
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Credit from "./pages/Credit/Credit";
@@ -29,7 +29,7 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/contact" element={<Contacts />} />
         <Route path="/about/ourteam" element={<OurTeam />} />
-        <Route path="/about/oursponsors" element={<OurSponsors />} />
+        <Route path="/about/oursponsors" element={<Sponsor />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/resources/websitecredit" element={<Credit />} />
       </Routes>
