@@ -12,7 +12,8 @@
     "vite",
     "typescript",
     "marketing",
-    "plano"
+    "plano",
+    "robotics"
   ],
   "scripts": {
     "dev": "vite",
