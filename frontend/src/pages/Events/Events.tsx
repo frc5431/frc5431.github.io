@@ -67,8 +67,6 @@ const Events: React.FC = () => {
             </div>
           </div>
         </section>
-        <section>
-        </section>
       </main>
       {/* TOGO GET FOOTER TO WORK HERE */}
       <Footer/>
