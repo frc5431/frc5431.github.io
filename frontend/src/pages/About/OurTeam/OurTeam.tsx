@@ -6,7 +6,7 @@ import scoutingImage from '../../../assets/img/universal/teamdescphoto/SNSteam.p
 import businessTeamImage from '../../../assets/img/universal/teamdescphoto/BusinessTeam.png';
 import Footer from '../../../components/Footer/Footer';
 
-const OurTeam = () => {
+const OurTeam: React.FC = () => {
   const subteams = [
     {
       id: 1,

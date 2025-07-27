@@ -1,81 +1,71 @@
 import React from 'react';
 import './Sponsor.css';
 import teamNumber from '../../assets/img/universal/5431LogoBlackvector.svg';
-import raisingCanesLogo from '../../assets/img/Logos/Raising Canes.png';
-import pisdLogo from '../../assets/img/Logos/PISD.png';
-import texasInstrumentsLogo from '../../assets/img/Logos/Texas_Instruments.png';
-import solidWorksLogo from '../../assets/img/Logos/SolidWorks.png';
-import texasWorkforceLogo from '../../assets/img/Logos/Texas_Workforce_Commission.png';
-import boosterClubLogo from '../../assets/img/Logos/Booster_Club.png';
-import boeingLogo from '../../assets/img/Logos/boeing logo.png';
-import haasLogo from '../../assets/img/Logos/haaslogo.png';
-import poop911Logo from '../../assets/img/Logos/poop911.png';
-import raytheonLogo from '../../assets/img/Logos/raytheon.png';
-import boozAllenLogo from '../../assets/img/Logos/boozallen.webp';
-import gtsTechnologyLogo from '../../assets/img/Logos/gtstechnology.png';
 import Footer from '../../components/Footer/Footer';
+
+import imageAliases from '../../assets/imageAliases';
 
 const Sponsor: React.FC = () => {
   const sponsors = [
     {
       id: 1,
       name: "Raising Canes",
-      image: raisingCanesLogo,
+      image: imageAliases.raisingCanesLogo,
     },
     {
       id: 2,
       name: "PISD Education Foundation",
-      image: pisdLogo,
+      image: imageAliases.pisdLogo,
     },
     {
       id: 3,
       name: "Texas Instruments",
-      image: texasInstrumentsLogo,
+      image: imageAliases.texasInstrumentsLogo,
     },
     {
       id: 4,
       name: "Poop 911",
-      image: poop911Logo,
+      image: imageAliases.poop911Logo,
     },
     {
       id: 5,
       name: "HAAS",
-      image: haasLogo,
+      image: imageAliases.haasLogo,
     },
     {
       id: 6,
       name: "Booster Club",
-      image: boosterClubLogo,
+      image: imageAliases.boosterClubLogo,
     },
     {
       id: 7,
       name: "Booz Allen Hamilton",
-      image: boozAllenLogo,
+      image: imageAliases.boozAllenLogo,
     },
     {
       id: 8,
       name: "Texas Workforce Commission",
-      image: texasWorkforceLogo,
+      image: imageAliases.texasWorkforceLogo,
     },
     {
       id: 9,
       name: "GTS Technology",
-      image: gtsTechnologyLogo,
+      image: imageAliases.gtsTechnologyLogo,
     },
     {
       id: 10,
       name: "Boeing",
-      image: boeingLogo,
+      image: imageAliases.boeingLogo,
     },
     {
       id: 11,
       name: "SolidWorks",
-      image: solidWorksLogo,
+      image: imageAliases.solidWorksLogo,
     },
     {
       id: 12,
       name: "Raytheon",
-      image: raytheonLogo,
+      image: imageAliases.raytheonLogo,
     },
   ];
 

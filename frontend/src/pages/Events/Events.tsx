@@ -60,8 +60,7 @@ const Events: React.FC = () => {
                     }} 
                     width="800" 
                     height="600" 
-                    frameBorder="0" 
-                    scrolling="no"
+
                   ></iframe>
                 </div>
               </div>
@@ -69,9 +68,10 @@ const Events: React.FC = () => {
           </div>
         </section>
         <section>
-          <Footer/>
         </section>
       </main>
+      {/* TOGO GET FOOTER TO WORK HERE */}
+      <Footer/>
     </>
   );
 };

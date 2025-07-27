@@ -1,17 +1,8 @@
 
 // Import Bootstrap CSS (you'll need to install it with npm first)
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FRClogo from '../../assets/img/Logos/FRC.png'
-import FRCcondensedLogo from '../../assets/img/Logos/FRC_condensed.png'
-import PAHSHelmetLogo from '../../assets/img/Logos/PAHS_helmet.png'
-import NTXLogo from '../../assets/img/Logos/NTX.png'
-import NTXnotext from '../../assets/img/Logos/FRC_condensed.png'
-import hatConstruction from '../../assets/img/universal/hat construction.jpg'
-import universal5431NumberSign from '../../assets/img/universal/5431 number sign.jpg'
-import frcEvent from '../../assets/img/universal/frc event.jpg'
-import hyperionShooting from '../../assets/img/about/2020/Hyperion shooting.jpg'
 import teamLogoBlack from '../../assets/img/universal/5431LogoBlackvector.svg'
-
+import imageAliases from '../../assets/imageAliases';
 import './Home.css';
 import Carousel from '../../components/Carosuel/Carousel';
 
@@ -28,10 +19,10 @@ export interface CarouselItem {
 
 function Home() {
   const carouselItems: CarouselItem[] = [
-    { id: 1, imagePath: universal5431NumberSign, alt: "team holding sign" },
-    { id: 2, imagePath: frcEvent, alt: "sfs" },
-    { id: 3, imagePath: hyperionShooting, alt: "fs" },
-    { id: 4, imagePath: hatConstruction, alt: "" },
+    { id: 1, imagePath: imageAliases.universal5431NumberSign, alt: "team holding sign" },
+    { id: 2, imagePath: imageAliases.frcEvent, alt: "sfs" },
+    { id: 3, imagePath: imageAliases.hyperionShooting, alt: "fs" },
+    { id: 4, imagePath: imageAliases.hatConstruction, alt: "" },
   ];
 
   return (
@@ -68,18 +59,18 @@ function Home() {
                 <div className="mt-1">
                   <img
                     className="card-img-overlay d-block d-md-none mh-100 mw-100"
-                    src={FRCcondensedLogo}
+                    src={imageAliases.FRCcondensedLogo}
                     alt="FIRST Robotics (FRC)"
                   />
                   <img
                     className="card-img-overlay d-none d-md-flex ml-md-auto d-lg-none mh-100 mw-100"
-                    src={FRClogo}
+                    src={imageAliases.FRClogo}
                     alt="FIRST Robotics (FRC)"
                   />
                   <a href="https://www.firstinspires.org/robotics/frc" target="_blank" rel="noopener noreferrer">
                     <img
                       className="card-img-top d-none d-lg-block"
-                      src={FRClogo}
+                      src={imageAliases.FRClogo}
                       alt="FIRST Robotics (FRC)"
                     />
                   </a>
@@ -109,13 +100,13 @@ function Home() {
                 <div className="mt-1">
                   <img
                     className="card-img-overlay d-block d-md-flex ml-md-auto d-lg-none mh-100 mw-100"
-                    src={PAHSHelmetLogo}
+                    src={imageAliases.PAHSHelmetLogo}
                     alt="Plano ISD Academy High School (AHS)"
                   />
                   <a href="https://www.pisd.edu/academy" target="_blank" rel="noopener noreferrer">
                     <img
                       className="card-img-top d-none d-lg-block"
-                      src={PAHSHelmetLogo}
+                      src={imageAliases.PAHSHelmetLogo}
                       alt="Plano ISD Academy High School (AHS)"
                     />
                   </a>
@@ -144,18 +135,18 @@ function Home() {
                 <div className="mt-1">
                   <img
                     className="card-img-overlay d-block d-md-none mh-100 mw-100"
-                    src={NTXnotext}
+                    src={imageAliases.NTXnotext}
                     alt="North Texas Robotics (NTX)"
                   />
                   <img
                     className="card-img-overlay d-none d-md-flex ml-md-auto d-lg-none mh-100 mw-100"
-                    src={NTXLogo}
+                    src={imageAliases.NTXLogo}
                     alt="North Texas Robotics (NTX)"
                   />
                   <a href="https://www.ntxrobotics.com/" target="_blank" rel="noopener noreferrer">
                     <img
                       className="card-img-top d-none d-lg-block"
-                      src={NTXLogo}
+                      src={imageAliases.NTXLogo}
                       alt="North Texas Robotics (NTX)"
                     />
                   </a>

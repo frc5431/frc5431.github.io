@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
-import logo from '../../assets/img/universal/5431Logo.png';
 import './Header.css';
 import { NavLink, useNavigate } from "react-router-dom";
 
+import imageAliases from '../../assets/imageAliases';
 
 const Header = () => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
@@ -44,7 +44,7 @@ const Header = () => {
     <nav className="navbar fixed-top navbar-expand-lg navbar-custom" style={{borderBottomLeftRadius: '10px', borderBottomRightRadius: '10px'}}>
       {/* Logo */}
       <div className="navbar-brand" onClick={() => navigate("/")} style={{cursor: 'pointer'}}>
-        <img src={logo} alt="5431" draggable="false" style={{width:'80px', marginLeft:'1vw'}}/>
+        <img src={imageAliases.logo} alt="5431" draggable="false" style={{width:'80px', marginLeft:'1vw'}}/>
       </div>
 
       {/* Mobile toggle button */}
