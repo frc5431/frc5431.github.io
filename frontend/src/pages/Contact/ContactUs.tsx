@@ -1,5 +1,5 @@
 ﻿import React, { useState } from 'react';
-import './Contactus.css'
+import './ContactUs.css'
 import teamNumber from '../../assets/img/universal/5431LogoBlackvector.svg'
 import axios from 'axios';
 import Footer from '../../components/Footer/Footer';
