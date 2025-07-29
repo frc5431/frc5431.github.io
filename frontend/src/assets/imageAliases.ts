@@ -60,7 +60,7 @@ const imageAliases = {
     // 2018
     group2018: '/assets/img/about/2018/2018group.avif',
     OphidianAction: '/assets/img/about/2018/Ophidian.avif',
-    Scropius: '/assets/img/about/2018/Scorpius.avif',
+    Scorpius: '/assets/img/about/2018/Scorpius.avif',
 
     // 2019
     group2019: '/assets/img/about/2019/5431group2019.avif',
