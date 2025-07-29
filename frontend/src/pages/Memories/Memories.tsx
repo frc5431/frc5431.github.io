@@ -163,9 +163,9 @@ const Memories: React.FC = () => {
                     caption: 'A photo of our 2018 members who competed during this year',
                 },
                 {
-                    imageSrc: imageAliases.Scropius,
-                    altText: 'Scropius',
-                    caption: 'Scropius, our first design, in the aftermath of a PowerUp game',
+                    imageSrc: imageAliases.Scorpius,
+                    altText: 'Scorpius',
+                    caption: 'Scorpius, our first design, in the aftermath of a PowerUp game',
                 }
             ],
             youtubeVideos: [
@@ -344,7 +344,7 @@ const Memories: React.FC = () => {
                 },
                 {
                     imageSrc: imageAliases.prototypeBotAction,
-                    altText: 'Protoype in Action',
+                    altText: 'Prototype in Action',
                     caption: 'Our prototype in action playing the 2022 game'
                 },
                 {

@@ -81,7 +81,7 @@ const MemoryItem: React.FC<MemoryItemType & { onOpenModal: (src: string) => void
   );
 };
 
-const MemoriesYear: React.FC<MemoriesYearProps> = ({year, description: discription, gameName, imageURL, memoryImages, youtubeVideos, learnMoreLink}: MemoriesYearProps) => {
+const MemoriesYear: React.FC<MemoriesYearProps> = ({year, description, gameName, imageURL, memoryImages, youtubeVideos, learnMoreLink}: MemoriesYearProps) => {
   const [modalImage, setModalImage] = useState<string | null>(null);
 
   // Function to open image in modal
@@ -119,7 +119,7 @@ const MemoriesYear: React.FC<MemoriesYearProps> = ({year, description: discripti
 
       <div className="year-description">
         <h2>{year}: {gameName}</h2>
-        <p>{discription}</p>
+        <p>{description}</p>
       </div>
 
       {memoryImages.length > 0 && (

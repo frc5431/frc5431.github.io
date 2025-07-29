@@ -6,7 +6,7 @@ interface CarouselProps {
   data: CarouselItem[];
 }
 
-function Carosuel({ data }: CarouselProps) {
+function Carousel({ data }: CarouselProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isAutoPaused, setIsAutoPaused] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -136,4 +136,4 @@ function Carosuel({ data }: CarouselProps) {
   )
 }
 
-export default Carosuel;
+export default Carousel;
