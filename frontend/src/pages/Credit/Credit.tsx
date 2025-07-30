@@ -2,11 +2,8 @@
 // W LOGIC BUT KINDA FUNNI THAT ITS HIDDEN AWAY IN THE RESORUCES TAB LOL
 // Credit to rudy for fixing the minor spelling mistakes. Basically, he's the only one who actually matters in this project. I know, I'm awesome.
 
-
 const Credit = () => {
-  return (
-    <div>Credit</div>
-  )
-}
+  return <div>Credit</div>;
+};
 
-export default Credit
+export default Credit;

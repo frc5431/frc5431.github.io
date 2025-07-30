@@ -1,9 +1,9 @@
-import React from 'react';
-import './Sponsor.css';
-import teamNumber from '../../assets/img/universal/5431LogoBlackvector.svg';
-import Footer from '../../components/Footer/Footer';
+import React from "react";
+import "./Sponsor.css";
+import teamNumber from "../../assets/img/universal/5431LogoBlackvector.svg";
+import Footer from "../../components/Footer/Footer";
 
-import imageAliases from '../../assets/imageAliases';
+import imageAliases from "../../assets/imageAliases";
 
 const Sponsor: React.FC = () => {
   const sponsors = [
@@ -71,14 +71,13 @@ const Sponsor: React.FC = () => {
 
   return (
     <>
-      <section id="sponsor-banner" style={{ background: 'transparent' }}>
+      <section id="sponsor-banner" style={{ background: "transparent" }}>
         <div className="rellax" id="sponsor-banner-image"></div>
         <div id="banner-text">
-          <h1 className="title-text-sponsor">
-            Our Sponsors
-          </h1>
+          <h1 className="title-text-sponsor">Our Sponsors</h1>
           <h3 className="subtext-sponsor">
-            Thank you to our amazing sponsors who make our robotics journey possible!
+            Thank you to our amazing sponsors who make our robotics journey
+            possible!
           </h3>
         </div>
       </section>
@@ -86,11 +85,13 @@ const Sponsor: React.FC = () => {
       <section className="sponsor-description">
         <h2>How Your Support Helps</h2>
         <p>
-          Titan Robotics loves competing and giving back to the community more than anything.
-          Unfortunately, we can't do that without some help. That's where sponsorships and donations come in!
-          Thanks to the generosity of local companies and community members, we get the funding that we need
-            to buy what we need for the upcoming seasons.
-          From metal, to motors, to batteries, we couldn't get them without the amazing support from our sponsors. Go Plano!
+          Titan Robotics loves competing and giving back to the community more
+          than anything. Unfortunately, we can't do that without some help.
+          That's where sponsorships and donations come in! Thanks to the
+          generosity of local companies and community members, we get the
+          funding that we need to buy what we need for the upcoming seasons.
+          From metal, to motors, to batteries, we couldn't get them without the
+          amazing support from our sponsors. Go Plano!
         </p>
       </section>
 
@@ -99,14 +100,17 @@ const Sponsor: React.FC = () => {
           <h2 className="sponsor-section-title">Our Supporters</h2>
           <div className="sponsor-cards-grid">
             {sponsors.map((sponsor) => (
-              <div key={sponsor.id} className="sponsor-card">
+              <article
+                key={sponsor.id}
+                className="sponsor-card"
+                aria-labelledby={`sponsor-${sponsor.id}`}
+              >
                 <div className="sponsor-image-container">
                   <img
                     src={sponsor.image}
                     alt={sponsor.name}
                     className="sponsor-image"
                     onError={(e) => {
-                      // Fallback for missing images
                       e.currentTarget.src = teamNumber;
                     }}
                   />
@@ -114,13 +118,13 @@ const Sponsor: React.FC = () => {
                 <div className="sponsor-info">
                   <h3 className="sponsor-name">{sponsor.name}</h3>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <Footer/>
+      <Footer />
     </>
   );
 };

@@ -1,13 +1,12 @@
 :root {
-  --primary-color: #8B1FEA;
+  --primary-color: #8b1fea;
   --secondary-color: #3c0370;
-  --accent-color: #02204E;
-  --brand-blue: #1DAFEA;
-  --brand-navy: #02204E;
-  --brand-purple: #2B0250;
+  --accent-color: #02204e;
+  --brand-blue: #1dafea;
+  --brand-navy: #02204e;
+  --brand-purple: #2b0250;
   --light-bg: rgba(255, 255, 255, 0.9);
   --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
 }
 
 .carousel-container {
@@ -47,8 +46,7 @@
 
 .team-number {
   width: 25vw;
-  filter: 
-    drop-shadow(0 2px 8px rgba(139, 31, 234, 0.3))
+  filter: drop-shadow(0 2px 8px rgba(139, 31, 234, 0.3))
     drop-shadow(0 4px 16px rgba(29, 175, 234, 0.2))
     drop-shadow(0 8px 24px rgba(2, 32, 78, 0.1));
   margin-bottom: 1vh;
@@ -75,21 +73,23 @@
 }
 
 .content-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -3px;
   left: -3px;
   right: -3px;
   bottom: -3px;
-  background: linear-gradient(45deg,
-      transparent,
-      rgba(2, 32, 78, 0.3),
-      rgba(29, 175, 234, 0.4),
-      transparent,
-      transparent,
-      rgba(2, 32, 78, 0.25),
-      rgba(29, 175, 234, 0.35),
-      transparent);
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(2, 32, 78, 0.3),
+    rgba(29, 175, 234, 0.4),
+    transparent,
+    transparent,
+    rgba(2, 32, 78, 0.25),
+    rgba(29, 175, 234, 0.35),
+    transparent
+  );
   border-radius: 20px;
   z-index: -1;
 }

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import CloseIcon from '@mui/icons-material/Close';
+import React, { useState } from "react";
+import CloseIcon from "@mui/icons-material/Close";
 
 export interface MemoryItemType {
   imageSrc: string;
@@ -36,7 +36,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ imageSrc, onClose }) => {
         <button className="modal-close" onClick={onClose}>
           <CloseIcon />
         </button>
-        <img src={imageSrc} alt="Enlarged view" className="modal-image"/>
+        <img src={imageSrc} alt="Enlarged view" className="modal-image" />
       </div>
     </div>
   );
@@ -62,12 +62,9 @@ const YouTubeVideo: React.FC<YouTubeVideoType> = ({ videoId, title }) => {
 };
 
 // Memory Item component
-const MemoryItem: React.FC<MemoryItemType & { onOpenModal: (src: string) => void }> = ({ 
-  imageSrc,
-  altText,
-  caption,
-  onOpenModal
-}) => {
+const MemoryItem: React.FC<
+  MemoryItemType & { onOpenModal: (src: string) => void }
+> = ({ imageSrc, altText, caption, onOpenModal }) => {
   return (
     <div className="memory-item">
       <img
@@ -81,7 +78,16 @@ const MemoryItem: React.FC<MemoryItemType & { onOpenModal: (src: string) => void
   );
 };
 
-const MemoriesYear: React.FC<MemoriesYearProps> = ({year, description, gameName, imageURL, memoryImages, youtubeVideos, learnMoreLink}: MemoriesYearProps) => {
+const MemoriesYear: React.FC<MemoriesYearProps> = ({
+  year,
+  description,
+  gameName,
+  imageURL,
+  memoryImages,
+  youtubeVideos,
+  learnMoreLink,
+}: MemoriesYearProps) => {
+
   const [modalImage, setModalImage] = useState<string | null>(null);
 
   // Function to open image in modal
@@ -92,10 +98,10 @@ const MemoriesYear: React.FC<MemoriesYearProps> = ({year, description, gameName,
   // Function to close modal with smooth exit animation
   const closeImageModal = () => {
     // Add closing class for exit animation
-    const modal = document.querySelector('.image-modal');
+    const modal = document.querySelector(".image-modal");
     if (modal) {
-      modal.classList.add('closing');
-      
+      modal.classList.add("closing");
+
       // Remove after animation completes
       setTimeout(() => {
         setModalImage(null);
@@ -107,29 +113,34 @@ const MemoriesYear: React.FC<MemoriesYearProps> = ({year, description, gameName,
   };
 
   return (
-    <div className="year-content">
-      <div className="gameImageContainer clickable-image">
+    <main className="year-content" aria-labelledby={`year-title-${year}`}>
+      <figure className="gameImageContainer clickable-image">
         <img
           src={imageURL}
           className="gameImage"
           alt={`${year} ${gameName} Game`}
           onClick={() => openImageModal(imageURL)}
-          />
-      </div>
+        />
+      </figure>
 
       <div className="year-description">
-        <h2>{year}: {gameName}</h2>
+        <h2>
+          {year}: {gameName}
+        </h2>
+
         <p>{description}</p>
       </div>
 
       {memoryImages.length > 0 && (
-        <>
-          <div className="content-divider">
-            <div className="divider-line"></div>
-            <div className="divider-text">{memoryImages.length > 1 ? 'Photos' : 'Photo'}</div>
-            <div className="divider-line"></div>
+        <section aria-label="Photo Gallery">
+          <div className="content-divider" role="presentation">
+            <div className="divider-line" aria-hidden="true"></div>
+            <div className="divider-text">
+              {memoryImages.length > 1 ? "Photos" : "Photo"}
+            </div>
+            <div className="divider-line" aria-hidden="true"></div>
           </div>
-          <div className="memory-gallery">
+          <article className="memory-gallery">
             {memoryImages.map((memory, index) => (
               <MemoryItem
                 key={index}
@@ -139,18 +150,20 @@ const MemoriesYear: React.FC<MemoriesYearProps> = ({year, description, gameName,
                 onOpenModal={openImageModal}
               />
             ))}
-          </div>
-        </>
+          </article>
+        </section>
       )}
 
       {youtubeVideos && youtubeVideos.length > 0 && (
-        <>
-          <div className="content-divider">
-            <div className="divider-line"></div>
-            <div className="divider-text">{youtubeVideos.length > 1 ? 'Videos' : 'Video'}</div>
-            <div className="divider-line"></div>
+        <section aria-label="Video Gallery">
+          <div className="content-divider" role="presentation">
+            <div className="divider-line" aria-hidden="true"></div>
+            <div className="divider-text">
+              {youtubeVideos.length > 1 ? "Videos" : "Video"}
+            </div>
+            <div className="divider-line" aria-hidden="true"></div>
           </div>
-          <div className="memory-gallery">
+          <article className="memory-gallery">
             {youtubeVideos.map((video, index) => (
               <YouTubeVideo
                 key={index}
@@ -158,21 +171,25 @@ const MemoriesYear: React.FC<MemoriesYearProps> = ({year, description, gameName,
                 title={video.title}
               />
             ))}
-          </div>
-        </>
+          </article>
+        </section>
       )}
-      
-      <footer className="footer">
-        {/* Apparently rel="noopener noreferrer" is some security stuff */}
-        <a className="learn-more-link" href={learnMoreLink} target="_blank" rel="noopener noreferrer">
+
+      <nav aria-label="Learn More" className="footer">
+        <a
+          className="learn-more-link"
+          href={learnMoreLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Learn More About The {year} Season
         </a>
-      </footer>
+      </nav>
 
       {/* Modal for displaying enlarged images */}
       <ImageModal imageSrc={modalImage} onClose={closeImageModal} />
-    </div>
-  )
-}
+    </main>
+  );
+};
 
-export default MemoriesYear
+export default MemoriesYear;
