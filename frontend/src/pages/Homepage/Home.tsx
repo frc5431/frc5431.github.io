@@ -1,15 +1,14 @@
-
 // Import Bootstrap CSS (you'll need to install it with npm first)
-import 'bootstrap/dist/css/bootstrap.min.css';
-import teamLogoBlack from '../../assets/img/universal/5431LogoBlackvector.svg'
-import imageAliases from '../../assets/imageAliases';
-import './Home.css';
-import Carousel from '../../components/Carosuel/Carousel';
+import "bootstrap/dist/css/bootstrap.min.css";
+import teamLogoBlack from "../../assets/img/universal/5431LogoBlackvector.svg";
+import imageAliases from "../../assets/imageAliases";
+import "./Home.css";
+import Carousel from "../../components/Carosuel/Carousel";
 
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import Footer from '../../components/Footer/Footer';
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import Footer from "../../components/Footer/Footer";
 
 export interface CarouselItem {
   id: number;
@@ -19,7 +18,11 @@ export interface CarouselItem {
 
 function Home() {
   const carouselItems: CarouselItem[] = [
-    { id: 1, imagePath: imageAliases.universal5431NumberSign, alt: "team holding sign" },
+    {
+      id: 1,
+      imagePath: imageAliases.universal5431NumberSign,
+      alt: "team holding sign",
+    },
     { id: 2, imagePath: imageAliases.frcEvent, alt: "sfs" },
     { id: 3, imagePath: imageAliases.hyperionShooting, alt: "fs" },
     { id: 4, imagePath: imageAliases.hatConstruction, alt: "" },
@@ -27,13 +30,18 @@ function Home() {
 
   return (
     <div className="app-container">
-
       <main>
         {/* Top banner */}
         <section id="banner">
-          <div id="index-banner-image" className="rellax" data-rellax-speed="-1"></div>
+          <div
+            id="index-banner-image"
+            className="rellax"
+            data-rellax-speed="-1"
+          ></div>
           <div id="arrowdown">
-            <a href="#content"><span></span></a>
+            <a href="#content">
+              <span></span>
+            </a>
           </div>
         </section>
 
@@ -44,12 +52,34 @@ function Home() {
         {/* Content section */}
         <section id="index-content">
           <div id="content" className="content-container">
-            <img src={teamLogoBlack} alt="Team 5431 Logo" className="team-number" />
+            <img
+              src={teamLogoBlack}
+              alt="Team 5431 Logo"
+              className="team-number"
+            />
             <Carousel data={carouselItems} />
             <div className="social-container">
-              <a href="https://www.instagram.com/frc5431/" target='_blank' rel="noreferrer"><InstagramIcon fontSize='large' className="social-icon" /></a>
-              <a href="https://www.facebook.com/frc5431/" target='_blank' rel="noreferrer"><FacebookIcon fontSize='large' className="social-icon" /></a>
-              <a href="https://www.youtube.com/@frc5431/" target='_blank' rel="noreferrer"><YouTubeIcon fontSize='large' className="social-icon" /></a>
+              <a
+                href="https://www.instagram.com/frc5431/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <InstagramIcon fontSize="large" className="social-icon" />
+              </a>
+              <a
+                href="https://www.facebook.com/frc5431/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FacebookIcon fontSize="large" className="social-icon" />
+              </a>
+              <a
+                href="https://www.youtube.com/@frc5431/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <YouTubeIcon fontSize="large" className="social-icon" />
+              </a>
             </div>
           </div>
           <div className="container-fluid pb-0 pb-md-4">
@@ -67,7 +97,11 @@ function Home() {
                     src={imageAliases.FRClogo}
                     alt="FIRST Robotics (FRC)"
                   />
-                  <a href="https://www.firstinspires.org/robotics/frc" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://www.firstinspires.org/robotics/frc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       className="card-img-top d-none d-lg-block"
                       src={imageAliases.FRClogo}
@@ -79,17 +113,26 @@ function Home() {
                   <h2 className="card-title mt-3">FIRST Robotics</h2>
                   <div className="line mb-3"></div>
                   <p className="card-text">
-                    FIRST (For Inspiration and Recognition of Science and
-                    Technology) was founded in 1989 to inspire young people's
-                    interest and participation in science and technology. Over the
-                    past 30 years, FIRST participation has been proven to
-                    encourage students to pursue education and careers in
-                    STEM-related fields.
+                    <abbr title="For Inspiration and Recognition of Science and Technology">
+                      FIRST
+                    </abbr>{" "}
+                    (For Inspiration and Recognition of Science and Technology)
+                    was founded in 1989 to inspire young people's interest and
+                    participation in science and technology. Over the past 30
+                    years, FIRST participation has been proven to encourage
+                    students to pursue education and careers in STEM-related
+                    fields.
                   </p>
                 </div>
                 <div className="card-footer">
                   <h3>
-                    <a href="https://www.firstinspires.org/robotics/frc" target="_blank" rel="noopener noreferrer">Find Out More</a>
+                    <a
+                      href="https://www.firstinspires.org/robotics/frc"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Find Out More
+                    </a>
                   </h3>
                 </div>
               </div>
@@ -103,7 +146,11 @@ function Home() {
                     src={imageAliases.PAHSHelmetLogo}
                     alt="Plano ISD Academy High School (AHS)"
                   />
-                  <a href="https://www.pisd.edu/academy" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://www.pisd.edu/academy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       className="card-img-top d-none d-lg-block"
                       src={imageAliases.PAHSHelmetLogo}
@@ -124,7 +171,13 @@ function Home() {
                 </div>
                 <div className="card-footer">
                   <h3>
-                    <a href="https://www.pisd.edu/academy" target="_blank" rel="noopener noreferrer">Find Out More</a>
+                    <a
+                      href="https://www.pisd.edu/academy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Find Out More
+                    </a>
                   </h3>
                 </div>
               </div>
@@ -143,7 +196,11 @@ function Home() {
                     src={imageAliases.NTXLogo}
                     alt="North Texas Robotics (NTX)"
                   />
-                  <a href="https://www.ntxrobotics.com/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://www.ntxrobotics.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       className="card-img-top d-none d-lg-block"
                       src={imageAliases.NTXLogo}
@@ -158,13 +215,19 @@ function Home() {
                     North Texas Robotics was founded in 2015 to bring teams
                     together to further STEM and FIRST across North Texas. Its
                     teams work hard to promote and create inter-team alliances
-                    across the area. NTX is responsible for the North Texas Coach
-                    and Mentor Workshop and the NTX Tournament of Robots.
+                    across the area. NTX is responsible for the North Texas
+                    Coach and Mentor Workshop and the NTX Tournament of Robots.
                   </p>
                 </div>
                 <div className="card-footer">
                   <h3>
-                    <a href="https://www.ntxrobotics.com/" target="_blank" rel="noopener noreferrer">Find Out More</a>
+                    <a
+                      href="https://www.ntxrobotics.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Find Out More
+                    </a>
                   </h3>
                 </div>
               </div>
@@ -172,12 +235,14 @@ function Home() {
 
             {/* Media section */}
             <div className="px-xl-5 px-md-3 px-0">
-              <div className="row mt-3 mx-lg-3 mx-md-2 mx-0 px-xl-5 px-md-4 px-2 py-md-4 py-3" id="media">
+              <div
+                className="row mt-3 mx-lg-3 mx-md-2 mx-0 px-xl-5 px-md-4 px-2 py-md-4 py-3"
+                id="media"
+              >
                 <div className="col col-lg-8 col-md-7 center center-element">
-                  <h2 className='center-text'>5431 Chairman's Video</h2>
+                  <h2 className="center-text">5431 Chairman's Video</h2>
                   <div className="yt-container">
                     <iframe
-
                       title="Chairman's Video 2019-2020"
                       src="https://www.youtube.com/embed/V_4pVFlNjqI"
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -189,10 +254,9 @@ function Home() {
                     our drive and passion for spreading the seeds of STEM
                     education, and covers how we do it!
                   </p>
-                  <h2 className='center-text'>About FIRST</h2>
+                  <h2 className="center-text">About FIRST</h2>
                   <div className="yt-container">
                     <iframe
-
                       title="About FIRST"
                       src="https://www.youtube.com/embed/K_PuWjr7qcM"
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -209,7 +273,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <Footer/>
+          <Footer />
         </section>
       </main>
     </div>

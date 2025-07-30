@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
-import './Carousel.css'
-import { CarouselItem } from '../../pages/Homepage/Home';
+import { useState, useEffect } from "react";
+import "./Carousel.css";
+import { CarouselItem } from "../../pages/Homepage/Home";
 
 interface CarouselProps {
   data: CarouselItem[];
@@ -10,7 +10,9 @@ function Carosuel({ data }: CarouselProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isAutoPaused, setIsAutoPaused] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('right');
+  const [slideDirection, setSlideDirection] = useState<"left" | "right">(
+    "right",
+  );
   const [isMobile, setIsMobile] = useState(false);
   const numberOfImages = data.length - 1;
 
@@ -21,9 +23,9 @@ function Carosuel({ data }: CarouselProps) {
     };
 
     checkIfMobile();
-    window.addEventListener('resize', checkIfMobile);
+    window.addEventListener("resize", checkIfMobile);
 
-    return () => window.removeEventListener('resize', checkIfMobile);
+    return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
 
   // Auto-pan functionality
@@ -40,32 +42,32 @@ function Carosuel({ data }: CarouselProps) {
   const nextImage = () => {
     if (isTransitioning) return;
     setIsAutoPaused(true);
-    setSlideDirection('right');
+    setSlideDirection("right");
     setIsTransitioning(true);
-    
+
     setTimeout(() => {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === numberOfImages ? 0 : prevIndex + 1
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === numberOfImages ? 0 : prevIndex + 1,
       );
       setIsTransitioning(false);
     }, 600);
-    
+
     setTimeout(() => setIsAutoPaused(false), 10000);
   };
 
   const previousImage = () => {
     if (isTransitioning) return;
     setIsAutoPaused(true);
-    setSlideDirection('left');
+    setSlideDirection("left");
     setIsTransitioning(true);
-    
+
     setTimeout(() => {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === 0 ? numberOfImages : prevIndex - 1
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === 0 ? numberOfImages : prevIndex - 1,
       );
       setIsTransitioning(false);
     }, 600);
-    
+
     setTimeout(() => setIsAutoPaused(false), 10000);
   };
 
@@ -73,29 +75,38 @@ function Carosuel({ data }: CarouselProps) {
     if (data[currentImageIndex]) {
       return data[currentImageIndex].imagePath;
     } else {
-      return '';
+      return "";
     }
   };
 
   const getNextImage = () => {
-    const nextIndex = slideDirection === 'right' 
-      ? (currentImageIndex === numberOfImages ? 0 : currentImageIndex + 1)
-      : (currentImageIndex === 0 ? numberOfImages : currentImageIndex - 1);
-    return data[nextIndex]?.imagePath || '';
+    const nextIndex =
+      slideDirection === "right"
+        ? currentImageIndex === numberOfImages
+          ? 0
+          : currentImageIndex + 1
+        : currentImageIndex === 0
+          ? numberOfImages
+          : currentImageIndex - 1;
+    return data[nextIndex]?.imagePath || "";
   };
 
-  const getAnimationClass = (type: 'out' | 'in') => {
+  const getAnimationClass = (type: "out" | "in") => {
     if (isMobile) {
-      return type === 'out' ? 'fade-out' : 'fade-in';
+      return type === "out" ? "fade-out" : "fade-in";
     } else {
-      return type === 'out' ? `slide-out-${slideDirection}` : `slide-in-${slideDirection}`;
+      return type === "out"
+        ? `slide-out-${slideDirection}`
+        : `slide-in-${slideDirection}`;
     }
   };
 
   return (
-  <div className="carousel">
+    <div className="carousel">
       <div className="carousel-track">
-        <div className={`carousel-image-wrapper current ${isTransitioning ? getAnimationClass('out') : ''}`}>
+        <div
+          className={`carousel-image-wrapper current ${isTransitioning ? getAnimationClass("out") : ""}`}
+        >
           <img
             src={getCurrentImage()}
             alt={`Image ${currentImageIndex + 1}`}
@@ -103,7 +114,9 @@ function Carosuel({ data }: CarouselProps) {
           />
         </div>
         {isTransitioning && (
-          <div className={`carousel-image-wrapper next ${getAnimationClass('in')}`}>
+          <div
+            className={`carousel-image-wrapper next ${getAnimationClass("in")}`}
+          >
             <img
               src={getNextImage()}
               alt={`Next image`}
@@ -112,28 +125,28 @@ function Carosuel({ data }: CarouselProps) {
           </div>
         )}
       </div>
-      
-      <button 
+
+      <button
         onClick={previousImage}
-        className='carousel-button left'
+        className="carousel-button left"
         aria-label="Previous image"
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
         </svg>
       </button>
 
-      <button 
+      <button
         onClick={nextImage}
-        className='carousel-button right'
+        className="carousel-button right"
         aria-label="Next image"
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
         </svg>
       </button>
     </div>
-  )
+  );
 }
 
 export default Carosuel;

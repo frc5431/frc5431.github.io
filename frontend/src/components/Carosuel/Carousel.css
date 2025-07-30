@@ -25,7 +25,13 @@
   height: 40vh;
   padding: 8px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #02204E 0%, #2B0250 25%, #8B1FEA 75%, #1DAFEA 100%);
+  background: linear-gradient(
+    135deg,
+    #02204e 0%,
+    #2b0250 25%,
+    #8b1fea 75%,
+    #1dafea 100%
+  );
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
@@ -42,7 +48,7 @@
   .carousel-track {
     height: 60vh;
   }
-  
+
   .carousel-image-wrapper {
     width: 70vw;
     height: 60vh;

@@ -1,5 +1,5 @@
 :root {
-    --something: #000;
+  --something: #000;
 }
 
 #events-banner-image {
@@ -17,30 +17,34 @@
 }
 
 .events-main-text {
-    font-size: 5.5rem !important;
-    font-weight: 600;
-    color: white;
-    letter-spacing: 0.02em;
-    filter: 
-    drop-shadow(0 2px 8px rgba(139, 31, 234, 0.25))
-    drop-shadow(0 4px 16px rgba(139, 31, 234, 0.15)) 
-    drop-shadow(0 8px 24px rgba(255, 255, 255, 0.12)); 
+  font-size: 5.5rem !important;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.02em;
+  filter: drop-shadow(0 2px 8px rgba(139, 31, 234, 0.25))
+    drop-shadow(0 4px 16px rgba(139, 31, 234, 0.15))
+    drop-shadow(0 8px 24px rgba(255, 255, 255, 0.12));
 }
 
 .events-subtext {
-    filter: 
-    drop-shadow(0 2px 8px rgba(139, 31, 234, 0.25))
-    drop-shadow(0 4px 16px rgba(139, 31, 234, 0.15)) 
-    drop-shadow(0 8px 24px rgba(255, 255, 255, 0.12)); 
+  filter: drop-shadow(0 2px 8px rgba(139, 31, 234, 0.25))
+    drop-shadow(0 4px 16px rgba(139, 31, 234, 0.15))
+    drop-shadow(0 8px 24px rgba(255, 255, 255, 0.12));
 }
 
 .calendar-title {
-    background: linear-gradient(135deg, #02204E 0%, #2B0250 25%, #8B1FEA 75%, #1DAFEA 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2.5rem;
-    font-weight: bold !important;
+  background: linear-gradient(
+    135deg,
+    #02204e 0%,
+    #2b0250 25%,
+    #8b1fea 75%,
+    #1dafea 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: bold !important;
 }
