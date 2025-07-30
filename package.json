@@ -1,0 +1,41 @@
+{
+  "name": "frc5431-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "FRC Team 5431 Website",
+  "keywords": [
+    "frc",
+    "team5431",
+    "website",
+    "react",
+    "vite",
+    "typescript",
+    "marketing",
+    "plano",
+    "robotics"
+  ],
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@typescript-eslint/eslint-plugin": "^8.38.0",
+    "@typescript-eslint/parser": "^8.38.0",
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "husky": "^9.0.0",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.3.2",
+    "typescript-eslint": "^8.38.0"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "**/*.{json,css,html}": "prettier --write"
+  }
+}
