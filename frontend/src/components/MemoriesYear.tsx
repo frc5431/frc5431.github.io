@@ -87,6 +87,7 @@ const MemoriesYear: React.FC<MemoriesYearProps> = ({
   youtubeVideos,
   learnMoreLink,
 }: MemoriesYearProps) => {
+
   const [modalImage, setModalImage] = useState<string | null>(null);
 
   // Function to open image in modal
@@ -126,6 +127,7 @@ const MemoriesYear: React.FC<MemoriesYearProps> = ({
         <h2>
           {year}: {gameName}
         </h2>
+
         <p>{description}</p>
       </div>
 
