@@ -109,7 +109,7 @@ function Carousel({ data }: CarouselProps) {
         >
           <img
             src={getCurrentImage()}
-            alt={`Image ${currentImageIndex + 1}`}
+            alt={`${currentImageIndex + 1}`}
             className="carousel-image"
           />
         </div>
@@ -117,11 +117,7 @@ function Carousel({ data }: CarouselProps) {
           <div
             className={`carousel-image-wrapper next ${getAnimationClass("in")}`}
           >
-            <img
-              src={getNextImage()}
-              alt={`Next image`}
-              className="carousel-image"
-            />
+            <img src={getNextImage()} alt={`Next`} className="carousel-image" />
           </div>
         )}
       </div>
@@ -148,6 +144,5 @@ function Carousel({ data }: CarouselProps) {
     </div>
   );
 }
-
 
 export default Carousel;
