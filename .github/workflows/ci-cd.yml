@@ -1,0 +1,80 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      docker:
+        image: docker:28.3-dind
+        options: --privileged
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js (frontend)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.2.0
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies (frontend)
+        run: |
+          cd frontend
+          npm ci
+
+      - name: Set up Node.js (backend)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.2.0
+          cache: "npm"
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies (backend)
+        run: |
+          cd backend
+          npm ci
+
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm run build
+
+      - name: Build backend
+        run: |
+          cd backend
+          npm run build || true
+
+      - name: Lint frontend
+        run: |
+          cd frontend
+          npm run lint
+
+      - name: Lint backend
+        run: |
+          cd backend
+          npm run lint || true
+
+      - name: Docker Compose Build
+        run: |
+          docker compose build
+
+      - name: Docker Compose Up (test)
+        run: |
+          docker compose up -d
+          sleep 20
+          docker compose ps
+
+      - name: Docker Compose Down
+        if: always()
+        run: |
+          docker compose down
+
+  # Add deploy job here if needed
+  # deploy, rn i'm using webhooks for a self-hosted server
