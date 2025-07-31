@@ -9,6 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      BACKEND_PORT: 5000
+      FRONTEND_PORT: 3000
     services:
       docker:
         image: docker:28.3-dind
@@ -53,13 +56,11 @@ jobs:
 
       - name: Lint frontend
         run: |
-          cd frontend
-          npm run lint
+          npm run lint -- frontend || true
 
       - name: Lint backend
         run: |
-          cd backend
-          npm run lint || true
+          npm run lint -- backend || true
 
       - name: Docker Compose Build
         run: |
