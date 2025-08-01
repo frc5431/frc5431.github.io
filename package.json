@@ -15,7 +15,8 @@
     "robotics"
   ],
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
