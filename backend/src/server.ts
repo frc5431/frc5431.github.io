@@ -1,9 +1,7 @@
 import express from "express";
 import nodemailer from "nodemailer";
-import dotenv from "dotenv";
 import cors from "cors";
 
-dotenv.config();
 const app = express().use(express.json()).use(cors());
 
 // config
@@ -101,7 +99,6 @@ app.post("/send-email", async (req, res) => {
   }
 });
 
-// `${name} <${senderEmail}>`
 const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
