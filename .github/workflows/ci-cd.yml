@@ -45,11 +45,16 @@ jobs:
           npm ci
 
       - name: Build frontend
+        env:
+          HOST: "https://host.example.com"
         run: |
           cd frontend
           npm run build
 
       - name: Build backend
+        env:
+          EMAIL_USER: "blank@gmail.com"
+          EMAIL_PASS: "blank_password"
         run: |
           cd backend
           npm run build || true

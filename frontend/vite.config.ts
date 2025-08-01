@@ -1,9 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { compression } from "vite-plugin-compression2";
-// import viteImagemin from 'vite-plugin-imagemin'
 
 const isDocker = process.env.DOCKER === "true";
+const HOST = process.env.HOST;
 
 export default defineConfig({
   base: "/",
@@ -15,6 +15,6 @@ export default defineConfig({
   ],
   server: {
     host: isDocker ? true : "localhost",
-    allowedHosts: ["https://frc5431.wucode.org"],
+    allowedHosts: [HOST || "frc5431.wucode.org"],
   },
 });
