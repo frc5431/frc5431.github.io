@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 
 export interface MemoryItemType {
@@ -28,17 +28,51 @@ interface ImageModalProps {
 }
 
 const ImageModal: React.FC<ImageModalProps> = ({ imageSrc, onClose }) => {
+  const modalRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" || e.key === "Enter") {
+        onClose();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
   if (!imageSrc) return null;
 
   return (
-    <div className="image-modal" onClick={onClose}>
-      <div className="modal-content">
-        <button className="modal-close" onClick={onClose}>
+    <button
+      type="button"
+      className="image-modal"
+      ref={modalRef}
+      onClick={onClose}
+      onKeyDown={(e) => {
+        if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
+          onClose();
+        }
+      }}
+      aria-label="Image viewer"
+      tabIndex={0}
+      style={{ padding: 0, border: "none", background: "none" }}
+    >
+      <div
+        className="modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Image viewer"
+      >
+        <button
+          className="modal-close"
+          onClick={onClose}
+          aria-label="Close image viewer"
+        >
           <CloseIcon />
         </button>
         <img src={imageSrc} alt="Enlarged view" className="modal-image" />
       </div>
-    </div>
+    </button>
   );
 };
 
@@ -51,7 +85,6 @@ const YouTubeVideo: React.FC<YouTubeVideoType> = ({ videoId, title }) => {
         <iframe
           src={`https://www.youtube.com/embed/${videoId}`}
           title={title}
-          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           className="youtube-video"
@@ -67,12 +100,14 @@ const MemoryItem: React.FC<
 > = ({ imageSrc, altText, caption, onOpenModal }) => {
   return (
     <div className="memory-item">
-      <img
-        src={imageSrc}
-        alt={altText}
+      <button
+        type="button"
         className="memory-image clickable-image"
         onClick={() => onOpenModal(imageSrc)}
-      />
+        aria-label={`Enlarge image: ${altText}`}
+      >
+        <img src={imageSrc} alt={altText} className="memory-image" />
+      </button>
       <div className="memory-caption">{caption}</div>
     </div>
   );
@@ -87,7 +122,6 @@ const MemoriesYear: React.FC<MemoriesYearProps> = ({
   youtubeVideos,
   learnMoreLink,
 }: MemoriesYearProps) => {
-
   const [modalImage, setModalImage] = useState<string | null>(null);
 
   // Function to open image in modal
@@ -115,12 +149,19 @@ const MemoriesYear: React.FC<MemoriesYearProps> = ({
   return (
     <main className="year-content" aria-labelledby={`year-title-${year}`}>
       <figure className="gameImageContainer clickable-image">
-        <img
-          src={imageURL}
-          className="gameImage"
-          alt={`${year} ${gameName} Game`}
+        <button
+          type="button"
+          className="gameImageButton"
           onClick={() => openImageModal(imageURL)}
-        />
+          aria-label={`Enlarge image: ${year} ${gameName} Game`}
+          style={{ padding: 0, border: "none", background: "none" }}
+        >
+          <img
+            src={imageURL}
+            className="gameImage"
+            alt={`${year} ${gameName} Game`}
+          />
+        </button>
       </figure>
 
       <div className="year-description">

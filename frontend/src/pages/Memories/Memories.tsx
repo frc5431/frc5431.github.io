@@ -479,6 +479,7 @@ const Memories: React.FC = () => {
               <img
                 src={imageAliases.transitionLogo}
                 className="time-machine-placeholder"
+                alt="Time Machine Transition Logo"
               ></img>
             </div>
             <div className="transition-text">

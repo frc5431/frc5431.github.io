@@ -1,2 +1,4 @@
 #!/bin/sh
+
+echo "Running lint-staged..."
 npx lint-staged
