@@ -1,6 +1,7 @@
 import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
+import reactPlugin from "eslint-plugin-react";
 import tseslint from "typescript-eslint";
 import eslintConfigPrettier from "eslint-config-prettier";
 import tsParser from '@typescript-eslint/parser';
@@ -47,6 +48,7 @@ export default tseslint.config(
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
       "jsx-a11y": jsxA11y,
+      "react": reactPlugin,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -55,6 +57,7 @@ export default tseslint.config(
         "warn",
         { allowConstantExport: true },
       ],
+      ...reactPlugin.configs["jsx-runtime"].rules,
     },
   }
 );

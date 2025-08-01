@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Carousel.css";
 import { CarouselItem } from "../../pages/Homepage/Home";
+import { useCallback } from "react";
 
 interface CarouselProps {
   data: CarouselItem[];
@@ -29,17 +30,7 @@ function Carousel({ data }: CarouselProps) {
   }, []);
 
   // Auto-pan functionality
-  useEffect(() => {
-    if (isAutoPaused || data.length <= 1 || isTransitioning) return;
-
-    const interval = setInterval(() => {
-      nextImage();
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [numberOfImages, isAutoPaused, data.length, isTransitioning]);
-
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     if (isTransitioning) return;
     setIsAutoPaused(true);
     setSlideDirection("right");
@@ -53,7 +44,17 @@ function Carousel({ data }: CarouselProps) {
     }, 600);
 
     setTimeout(() => setIsAutoPaused(false), 10000);
-  };
+  }, [isTransitioning, numberOfImages]);
+
+  useEffect(() => {
+    if (isAutoPaused || data.length <= 1 || isTransitioning) return;
+
+    const interval = setInterval(() => {
+      nextImage();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [numberOfImages, isAutoPaused, data.length, isTransitioning, nextImage]);
 
   const previousImage = () => {
     if (isTransitioning) return;
