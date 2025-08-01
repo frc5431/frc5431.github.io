@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import "./Header.css";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import imageAliases from "../../assets/imageAliases";
 
@@ -43,8 +43,6 @@ const Header = () => {
     };
   }, []);
 
-  const navigate = useNavigate();
-
   const currentYear = new Date().getFullYear();
   const currentGameManual =
     "https://firstfrc.blob.core.windows.net/frc" +
@@ -61,20 +59,14 @@ const Header = () => {
       }}
     >
       {/* Logo */}
-      <div
-        className="navbar-brand"
-        onClick={() => {
-          void navigate("/");
-        }}
-        style={{ cursor: "pointer" }}
-      >
+      <Link className="navbar-brand" to={"/"} style={{ cursor: "pointer" }}>
         <img
           src={imageAliases.logo}
           alt="5431"
           draggable="false"
           style={{ width: "80px", marginLeft: "1vw" }}
         />
-      </div>
+      </Link>
 
       {/* Mobile toggle button */}
       <button
@@ -107,16 +99,15 @@ const Header = () => {
 
           {/* About dropdown */}
           <li className="nav-item dropdown" ref={aboutDropdownRef}>
-            <div
+            <button
               className={`nav-link dropdown-toggle ${aboutDropdownOpen ? "active show" : ""}`}
-              role="button"
               onClick={toggleAboutDropdown}
               aria-haspopup="true"
               aria-expanded={aboutDropdownOpen}
               style={{ cursor: "pointer" }}
             >
               About
-            </div>
+            </button>
             <div
               className={`dropdown-menu ${aboutDropdownOpen ? "show" : ""}`}
               aria-labelledby="navbarDropdown"
@@ -183,16 +174,16 @@ const Header = () => {
 
           {/* Resources dropdown */}
           <li className="nav-item dropdown" ref={resourcesDropdownRef}>
-            <div
+            <button
               className={`nav-link dropdown-toggle ${resourcesDropdownOpen ? "active show" : ""}`}
-              role="button"
               onClick={toggleResourcesDropdown}
               aria-haspopup="true"
               aria-expanded={resourcesDropdownOpen}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer", background: "none", border: "none" }}
             >
               Resources
-            </div>
+            </button>
+
             <div
               className={`dropdown-menu ${resourcesDropdownOpen ? "show" : ""}`}
               aria-labelledby="resourcesDropdown"
@@ -233,7 +224,6 @@ const Header = () => {
               >
                 Season Materials
               </a>
-
               <a
                 className="dropdown-item"
                 href="https://docs.wpilib.org/en/stable/"
@@ -243,14 +233,13 @@ const Header = () => {
               >
                 WPILib Docs
               </a>
-              <a
+              <button
                 className="dropdown-item"
-                role="button"
-                rel="noopener noreferrer"
                 onClick={() => setResourcesDropdownOpen(false)}
+                style={{ cursor: "pointer" }}
               >
                 Website Credit
-              </a>
+              </button>
             </div>
           </li>
         </ul>

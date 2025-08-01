@@ -78,6 +78,7 @@ const Events: React.FC = () => {
                   }}
                   width="800"
                   height="600"
+                  title="Titan Robotics Calendar"
                 ></iframe>
               </div>
             </div>
