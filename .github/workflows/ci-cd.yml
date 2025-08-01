@@ -44,17 +44,21 @@ jobs:
           cd backend
           npm ci
 
+      - name: Create .env files for Docker Compose
+        run: |
+          echo "PORT=$FRONTEND_PORT" > frontend/.env
+          echo "HOST=https://host.example.com" >> frontend/.env
+
+          echo "PORT=$BACKEND_PORT" > backend/.env
+          echo "EMAIL_USER=blank@gmail.com" >> backend/.env
+          echo "EMAIL_PASS=blank_password" >> backend/.env
+
       - name: Build frontend
-        env:
-          HOST: "https://host.example.com"
         run: |
           cd frontend
           npm run build
 
       - name: Build backend
-        env:
-          EMAIL_USER: "blank@gmail.com"
-          EMAIL_PASS: "blank_password"
         run: |
           cd backend
           npm run build || true
