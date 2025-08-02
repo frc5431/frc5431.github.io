@@ -1,10 +1,7 @@
 import React from "react";
 import "./OurTeam.css";
-import buildTeamImage from "../../../assets/img/universal/teamdescphoto/BuildTeam.png";
-import controlSystemsImage from "../../../assets/img/universal/teamdescphoto/ControlSystemTeam.png";
-import scoutingImage from "../../../assets/img/universal/teamdescphoto/SNSteam.png";
-import businessTeamImage from "../../../assets/img/universal/teamdescphoto/BusinessTeam.png";
 import Footer from "../../../components/Footer/Footer";
+import imageAliases from "../../../assets/imageAliases";
 
 const OurTeam: React.FC = () => {
   const subteams = [
@@ -13,28 +10,28 @@ const OurTeam: React.FC = () => {
       name: "Build",
       description:
         "The Build subteam is the core of the team. They build the robot and manufacture the parts needed to do so. It doesn't matter if they CAD, weld, or assemble, they are the backbone that we couldn't function without!",
-      image: buildTeamImage,
+      image: imageAliases.buildTeam,
     },
     {
       id: 2,
       name: "Control Systems",
       description:
         "Control Systems is the subteam that makes sure the robot can operate! They create the programs that operate the robot, as well as wiring all the electronics that go into it. The games wouldn't be playable without them!",
-      image: controlSystemsImage,
+      image: imageAliases.controlSystems,
     },
     {
       id: 3,
       name: "Scouting and Strategy",
       description:
         "Scouting and Strategy, or S&S, is the team that manages all scouting for the team. They study the manual for each new game until they know it backwards and forwards, and then use their knowledge of the game to decide alliances!",
-      image: scoutingImage,
+      image: imageAliases.scouting,
     },
     {
       id: 4,
       name: "Business",
       description:
         "Business is the subteam that manages all the marketing and outreach the team does. From managing sponsorships to designing buttons and merchandise, Business is there to make our presence in the community known!",
-      image: businessTeamImage,
+      image: imageAliases.business,
     },
   ];
 

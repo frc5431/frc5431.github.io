@@ -107,7 +107,7 @@ section::after {
 
 #index-banner-image {
   top: 0px;
-  background: url("assets/img/universal/banner4.png") center no-repeat;
+  background: url("/assets/img/universal/banner4.avif") center no-repeat;
   background-size: cover;
   width: 100%;
   height: 100vh;
@@ -119,7 +119,7 @@ section::after {
 /* Switches to an image with a different aspect ratio at smaller screen sizes */
 @media (max-width: 1199px) {
   #index-banner-image {
-    background: url("assets/img/universal/mobile-splash.png") center no-repeat;
+    background: url("/assets/img/universal/mobile-splash.avif") center no-repeat;
     background-size: cover;
   }
 
@@ -439,7 +439,7 @@ img.logo {
 
 #ourteam-banner-image {
   top: 0px;
-  background: url("assets/img/universal/team-cheering-2.jpg") center no-repeat;
+  background: url("/assets/img/universal/team-cheering-2.avif") center no-repeat;
   background-size: cover;
   width: 100%;
   height: 80vh;
@@ -488,7 +488,7 @@ img.logo {
   top: 0px;
   background:
     linear-gradient(rgba(50, 50, 50, 0.25), rgba(50, 50, 50, 0.25)),
-    url("assets/img/universal/construction.jpg") center no-repeat;
+    url("/assets/img/universal/construction.avif") center no-repeat;
   background-size: cover;
   width: 100%;
   height: 80vh;
@@ -546,9 +546,9 @@ img.logo {
 /*Game Logos*/
 #game-logo-15 {
   background:
-    url("assets/img/about/2015/RecycleRush.png"), rgba(50, 200, 160, 1); /* for browsers that don't support CSS gradients */
+    url("/assets/img/about/2015/RecycleRush.avif"), rgba(50, 200, 160, 1); /* for browsers that don't support CSS gradients */
   background:
-    url("assets/img/about/2015/RecycleRush.png"),
+    url("/assets/img/about/2015/RecycleRush.avif"),
     linear-gradient(
       90deg,
       rgba(30, 210, 120, 1) 0%,
@@ -561,9 +561,9 @@ img.logo {
 }
 #game-logo-16 {
   background:
-    url("assets/img/about/2016/Stronghold.png"), rgba(170, 110, 160, 1); /* for browsers that don't support CSS gradients */
+    url("/assets/img/about/2016/Stronghold.avif"), rgba(170, 110, 160, 1); /* for browsers that don't support CSS gradients */
   background:
-    url("assets/img/about/2016/Stronghold.png"),
+    url("/assets/img/about/2016/Stronghold.avif"),
     radial-gradient(
       rgba(230, 100, 60, 1) 5%,
       rgba(170, 110, 160, 1) 65%,
@@ -575,9 +575,9 @@ img.logo {
 }
 #game-logo-17 {
   background:
-    url("assets/img/about/2017/Steamworks.png"), rgba(160, 140, 20, 1); /* for browsers that don't support CSS gradients */
+    url("/assets/img/about/2017/Steamworks.avif"), rgba(160, 140, 20, 1); /* for browsers that don't support CSS gradients */
   background:
-    url("assets/img/about/2017/Steamworks.png"),
+    url("/assets/img/about/2017/Steamworks.avif"),
     linear-gradient(
       90deg,
       rgba(160, 140, 20, 1) 0%,
@@ -590,9 +590,9 @@ img.logo {
 }
 #game-logo-18 {
   background:
-    url("assets/img/about/2018/PowerUp.png"), rgba(205, 205, 100, 1); /* for browsers that don't support CSS gradients */
+    url("/assets/img/about/2018/PowerUp.avif"), rgba(205, 205, 100, 1); /* for browsers that don't support CSS gradients */
   background:
-    url("assets/img/about/2018/PowerUp.png"),
+    url("/assets/img/about/2018/PowerUp.avif"),
     linear-gradient(
       -45deg,
       rgba(235, 100, 100, 1) 0%,
@@ -605,9 +605,9 @@ img.logo {
 }
 #game-logo-19 {
   background:
-    url("assets/img/about/2019/DeepSpace_white.png"), rgba(10, 70, 110, 1); /* for browsers that don't support CSS gradients */
+    url("/assets/img/about/2019/DeepSpace_white.avif"), rgba(10, 70, 110, 1); /* for browsers that don't support CSS gradients */
   background:
-    url("assets/img/about/2019/DeepSpace_white.png"),
+    url("/assets/img/about/2019/DeepSpace_white.avif"),
     radial-gradient(
       rgba(20, 90, 150, 1) 2%,
       rgba(10, 70, 110, 1) 35%,
@@ -619,10 +619,10 @@ img.logo {
 }
 #game-logo-20 {
   background:
-    url("assets/img/about/2020/InfiniteRecharge_white.png"),
+    url("/assets/img/about/2020/InfiniteRecharge_white.avif"),
     rgba(180, 180, 35, 1); /* for browsers that don't support CSS gradients */
   background:
-    url("assets/img/about/2020/InfiniteRecharge_white.png"),
+    url("/assets/img/about/2020/InfiniteRecharge_white.avif"),
     linear-gradient(180deg, rgba(180, 180, 35, 1), rgba(35, 35, 180, 1));
   background-repeat: no-repeat;
   background-position: center center;
@@ -630,9 +630,9 @@ img.logo {
 }
 #game-logo-22 {
   background:
-    url("assets/img/about/2022/Rapid React.png"), rgba(57, 124, 56, 0.7); /* for browsers that don't support CSS gradients */
+    url("/assets/img/about/2022/Rapid React.avif"), rgba(57, 124, 56, 0.7); /* for browsers that don't support CSS gradients */
   background:
-    url("assets/img/about/2022/Rapid React.png"),
+    url("/assets/img/about/2022/Rapid React.avif"),
     repeating-conic-gradient(
       from 90deg at 50% 100%,
       rgba(24, 90, 170, 0.9) 0%,
@@ -647,10 +647,10 @@ img.logo {
 }
 #game-logo-23 {
   background:
-    url("assets/img/about/2023/CHARGED_UP_Logo_Horiz_RGB_FullColor-removebg-preview.png"),
+    url("/assets/img/about/2023/CHARGED_UP_Logo_Horiz_RGB_FullColor-removebg-preview.avif"),
     rgba(255, 255, 255, 1); /* for browsers that don't support CSS gradients */
   background:
-    url("assets/img/about/2023/CHARGED_UP_Logo_Horiz_RGB_FullColor-removebg-preview.png"),
+    url("/assets/img/about/2023/CHARGED_UP_Logo_Horiz_RGB_FullColor-removebg-preview.avif"),
     radial-gradient(
       rgba(255, 182, 0, 1) 2%,
       rgba(255, 255, 255, 1) 35%,
@@ -662,10 +662,10 @@ img.logo {
 }
 #game-logo-24 {
   background:
-    url("assets/img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.png"),
+    url("/assets/img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.avif"),
     rgba(5, 154, 86, 1); /* for browsers that don't support CSS gradients */
   background:
-    url("assets/img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.png"),
+    url("/assets/img/about/2024/FIS_CRESCENDO_Logo_Horizontal_RGB.avif"),
     radial-gradient(
       rgba(0, 0, 0, 1) 2%,
       rgba(5, 154, 86, 1) 35%,
@@ -782,7 +782,7 @@ ul.timeline > li:before {
   top: 0px;
   background:
     linear-gradient(rgba(50, 50, 50, 0.25), rgba(50, 50, 50, 0.25)),
-    url("assets/img/universal/5431 flag cropped.jpg"),
+    url("/assets/img/universal/5431 flag cropped.avif"),
     center no-repeat;
   background-size: cover;
   width: 100%;
@@ -870,7 +870,7 @@ is less painful to read.*/
   top: 0px;
   background:
     linear-gradient(rgba(50, 50, 50, 0.25), rgba(50, 50, 50, 0.25)),
-    url("assets/img/universal/team spirit.jpg") center no-repeat;
+    url("/assets/img/universal/team spirit.avif") center no-repeat;
   background-size: cover;
   width: 100%;
   height: 80vh;

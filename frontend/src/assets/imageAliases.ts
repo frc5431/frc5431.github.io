@@ -104,6 +104,12 @@ const imageAliases = {
   layingdowniris: "/assets/img/about/2025/layingdowniris.avif",
   placingcoral: "/assets/img/about/2025/placingdowncoraliris.avif",
   irisbeingworkedon: "/assets/img/about/2025/irisbeingworkedon.avif",
+
+  // SUBSYSTEM IMAGES
+  buildTeam: "/assets/img/universal/teamdescphoto/BuildTeam.avif",
+  controlSystems: "/assets/img/universal/teamdescphoto/ControlSystemTeam.avif",
+  scouting: "/assets/img/universal/teamdescphoto/SNSteam.avif",
+  business: "/assets/img/universal/teamdescphoto/BusinessTeam.avif",
 };
 
 export default imageAliases;
