@@ -1,4 +1,34 @@
-:80 {
-    root * /usr/share/caddy
-    file_server
+{$DOMAIN:{$FRONTEND_PORT}} {
+	root * /srv/frontend
+	encode
+	file_server
+
+    handle_path /api/* {
+        reverse_proxy backend:{$BACKEND_PORT}
+    }
+
+    # Adds a header under name assets? caches things apperently.
+    @assets {
+        path_regexp \.(js|css|woff2|ttf|eot|svg|avif|webp|ico|jpg|jpeg|png|gif|mp4|webm)$
+    }
+
+    header @assets {
+      Cache-Control "public, max-age=31536000, immutable"
+    }
+
+    @html {
+        path *.html
+    }
+    header @html {
+        Cache-Control "public, max-age=0, must-revalidate"
+    }
+
+    handle {
+        try_files {path} /index.html
+    }
+
+    # log {
+    #     output stdout
+    #     format json
+    # }
 }
