@@ -46,10 +46,12 @@ jobs:
 
       - name: Create .env files for Docker Compose
         run: |
-          echo "PORT=$FRONTEND_PORT" > frontend/.env
+          echo "FRONTEND_PORT=$FRONTEND_PORT" > .env
+          echo "BACKEND_PORT=$BACKEND_PORT" >> .env
+          echo "DOMAIN=https://host.example.com" >> .env
+
           echo "HOST=https://host.example.com" >> frontend/.env
 
-          echo "PORT=$BACKEND_PORT" > backend/.env
           echo "EMAIL_USER=blank@gmail.com" >> backend/.env
           echo "EMAIL_PASS=blank_password" >> backend/.env
 
