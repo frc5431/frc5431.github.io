@@ -2,3 +2,8 @@
 *.env
 
 node_modules
+caddy/data
+caddy/config
+
+temp
+.tmpv

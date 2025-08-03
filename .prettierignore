@@ -56,3 +56,5 @@ frontend/node_modules/
 # Ignore all files named "temp" or with extension .tmp anywhere
 **/temp
 **/*.tmp
+
+*.md

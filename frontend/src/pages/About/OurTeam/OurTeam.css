@@ -12,8 +12,7 @@
 /* Banner Styling */
 #ourteam-banner-image {
   top: 0px;
-  background: url("../../../assets/img/universal/dallasgroup.JPG") center
-    no-repeat;
+  background: url("/assets/img/universal/dallasgroup.avif") center no-repeat;
   background-size: cover;
   width: 100%;
   height: 80vh;
