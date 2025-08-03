@@ -5,7 +5,7 @@ import axios from "axios";
 import Footer from "../../components/Footer/Footer";
 
 const Contactus: React.FC = () => {
-  const backendUrl = "https://api.frc5431.wucode.org/send-email";
+  const backendUrl = "https://frc5431.wucode.org/api/send-email";
 
   const [formData, setFormData] = useState({
     name: "",

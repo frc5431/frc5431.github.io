@@ -35,10 +35,12 @@ services:
       - ./frontend/dist:/srv/frontend
     env_file: .env
     environment:
-      - DOMAIN=${DOMAIN}
+      - FRONTEND_PORT=${FRONTEND_PORT}
+      - BACKEND_PORT=${BACKEND_PORT}
     ports:
       - "80:80"
       - "443:443"
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
 
 volumes:
   caddy_data:
