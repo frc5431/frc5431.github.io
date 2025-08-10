@@ -14,3 +14,4 @@ RUN npm run build
 
 FROM caddy:2-alpine AS serve
 COPY --from=build /usr/src/app/frontend/dist /srv/frontend
+EXPOSE 80 443
