@@ -1,5 +1,5 @@
 # To have a domain, replace localhost:{$FRONTEND_PORT} with {$DOMAIN} and have
-# DOMAIN=whatever.com be in your root .env gaming
+# DOMAIN=whatever.com be in your root .env
 
 :{$FRONTEND_PORT} {
 	root * /srv/frontend
