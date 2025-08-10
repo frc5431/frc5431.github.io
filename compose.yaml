@@ -1,15 +1,4 @@
 services:
-  frc-site:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    restart: no
-    environment:
-      NODE_ENV: production
-      PORT: ${FRONTEND_PORT}
-    expose:
-      - ${FRONTEND_PORT}
-
   backend:
     build:
       context: ./backend
@@ -23,16 +12,16 @@ services:
     expose:
       - ${BACKEND_PORT}
   caddy:
-    image: caddy:2.10
+    build:
+      context: .
+      dockerfile: ./frontend/Dockerfile
     restart: unless-stopped
     depends_on:
-      - frc-site
       - backend
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./caddy/data:/data
       - ./caddy/config:/config
-      - ./frontend/dist:/srv/frontend
     env_file: .env
     environment:
       - FRONTEND_PORT=${FRONTEND_PORT}
