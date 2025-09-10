@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import "./Memories.css";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -14,6 +14,8 @@ import imageAliases from "../../assets/imageAliases";
 const Memories: React.FC = () => {
   const [traveled, toggleTravel] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   // year related stuff
   const [year, setYear] = useState(2025);
@@ -452,13 +454,97 @@ const Memories: React.FC = () => {
     },
   };
 
-  const handleTravel = () => {
-    setIsTransitioning(true);
+  // Function to preload all images for a given year
+  const preloadImages = useCallback((selectedYear: number): Promise<void> => {
+    return new Promise((resolve, reject) => {
+      const yearData = yearContent[selectedYear as keyof typeof yearContent];
+      if (!yearData) {
+        resolve();
+        return;
+      }
 
-    setTimeout(() => {
-      toggleTravel(true);
-      setIsTransitioning(false);
-    }, 1000);
+      // Collect all image URLs for the year
+      const imageUrls: string[] = [yearData.imageURL];
+      yearData.memoryImages.forEach(memory => {
+        imageUrls.push(memory.imageSrc);
+      });
+
+      let loadedCount = 0;
+      const totalImages = imageUrls.length;
+      let errorCount = 0;
+      const maxErrors = Math.floor(totalImages / 2); // Allow up to half the images to fail
+
+      if (totalImages === 0) {
+        resolve();
+        return;
+      }
+
+      const onImageLoad = () => {
+        loadedCount++;
+        const progress = (loadedCount / totalImages) * 100;
+        setLoadingProgress(progress);
+        
+        if (loadedCount === totalImages) {
+          setTimeout(() => resolve(), 200); // Small delay to show 100%
+        }
+      };
+
+      const onImageError = (url: string) => {
+        console.warn(`Failed to load image: ${url}`);
+        errorCount++;
+        loadedCount++; // Count errors as "loaded" for progress
+        
+        const progress = (loadedCount / totalImages) * 100;
+        setLoadingProgress(progress);
+        
+        // If too many images fail, reject
+        if (errorCount > maxErrors) {
+          reject(new Error(`Too many images failed to load (${errorCount}/${totalImages})`));
+          return;
+        }
+        
+        // If all images processed (loaded or errored), resolve
+        if (loadedCount === totalImages) {
+          setTimeout(() => resolve(), 200);
+        }
+      };
+
+      // Start loading all images
+      imageUrls.forEach(url => {
+        const img = new Image();
+        img.onload = onImageLoad;
+        img.onerror = () => onImageError(url);
+        img.src = url;
+      });
+    });
+  }, [yearContent]);
+
+  const handleTravel = async () => {
+    setIsTransitioning(true);
+    setIsLoading(true);
+    setLoadingProgress(0);
+
+    try {
+      // Preload all images for the selected year
+      await preloadImages(year);
+      
+      // Add a small delay to ensure smooth transition
+      setTimeout(() => {
+        toggleTravel(true);
+        setIsTransitioning(false);
+        setIsLoading(false);
+        setLoadingProgress(0);
+      }, 500);
+    } catch (error) {
+      console.error('Failed to load images:', error);
+      // Still proceed but log the error
+      setTimeout(() => {
+        toggleTravel(true);
+        setIsTransitioning(false);
+        setIsLoading(false);
+        setLoadingProgress(0);
+      }, 500);
+    }
   };
 
   const handleReturn = () => {
@@ -483,10 +569,32 @@ const Memories: React.FC = () => {
               ></img>
             </div>
             <div className="transition-text">
-              {traveled ? "Returning to Present..." : `Traveling to ${year}...`}
+              {traveled 
+                ? "Returning to Present..." 
+                : isLoading 
+                  ? `Loading ${year} memories...` 
+                  : `Traveling to ${year}...`
+              }
             </div>
+            {isLoading && (
+              <div className="loading-details">
+                <div className="loading-percentage">{Math.round(loadingProgress)}%</div>
+                <div className="loading-status">
+                  {loadingProgress === 100 
+                    ? "Almost ready..." 
+                    : "Loading images..."
+                  }
+                </div>
+              </div>
+            )}
             <div className="loading-bar">
-              <div className="loading-progress"></div>
+              <div 
+                className={`loading-progress ${!isLoading ? 'static-loading' : ''}`}
+                style={{ 
+                  width: isLoading ? `${loadingProgress}%` : '100%',
+                  transition: isLoading ? 'width 0.3s ease' : 'none'
+                }}
+              ></div>
             </div>
           </div>
         </div>

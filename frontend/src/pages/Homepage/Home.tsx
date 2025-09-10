@@ -1,10 +1,8 @@
 // Import Bootstrap CSS (you'll need to install it with npm first)
-import "bootstrap/dist/css/bootstrap.min.css";
 import teamLogoBlack from "../../assets/img/universal/5431LogoBlackvector.svg";
 import imageAliases from "../../assets/imageAliases";
 import "./Home.css";
 import Carousel from "../../components/Carosuel/Carousel";
-
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
