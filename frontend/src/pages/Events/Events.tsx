@@ -1,6 +1,7 @@
 ﻿import React, { useState, useEffect } from "react";
 import "./Events.css";
 import Footer from "../../components/Footer/Footer";
+import BalloonFestival from "../../assets/img/universal/planoballoonfestival.png"
 
 const Events: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -37,7 +38,12 @@ const Events: React.FC = () => {
       <section
         className="page-content"
         id="events-content"
-        style={{ height: "auto" }}
+        style={{
+          height: "auto",
+          position: "relative",
+          top: "0",
+          marginTop: "0",
+        }}
       >
         <div
           className="container-fluid py-xs-0 py-md-4 px-lg-5 px-xs-0"
@@ -83,6 +89,15 @@ const Events: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section style={{
+        position: "relative",
+        zIndex: 1
+      }}>
+        <h2 className="calendar-title">Plano Balloon Festival</h2>
+        <div className="balloon-container">
+          <img src={BalloonFestival} alt="Plano Balloon Festival" className="balloon-img" />
         </div>
       </section>
 

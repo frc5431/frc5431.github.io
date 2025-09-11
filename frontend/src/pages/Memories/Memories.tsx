@@ -5,7 +5,6 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import MemoriesYear from "../../components/MemoriesYear";
 import {
-  MemoryItemType,
   YouTubeVideoType,
 } from "../../components/MemoriesYear";
 
@@ -414,7 +413,28 @@ const Memories: React.FC = () => {
         imageURL: imageAliases.game2024,
         description:
           "In 2024, our team participated in the FIRST Crescendo competition.",
-        memoryImages: [] as MemoryItemType[],
+        memoryImages: [
+          {
+            imageSrc: imageAliases.gametimeorpheus,
+            altText: "Orpheus in competition",
+            caption: "Our robot Orpheus competing during a Crescendo match",
+          },
+          {
+            imageSrc: imageAliases.orpheusPits,
+            altText: "Orpheus in the pits",
+            caption: "Team working on Orpheus in the pit area",
+          },
+          {
+            imageSrc: imageAliases.orpheusPreparing,
+            altText: "Preparing Orpheus",
+            caption: "Team members preparing Orpheus for competition",
+          },
+          {
+            imageSrc: imageAliases.pumpedUp,
+            altText: "Team pumped up",
+            caption: "Our team excited and ready for competition",
+          },
+        ],
         youtubeVideos: [
           {
             videoId: "hmgaGmgWFc4",

@@ -2,6 +2,12 @@
   --something: #000;
 }
 
+#events-banner {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
 #events-banner-image {
   top: 0px;
   background-image: url("/assets/img/universal/frc panorama.avif");
@@ -14,6 +20,23 @@
   height: 80vh;
   filter: blur(3px);
   -webkit-filter: blur(3px);
+}
+
+#events-content {
+  position: relative;
+  z-index: 1;
+  background: white;
+  margin-top: 0;
+}
+
+/* Additional section styling to prevent overlap */
+#events-main section {
+  position: relative;
+  z-index: 1;
+}
+
+#events-main section:not(#events-banner) {
+  background: white;
 }
 
 .events-main-text {
@@ -47,4 +70,22 @@
   margin-bottom: 20px;
   font-size: 2.5rem;
   font-weight: bold !important;
+}
+
+.balloon-container {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #02204E 0%, #2B0250 25%, #8B1FEA 75%, #1DAFEA 100%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.balloon-img {
+  width: 70vw;
+  border-radius: 9px;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }

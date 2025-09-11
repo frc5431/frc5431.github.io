@@ -99,6 +99,12 @@ const imageAliases = {
   brontesAction: "/assets/img/about/2023/brontes action.avif",
   team2023: "/assets/img/about/2023/2023team (1).avif",
 
+  // 2024
+  gametimeorpheus: "/assets/img/about/2024/gametimeorphesus.avif",
+  orpheusPits: "/assets/img/about/2024/orphesusinpits.avif",
+  orpheusPreparing: "/assets/img/about/2024/orpheuspreparing.avif",
+  pumpedUp: "/assets/img/about/2024/pumpedup.avif",
+
   // 2025
   irisinblue: "/assets/img/about/2025/irisinblue.avif",
   layingdowniris: "/assets/img/about/2025/layingdowniris.avif",
