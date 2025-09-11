@@ -7,6 +7,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import Footer from "../../components/Footer/Footer";
+import { useState, useEffect } from "react";
 
 export interface CarouselItem {
   id: number;
@@ -14,7 +15,75 @@ export interface CarouselItem {
   alt: string;
 }
 
+interface Subteam {
+  id: number;
+  name: string;
+  backgroundClass: string;
+}
+
+const subteams: Subteam[] = [
+  {
+    id: 1,
+    name: "Build",
+    backgroundClass: "subteam-build",
+  },
+  {
+    id: 2,
+    name: "Control Systems",
+    backgroundClass: "subteam-control-systems",
+  },
+  {
+    id: 3,
+    name: "Scouting and Strategy",
+    backgroundClass: "subteam-scouting",
+  },
+  {
+    id: 4,
+    name: "Business",
+    backgroundClass: "subteam-business",
+  },
+];
+
 function Home() {
+
+  const [currentSubteam, setCurrentSubteam] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSubteam((prev) => (prev + 1) % subteams.length);
+    }, 8000); // Change every 8 seconds to allow for typing animation
+
+    return () => clearInterval(interval);
+  }, []); // Remove subteams.length dependency
+
+  useEffect(() => {
+    setDisplayedText("");
+    setIsTyping(true);
+    const currentName = subteams[currentSubteam].name;
+    let index = 0;
+    
+    // Small delay before starting to type
+    const startDelay = setTimeout(() => {
+      const typeInterval = setInterval(() => {
+        if (index < currentName.length) {
+          index++;
+          setDisplayedText(currentName.slice(0, index));
+        } else {
+          setIsTyping(false);
+          clearInterval(typeInterval);
+        }
+      }, 150); // Type each letter every 150ms
+      
+      // Store interval reference to clean up
+      return () => clearInterval(typeInterval);
+    }, 200); // 200ms delay before starting to type
+
+    return () => {
+      clearTimeout(startDelay);
+    };
+  }, [currentSubteam]); // Only depend on currentSubteam
   const carouselItems: CarouselItem[] = [
     {
       id: 1,
@@ -231,6 +300,42 @@ function Home() {
               </div>
             </div>
 
+            {/* Sponsors section */}
+            <div className="sponsors-section-container">
+              <div className="sponsors-banner">
+                <div className="sponsors-content">
+                  <h2 className="sponsors-title">See Our Sponsors!</h2>
+                  <p className="sponsors-description">
+                    Our amazing sponsors make everything we do possible. 
+                    Discover the companies and organizations that support our mission.
+                  </p>
+                  <a href="/about/oursponsors" className="sponsors-link">
+                    View All Sponsors
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Subteams section */}
+            <div className="subteams-section-container">
+              <div 
+                className={`subteams-banner ${subteams[currentSubteam].backgroundClass}`}
+              >
+                <div className="subteams-content">
+                  <h2 className="subteams-title">Check Out Our Subteams!</h2>
+                  <div className="current-subteam">
+                    <h3 className="current-subteam-name">
+                      {displayedText}
+                      {isTyping && <span className="cursor">|</span>}
+                    </h3>
+                  </div>
+                  <a href="/about/ourteam" className="subteams-link">
+                    Meet Our Team
+                  </a>
+                </div>
+              </div>
+            </div>
+
             {/* Media section */}
             <div className="px-xl-5 px-md-3 px-0">
               <div
@@ -238,21 +343,6 @@ function Home() {
                 id="media"
               >
                 <div className="col col-lg-8 col-md-7 center center-element">
-                  <h2 className="center-text">5431 Chairman's Video</h2>
-                  <div className="yt-container">
-                    <iframe
-                      title="Chairman's Video 2019-2020"
-                      src="https://www.youtube.com/embed/V_4pVFlNjqI"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen={true}
-                    ></iframe>
-                  </div>
-                  <p>
-                    Our 2019-2020 season chairman's video. The video talks about
-                    our drive and passion for spreading the seeds of STEM
-                    education, and covers how we do it!
-                  </p>
-                  <h2 className="center-text">About FIRST</h2>
                   <div className="yt-container">
                     <iframe
                       title="About FIRST"
