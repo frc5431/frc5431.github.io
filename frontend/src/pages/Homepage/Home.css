@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Outfit:wght@100..900&display=swap');
+
 :root {
   --primary-color: #8b1fea;
   --secondary-color: #3c0370;
@@ -134,4 +138,388 @@
 
 .social-icon:hover {
   color: var(--brand-purple);
+}
+
+/* Sponsors Section */
+.sponsors-section-container {
+  margin: 3rem 0;
+}
+
+.sponsors-banner {
+  background: url("/assets/img/universal/environmentchamps.avif") center no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: rgba(139, 31, 234, 0.4);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 300px;
+}
+
+.sponsors-banner h2 {
+  font-size: 4.8rem !important;
+  margin-bottom: 5vh; 
+}
+
+@media (min-width: 769px) {
+  .sponsors-banner {
+    padding: 5rem 3rem;
+    min-height: 400px;
+    max-width: 1400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sponsors-banner {
+    border-radius: 10px;
+  }
+  .sponsors-banner h2 {
+    font-size: 2.8rem !important;
+  }
+}
+
+.sponsors-banner::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  animation: shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.sponsors-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.sponsors-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sponsors-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sponsors-link {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--brand-purple);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 769px) {
+  .sponsors-title {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sponsors-description {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+  }
+  
+  .sponsors-link {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+.sponsors-link:hover {
+  background: white;
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .sponsors-banner {
+    padding: 2rem 1rem;
+    margin: 0 0.5rem;
+  }
+  
+  .sponsors-title {
+    font-size: 2rem;
+  }
+  
+  .sponsors-description {
+    font-size: 1rem;
+  }
+  
+  .sponsors-link {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Subteams Section */
+.subteams-section-container {
+  margin: 3rem 0;
+  padding: 0 1rem;
+}
+
+.subteams-banner {
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 300px;
+  transition: background 0.8s ease-in-out;
+}
+
+/* Subteam Background Classes */
+.subteam-build {
+  background: linear-gradient(135deg, #C0C0C0 0%, #808080 25%, #A9A9A9 50%, #696969 75%, #C0C0C0 100%);
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    inset 0 -1px 0 rgba(0,0,0,0.2),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.subteam-build .current-subteam-name {
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+}
+
+.subteam-control-systems {
+  background: black;
+}
+
+.subteam-control-systems .current-subteam-name {
+  color: #00FF00;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 600;
+}
+
+.subteam-scouting {
+  background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
+}
+
+.subteam-scouting .current-subteam-name {
+  color: #ffffff;
+  font-family: 'Gothic A1', sans-serif;
+  font-weight: 700;
+}
+
+.subteam-business {
+  background: rgb(62, 2, 62);
+}
+
+.subteam-business .current-subteam-name {
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+}
+
+@media (min-width: 769px) {
+  .subteams-banner {
+    padding: 5rem 3rem;
+    min-height: 400px;
+    max-width: 1400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .subteams-banner {
+    border-radius: 10px;
+    padding: 3rem 1rem;
+    margin: 0 0.5rem;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.subteams-banner::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  animation: shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.subteams-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.subteams-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.current-subteam {
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.current-subteam-name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+  font-weight: normal;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.current-subteam-description {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  max-width: 700px;
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+.subteams-link {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--brand-purple);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.subteams-link:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+@media (min-width: 769px) {
+  .subteams-title {
+    font-size: 3.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .current-subteam-name {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    min-height: 3rem;
+  }
+  
+  .current-subteam-description {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .subteams-link {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .subteams-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .current-subteam {
+    margin-bottom: 2.5rem;
+  }
+  
+  .current-subteam-name {
+    font-size: 1.5rem;
+    min-height: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .current-subteam-description {
+    font-size: 1rem;
+  }
+  
+  .subteams-link {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .subteams-content {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    min-height: 300px;
+  }
 }

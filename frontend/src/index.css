@@ -300,11 +300,11 @@ img.logo {
   background: var(--white);
 }
 
-#titan-blue h2,
+/* #titan-blue h2,
 #titan-navy h2,
 #titan-purple h2 {
   font-family: "Libre Baskerville";
-}
+} */
 
 #titan-blue {
   background: rgba(29, 175, 234, 0.3);
