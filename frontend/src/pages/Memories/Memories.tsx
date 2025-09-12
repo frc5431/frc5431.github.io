@@ -399,6 +399,26 @@ const Memories: React.FC = () => {
             altText: "Brontes in Action",
             caption: "A photo of Brontes putting down a Charged Up game piece",
           },
+          {
+            imageSrc: imageAliases.allianceStates,
+            altText: "Alliance discussion at States",
+            caption: "Team members discussing strategy during alliance selection at States",
+          },
+          {
+            imageSrc: imageAliases.pushingBrontes,
+            altText: "Pushing Brontes",
+            caption: "Team members carefully moving Brontes into position",
+          },
+          {
+            imageSrc: imageAliases.statesTeam,
+            altText: "States team photo",
+            caption: "Our team at the State competition in 2023",
+          },
+          {
+            imageSrc: imageAliases.teamCheering,
+            altText: "Team cheering",
+            caption: "Our excited team celebrating during competition",
+          },
         ],
         youtubeVideos: [
           {
