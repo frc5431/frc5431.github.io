@@ -8,6 +8,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const inputDir = path.resolve(__dirname, "../src/assets/img");
 const outputDir = path.resolve(__dirname, "../public/assets/img");
+
+// keep validExt in lowercase — we'll compare against a lowercased ext
 const validExt = [".jpg", ".jpeg", ".png"];
 
 function walkDir(dir, callback) {
@@ -23,12 +25,15 @@ function walkDir(dir, callback) {
 }
 
 function convert(filePath) {
-  const ext = path.extname(filePath).toLowerCase();
+  const extRaw = path.extname(filePath);
+  const ext = extRaw.toLowerCase();
+
   if (!validExt.includes(ext)) return;
 
   const relPath = path.relative(inputDir, filePath);
   const outputSubDir = path.join(outputDir, path.dirname(relPath));
-  const baseName = path.basename(filePath, ext);
+
+  const baseName = path.parse(filePath).name;
 
   if (!fs.existsSync(outputSubDir)) {
     fs.mkdirSync(outputSubDir, { recursive: true });
@@ -58,7 +63,7 @@ function convert(filePath) {
     sharp(filePath)
       .toFormat("avif", options)
       .toFile(avifOut)
-      .then(() => console.log(`✅ AVIF: ${relPath}`))
+      .then(() => console.log(`✅ AVIF: ${relPath} -> ${baseName}.avif`))
       .catch(console.error);
   }
 }

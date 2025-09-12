@@ -98,15 +98,15 @@ const imageAliases = {
   // 2023
   brontesAction: "/assets/img/about/2023/brontes action.avif",
   team2023: "/assets/img/about/2023/2023team (1).avif",
-  allianceStates: "/assets/img/about/2023/alliancestatesdiscussion-min.JPG",
-  pushingBrontes: "/assets/img/about/2023/pushingbrontes.JPG",
-  statesTeam: "/assets/img/about/2023/statesteam2024.JPG",
-  teamCheering: "/assets/img/about/2023/teamcheering2024.JPG",
+  allianceStates: "/assets/img/about/2023/alliancestatesdiscussion-min.avif",
+  pushingBrontes: "/assets/img/about/2023/pushingbrontes.avif",
+  statesTeam: "/assets/img/about/2023/statesteam2024.avif",
+  teamCheering: "/assets/img/about/2023/teamcheering2024.avif",
 
   // 2024
   gametimeorpheus: "/assets/img/about/2024/gametimeorphesus.avif",
   orpheusPits: "/assets/img/about/2024/orphesusinpits.avif",
-  orpheusPreparing: "/assets/img/about/2024/orpheuspreparing.avif",
+  orpheusPreparing: "/assets/img/about/2024/orphesuspreparing.avif",
   pumpedUp: "/assets/img/about/2024/pumpedup.avif",
 
   // 2025
