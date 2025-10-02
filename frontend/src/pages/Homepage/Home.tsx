@@ -330,37 +330,12 @@ function Home() {
                 </div>
               </div>
             </div>
-
-            {/* Media section */}
-            <div className="px-xl-5 px-md-3 px-0">
-              <div
-                className="row mt-3 mx-lg-3 mx-md-2 mx-0 px-xl-5 px-md-4 px-2 py-md-4 py-3"
-                id="media"
-              >
-                <div className="col col-lg-8 col-md-7 center center-element">
-                  <div className="yt-container">
-                    <iframe
-                      title="About FIRST"
-                      src="https://www.youtube.com/embed/K_PuWjr7qcM"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen={true}
-                    ></iframe>
-                  </div>
-                  <p>
-                    This video talks about who FIRST is and what FIRST Robotics
-                    Competition (FRC) does. Impacting many highschool students
-                    around the world preparing them for the future through fun
-                    challenges.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="content-container" style={{ marginTop: '5vh', paddingBottom: '5vh' }}>
+            {/* <div className="content-container" style={{ marginTop: '5vh', paddingBottom: '5vh' }}>
               {/* <img
                 src={teamLogoBlack}
                 alt="Team 5431 Logo"
                 className="team-number"
-              /> */}
+              />
               <Carousel data={carouselItems} />
               <div className="social-container">
                 <a
@@ -385,7 +360,7 @@ function Home() {
                   <YouTubeIcon fontSize="large" className="social-icon" />
                 </a>
               </div>
-            </div>
+            </div> */}
           </div>
           <Footer />
         </section>

@@ -81,6 +81,10 @@
   align-items: center;
 }
 
+.card {
+  border-radius: 10px;
+}
+
 .center-element {
   display: flex;
   flex-direction: column;
@@ -337,7 +341,6 @@
 @media (max-width: 768px) {
   .sponsors-banner {
     padding: 2rem 1rem;
-    margin: 0 0.5rem;
   }
   
   .sponsors-title {
@@ -357,7 +360,6 @@
 /* Subteams Section */
 .subteams-section-container {
   margin: 3rem 0;
-  padding: 0 1rem;
 }
 
 .subteams-banner {
@@ -430,7 +432,6 @@
   .subteams-banner {
     border-radius: 10px;
     padding: 3rem 1rem;
-    margin: 0 0.5rem;
     min-height: 350px;
     display: flex;
     align-items: center;

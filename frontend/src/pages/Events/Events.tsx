@@ -2,6 +2,14 @@
 import "./Events.css";
 import Footer from "../../components/Footer/Footer";
 import BalloonFestival from "../../assets/img/universal/planoballoonfestival.png"
+import Carousel from "../../components/Carosuel/Carousel";
+import imageAliases from "../../assets/imageAliases";
+
+export interface CarouselItem {
+  id: number;
+  imagePath: string;
+  alt: string;
+}
 
 const Events: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -16,6 +24,29 @@ const Events: React.FC = () => {
 
     return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
+
+  const carouselItems: CarouselItem[] = [
+    {
+      id: 1,
+      imagePath: imageAliases.universal5431NumberSign,
+      alt: "Team 5431 number sign",
+    },
+    {
+      id: 2,
+      imagePath: imageAliases.frcEvent,
+      alt: "FRC Event",
+    },
+    {
+      id: 3,
+      imagePath: imageAliases.hatConstruction,
+      alt: "Robot construction",
+    },
+    {
+      id: 4,
+      imagePath: imageAliases.hyperionShooting,
+      alt: "Robot shooting",
+    },
+  ];
 
   const calendarSrc = isMobile
     ? "https://calendar.google.com/calendar/embed?src=pisd.edu_57n5cfp52bltnua0aegb3mnr18%40group.calendar.google.com&ctz=America%2FChicago&mode=AGENDA"
@@ -91,13 +122,35 @@ const Events: React.FC = () => {
           </div>
         </div>
       </section>
-      <section style={{
+      <section className="section-container-events" style={{
         position: "relative",
         zIndex: 1
       }}>
-        <h2 className="calendar-title">Plano Balloon Festival</h2>
-        <div className="balloon-container">
-          <img src={BalloonFestival} alt="Plano Balloon Festival" className="balloon-img" />
+        <div>
+          <h2 className="calendar-title">Plano Balloon Festival</h2>
+          <div className="balloon-container">
+            <img src={BalloonFestival} alt="Plano Balloon Festival" className="balloon-img" />
+          </div>
+          <div>
+            <p className="balloon-text">Join us for the annual Plano Balloon Festival!</p>
+          </div>
+        </div>
+        <div>
+          <h2 className="calendar-title">NTX Stem Gals</h2>
+          <div className="balloon-container">
+            <img src={BalloonFestival} alt="Plano Balloon Festival" className="balloon-img" />
+          </div>
+          <div>
+            <p className="balloon-text">NTX is an annual event, that supports women in STEM.</p>
+          </div>
+        </div>
+      </section>
+      <section className="section-container-arrows">
+        <div>
+          <h2 className="calendar-title">Event Gallery</h2>
+          <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+            <Carousel data={carouselItems} />
+          </div>
         </div>
       </section>
 

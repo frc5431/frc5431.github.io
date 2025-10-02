@@ -68,7 +68,7 @@
   background-clip: text;
   text-align: center;
   margin-bottom: 20px;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold !important;
 }
 
@@ -84,8 +84,54 @@
 }
 
 .balloon-img {
-  width: 70vw;
+  width: 40vw;
   border-radius: 9px;
   display: block;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.balloon-text {
+  color: #2B0250;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 12px;
+  width: 40vw;
+}
+
+.section-container-events {
+  display: flex;
+  justify-content: center;
+  background-color: #DEDEDE !important;
+  padding-bottom: 2vh;
+  flex-direction: row;
+  gap: 5vw;
+}
+
+.section-container-arrows {
+  display: flex;
+  justify-content: space-around;
+  background-color: #DEDEDE !important;
+  padding-bottom: 5vh;
+  flex-direction: column;
+  width: 100vw;
+}
+
+@media (max-width: 768px) {
+  .events-main-text {
+    font-size: 3.5rem !important;
+  }
+
+  .balloon-img {
+    width: 80vw;
+  }
+
+  .balloon-text {
+    width: 80vw;
+    font-size: 1rem;
+  }
+
+  .section-container-events {
+    flex-direction: column;
+    align-items: center;
+    }
 }
