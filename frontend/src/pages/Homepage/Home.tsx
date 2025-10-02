@@ -1,5 +1,6 @@
 // Import Bootstrap CSS (you'll need to install it with npm first)
 import teamLogoBlack from "../../assets/img/universal/5431LogoBlackvector.svg";
+import backgroundVideoBrontes from "../../assets/img/universal/backgroundVideoBrontes.mp4";
 import imageAliases from "../../assets/imageAliases";
 import "./Home.css";
 import Carousel from "../../components/Carosuel/Carousel";
@@ -63,7 +64,7 @@ function Home() {
     setIsTyping(true);
     const currentName = subteams[currentSubteam].name;
     let index = 0;
-    
+
     // Small delay before starting to type
     const startDelay = setTimeout(() => {
       const typeInterval = setInterval(() => {
@@ -75,7 +76,7 @@ function Home() {
           clearInterval(typeInterval);
         }
       }, 150); // Type each letter every 150ms
-      
+
       // Store interval reference to clean up
       return () => clearInterval(typeInterval);
     }, 200); // 200ms delay before starting to type
@@ -118,37 +119,31 @@ function Home() {
 
         {/* Content section */}
         <section id="index-content">
-          <div id="content" className="content-container">
-            <img
-              src={teamLogoBlack}
-              alt="Team 5431 Logo"
-              className="team-number"
-            />
-            <Carousel data={carouselItems} />
-            <div className="social-container">
-              <a
-                href="https://www.instagram.com/frc5431/"
-                target="_blank"
-                rel="noreferrer"
+
+          <div id="content" className="team-description-container video-bg-container">
+            <div className="video-bg">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', pointerEvents: 'none', zIndex: 0 }}
               >
-                <InstagramIcon fontSize="large" className="social-icon" />
-              </a>
-              <a
-                href="https://www.facebook.com/frc5431/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FacebookIcon fontSize="large" className="social-icon" />
-              </a>
-              <a
-                href="https://www.youtube.com/@frc5431/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <YouTubeIcon fontSize="large" className="social-icon" />
-              </a>
+                <source src={backgroundVideoBrontes} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="team-description-content" style={{ position: 'relative', zIndex: 1 }}>
+              <img
+                src={teamLogoBlack}
+                alt="Team 5431 Logo"
+                className="team-number"
+              />
+              <h2 className="who-are-we">Who are we?</h2>
+              <p className="description-team">We are <strong>Titan Robotics, Team 5431</strong>, the largest robotics team in Plano and a leader in STEAM education. Our team contributes thousands of volunteer hours, mentors younger FLL and FRC teams, and showcases robotics at schools and community events. We focus on inspiring students, supporting local teams, and strengthening STEAM involvement across Plano. As Titans, we are dedicated to making a lasting impact through service, mentorship, and innovation.</p>
             </div>
           </div>
+
           <div className="container-fluid pb-0 pb-md-4">
             {/* Three info cards */}
             <div className="card-group pt-3">
@@ -306,7 +301,7 @@ function Home() {
                 <div className="sponsors-content">
                   <h2 className="sponsors-title">See Our Sponsors!</h2>
                   <p className="sponsors-description">
-                    Our amazing sponsors make everything we do possible. 
+                    Our amazing sponsors make everything we do possible.
                     Discover the companies and organizations that support our mission.
                   </p>
                   <a href="/about/oursponsors" className="sponsors-link">
@@ -318,7 +313,7 @@ function Home() {
 
             {/* Subteams section */}
             <div className="subteams-section-container">
-              <div 
+              <div
                 className={`subteams-banner ${subteams[currentSubteam].backgroundClass}`}
               >
                 <div className="subteams-content">
@@ -358,6 +353,37 @@ function Home() {
                     challenges.
                   </p>
                 </div>
+              </div>
+            </div>
+            <div className="content-container" style={{ marginTop: '5vh', paddingBottom: '5vh' }}>
+              {/* <img
+                src={teamLogoBlack}
+                alt="Team 5431 Logo"
+                className="team-number"
+              /> */}
+              <Carousel data={carouselItems} />
+              <div className="social-container">
+                <a
+                  href="https://www.instagram.com/frc5431/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <InstagramIcon fontSize="large" className="social-icon" />
+                </a>
+                <a
+                  href="https://www.facebook.com/frc5431/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FacebookIcon fontSize="large" className="social-icon" />
+                </a>
+                <a
+                  href="https://www.youtube.com/@frc5431/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <YouTubeIcon fontSize="large" className="social-icon" />
+                </a>
               </div>
             </div>
           </div>
