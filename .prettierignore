@@ -43,11 +43,9 @@ pnpm-lock.yaml
 .DS_Store
 Thumbs.db
 
-# Ignore backend dependency folders if any
-backend/node_modules/
 
-# Ignore frontend dependency folders if any
-frontend/node_modules/
+
+node_modules/
 
 # Optional: Ignore specific IDE or OS files you don’t want in repo
 *.swp

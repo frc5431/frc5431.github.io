@@ -45,7 +45,6 @@ const subteams: Subteam[] = [
 ];
 
 function Home() {
-
   const [currentSubteam, setCurrentSubteam] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
@@ -63,7 +62,7 @@ function Home() {
     setIsTyping(true);
     const currentName = subteams[currentSubteam].name;
     let index = 0;
-    
+
     // Small delay before starting to type
     const startDelay = setTimeout(() => {
       const typeInterval = setInterval(() => {
@@ -75,7 +74,7 @@ function Home() {
           clearInterval(typeInterval);
         }
       }, 150); // Type each letter every 150ms
-      
+
       // Store interval reference to clean up
       return () => clearInterval(typeInterval);
     }, 200); // 200ms delay before starting to type
@@ -306,8 +305,11 @@ function Home() {
                 <div className="sponsors-content">
                   <h2 className="sponsors-title">See Our Sponsors!</h2>
                   <p className="sponsors-description">
-                    Our amazing sponsors make everything we do possible. 
-                    Discover the companies and organizations that support our mission.
+                    Our amazing sponsors make everything we do possible.
+                    Discover the companies and organizations that support our
+                    mission. Our amazing sponsors make everything we do
+                    possible. Discover the companies and organizations that
+                    support our mission.
                   </p>
                   <a href="/about/oursponsors" className="sponsors-link">
                     View All Sponsors
@@ -318,7 +320,7 @@ function Home() {
 
             {/* Subteams section */}
             <div className="subteams-section-container">
-              <div 
+              <div
                 className={`subteams-banner ${subteams[currentSubteam].backgroundClass}`}
               >
                 <div className="subteams-content">

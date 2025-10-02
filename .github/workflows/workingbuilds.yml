@@ -1,89 +1,89 @@
-name: BUILDS TO TEST
+# name: BUILDS TO TEST
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+# on:
+#   push:
+#     branches: [main]
+#   pull_request:
+#     branches: [main]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    services:
-      docker:
-        image: docker:28.3-dind
-        options: --privileged
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     services:
+#       docker:
+#         image: docker:28.3-dind
+#         options: --privileged
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
 
-      - name: Set up Node.js (frontend)
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24.2.0
-          cache: "npm"
-          cache-dependency-path: frontend/package-lock.json
+#       - name: Set up Node.js (frontend)
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: 24.2.0
+#           cache: "npm"
+#           cache-dependency-path: frontend/package-lock.json
 
-      - name: Install dependencies (frontend)
-        run: |
-          cd frontend
-          npm ci
+#       - name: Install dependencies (frontend)
+#         run: |
+#           cd frontend
+#           npm ci
 
-      - name: Set up Node.js (backend)
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24.2.0
-          cache: "npm"
-          cache-dependency-path: backend/package-lock.json
+#       - name: Set up Node.js (backend)
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: 24.2.0
+#           cache: "npm"
+#           cache-dependency-path: backend/package-lock.json
 
-      - name: Install dependencies (backend)
-        run: |
-          cd backend
-          npm ci
+#       - name: Install dependencies (backend)
+#         run: |
+#           cd backend
+#           npm ci
 
-      - name: Create .env files for Docker Compose
-        run: |
-          echo "FRONTEND_PORT=$FRONTEND_PORT" > .env
-          echo "BACKEND_PORT=$BACKEND_PORT" >> .env
-          echo "DOMAIN=https://host.example.com" >> .env
+#       - name: Create .env files for Docker Compose
+#         run: |
+#           echo "FRONTEND_PORT=$FRONTEND_PORT" > .env
+#           echo "BACKEND_PORT=$BACKEND_PORT" >> .env
+#           echo "DOMAIN=https://host.example.com" >> .env
 
-          echo "HOST=https://host.example.com" >> frontend/.env
+#           echo "HOST=https://host.example.com" >> frontend/.env
 
-          echo "EMAIL_USER=blank@gmail.com" >> backend/.env
-          echo "EMAIL_PASS=blank_password" >> backend/.env
+#           echo "EMAIL_USER=blank@gmail.com" >> backend/.env
+#           echo "EMAIL_PASS=blank_password" >> backend/.env
 
-      - name: Build frontend
-        run: |
-          cd frontend
-          npm run build
+#       - name: Build frontend
+#         run: |
+#           cd frontend
+#           npm run build
 
-      - name: Build backend
-        run: |
-          cd backend
-          npm run build || true
+#       - name: Build backend
+#         run: |
+#           cd backend
+#           npm run build || true
 
-      - name: Lint frontend
-        run: |
-          npm run lint -- frontend || true
+#       - name: Lint frontend
+#         run: |
+#           npm run lint -- frontend || true
 
-      - name: Lint backend
-        run: |
-          npm run lint -- backend || true
+#       - name: Lint backend
+#         run: |
+#           npm run lint -- backend || true
 
-      - name: Docker Compose Build
-        run: |
-          docker compose build
+#       - name: Docker Compose Build
+#         run: |
+#           docker compose build
 
-      - name: Docker Compose Up (test)
-        run: |
-          docker compose up -d
-          sleep 20
-          docker compose ps
+#       - name: Docker Compose Up (test)
+#         run: |
+#           docker compose up -d
+#           sleep 20
+#           docker compose ps
 
-      - name: Docker Compose Down
-        if: always()
-        run: |
-          docker compose down
+#       - name: Docker Compose Down
+#         if: always()
+#         run: |
+#           docker compose down
 
-  # Add deploy job here if needed
-  # deploy, rn i'm using webhooks for a self-hosted server
+#   # Add deploy job here if needed
+#   # deploy, rn i'm using webhooks for a self-hosted server

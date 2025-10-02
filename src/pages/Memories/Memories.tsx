@@ -4,9 +4,7 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import MemoriesYear from "../../components/MemoriesYear";
-import {
-  YouTubeVideoType,
-} from "../../components/MemoriesYear";
+import { YouTubeVideoType } from "../../components/MemoriesYear";
 
 import imageAliases from "../../assets/imageAliases";
 
@@ -402,7 +400,8 @@ const Memories: React.FC = () => {
           {
             imageSrc: imageAliases.allianceStates,
             altText: "Alliance discussion at States",
-            caption: "Team members discussing strategy during alliance selection at States",
+            caption:
+              "Team members discussing strategy during alliance selection at States",
           },
           {
             imageSrc: imageAliases.pushingBrontes,
