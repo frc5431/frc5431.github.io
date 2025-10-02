@@ -77,7 +77,13 @@
   justify-content: center;
   padding: 8px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #02204E 0%, #2B0250 25%, #8B1FEA 75%, #1DAFEA 100%);
+  background: linear-gradient(
+    135deg,
+    #02204e 0%,
+    #2b0250 25%,
+    #8b1fea 75%,
+    #1dafea 100%
+  );
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   width: fit-content;
   margin: 0 auto;

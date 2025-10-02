@@ -1,7 +1,7 @@
 ﻿import React, { useState, useEffect } from "react";
 import "./Events.css";
 import Footer from "../../components/Footer/Footer";
-import BalloonFestival from "../../assets/img/universal/planoballoonfestival.png"
+import BalloonFestival from "../../assets/img/universal/planoballoonfestival.png";
 
 const Events: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -91,13 +91,19 @@ const Events: React.FC = () => {
           </div>
         </div>
       </section>
-      <section style={{
-        position: "relative",
-        zIndex: 1
-      }}>
+      <section
+        style={{
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
         <h2 className="calendar-title">Plano Balloon Festival</h2>
         <div className="balloon-container">
-          <img src={BalloonFestival} alt="Plano Balloon Festival" className="balloon-img" />
+          <img
+            src={BalloonFestival}
+            alt="Plano Balloon Festival"
+            className="balloon-img"
+          />
         </div>
       </section>
 
