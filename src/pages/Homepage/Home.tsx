@@ -307,7 +307,9 @@ function Home() {
                   <p className="sponsors-description">
                     Our amazing sponsors make everything we do possible.
                     Discover the companies and organizations that support our
-                    mission.
+                    mission. Our amazing sponsors make everything we do
+                    possible. Discover the companies and organizations that
+                    support our mission.
                   </p>
                   <a href="/about/oursponsors" className="sponsors-link">
                     View All Sponsors
