@@ -1,12 +1,10 @@
 ﻿import React, { useState } from "react";
 import "./ContactUs.css";
 import teamNumber from "../../assets/img/universal/5431LogoBlackvector.svg";
-import axios from "axios";
 import Footer from "../../components/Footer/Footer";
+import emailjs from "@emailjs/browser";
 
 const Contactus: React.FC = () => {
-  const backendUrl = "https://frc5431.wucode.org/api/send-email";
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -35,17 +33,28 @@ const Contactus: React.FC = () => {
     e.preventDefault();
     setFormStatus({ loading: true, error: false, sent: false });
 
-    // Simulate form submission
-    setTimeout(() => {
-      // Here you would normally send the data to a server
-      console.log("backend URL:", backendUrl);
-      axios
-        .post(backendUrl, formData)
-        .then((res) => {
-          console.log("Response from server:", res.data);
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      teamNumber: formData.teamNumber,
+      subject: formData.subject,
+      message: formData.message,
+      reply_to: formData.email,
+    };
+
+    emailjs
+      .send(
+        "service_x3eq9nl",
+        "template_yacy3jg",
+        templateParams,
+        "Lim2sIgAp9Heo4eLi",
+      )
+      .then(
+        (response) => {
+          console.log("Reply Email sent!", response.status, response.text);
           setFormStatus({ loading: false, error: false, sent: true });
 
-          // Reset form data
+          // Reset form
           setFormData({
             name: "",
             email: "",
@@ -53,12 +62,39 @@ const Contactus: React.FC = () => {
             subject: "",
             message: "",
           });
-        })
-        .catch((error) => {
-          console.error("Error sending form:", error);
+        },
+        (error) => {
+          console.error("EmailJS error (Auto-Reply):", error);
           setFormStatus({ loading: false, error: true, sent: false });
-        });
-    }, 1500);
+        },
+      );
+
+    emailjs
+      .send(
+        "service_x3eq9nl",
+        "template_1yb709k",
+        templateParams,
+        "Lim2sIgAp9Heo4eLi",
+      )
+      .then(
+        (response) => {
+          console.log("Admin Email sent!", response.status, response.text);
+          setFormStatus({ loading: false, error: false, sent: true });
+
+          // Reset form
+          setFormData({
+            name: "",
+            email: "",
+            teamNumber: "",
+            subject: "",
+            message: "",
+          });
+        },
+        (error) => {
+          console.error("EmailJS error (Admin Email):", error);
+          setFormStatus({ loading: false, error: true, sent: false });
+        },
+      );
   };
 
   return (
