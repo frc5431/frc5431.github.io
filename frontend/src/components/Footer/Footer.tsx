@@ -2,6 +2,7 @@ import React from "react";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 import "./Footer.css";
 
@@ -36,6 +37,13 @@ const Footer: React.FC = () => {
             rel="noreferrer"
           >
             <YouTubeIcon fontSize="large" className="footer-social-icon" />
+          </a>
+          <a
+            href="https://github.com/frc5431/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <GitHubIcon fontSize="large" className="footer-social-icon" />
           </a>
         </div>
       </div>

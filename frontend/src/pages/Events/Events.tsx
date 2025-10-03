@@ -1,7 +1,8 @@
 ﻿import React, { useState, useEffect } from "react";
 import "./Events.css";
 import Footer from "../../components/Footer/Footer";
-import BalloonFestival from "../../assets/img/universal/planoballoonfestival.png"
+import BalloonFestival from "../../assets/img/universal/planoballoonfestival.png";
+import stemGals from "../../assets/img/universal/stem gals.jpg";
 import Carousel from "../../components/Carosuel/Carousel";
 import imageAliases from "../../assets/imageAliases";
 
@@ -138,10 +139,10 @@ const Events: React.FC = () => {
         <div>
           <h2 className="calendar-title">NTX Stem Gals</h2>
           <div className="balloon-container">
-            <img src={BalloonFestival} alt="Plano Balloon Festival" className="balloon-img" />
+            <img src={stemGals} alt="NTX Stem Gals" className="balloon-img" />
           </div>
           <div>
-            <p className="balloon-text">NTX is an annual event, that supports women in STEM.</p>
+            <p className="balloon-text"><a target="_blank" href="https://www.ntxrobotics.com/">NTX</a> is an annual event, that supports women in STEM.</p>
           </div>
         </div>
       </section>

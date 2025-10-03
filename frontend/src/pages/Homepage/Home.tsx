@@ -271,7 +271,7 @@ function Home() {
                   </a>
                 </div>
                 <div className="card-body">
-                  <h2 className="card-title mt-3">NTX Robotics</h2>
+                  <h2 className="card-title mt-3" id="NTX">NTX Robotics</h2>
                   <div className="line mb-3"></div>
                   <p className="card-text">
                     North Texas Robotics was founded in 2015 to bring teams

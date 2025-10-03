@@ -116,6 +116,20 @@
   width: 100vw;
 }
 
+@media (min-width: 769px) {
+  .section-container-arrows {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+
+@media (max-width: 1140px) {
+  .section-container-arrows {
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+}
+
 @media (max-width: 768px) {
   .events-main-text {
     font-size: 3.5rem !important;
