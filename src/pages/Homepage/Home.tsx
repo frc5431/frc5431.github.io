@@ -1,5 +1,6 @@
 // Import Bootstrap CSS (you'll need to install it with npm first)
 import teamLogoBlack from "../../assets/img/universal/5431LogoBlackvector.svg";
+import backgroundVideoBrontes from "../../assets/img/universal/backgroundVideoBrontes.mp4";
 import imageAliases from "../../assets/imageAliases";
 import "./Home.css";
 import Carousel from "../../components/Carosuel/Carousel";
@@ -117,6 +118,54 @@ function Home() {
 
         {/* Content section */}
         <section id="index-content">
+          <div
+            id="content"
+            className="team-description-container video-bg-container"
+          >
+            <div className="video-bg">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  pointerEvents: "none",
+                  zIndex: 0,
+                }}
+              >
+                <source src={backgroundVideoBrontes} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div
+              className="team-description-content"
+              style={{ position: "relative", zIndex: 1 }}
+            >
+              <img
+                src={teamLogoBlack}
+                alt="Team 5431 Logo"
+                className="team-number"
+              />
+              <h2 className="who-are-we">Who are we?</h2>
+              <p className="description-team">
+                We are <strong>Titan Robotics, Team 5431</strong>, the largest
+                robotics team in Plano and a leader in STEAM education. Our team
+                contributes thousands of volunteer hours, mentors younger FLL
+                and FRC teams, and showcases robotics at schools and community
+                events. We focus on inspiring students, supporting local teams,
+                and strengthening STEAM involvement across Plano. As Titans, we
+                are dedicated to making a lasting impact through service,
+                mentorship, and innovation.
+              </p>
+            </div>
+          </div>
+
           <div id="content" className="content-container">
             <img
               src={teamLogoBlack}
@@ -275,7 +324,9 @@ function Home() {
                   </a>
                 </div>
                 <div className="card-body">
-                  <h2 className="card-title mt-3">NTX Robotics</h2>
+                  <h2 className="card-title mt-3" id="NTX">
+                    NTX Robotics
+                  </h2>
                   <div className="line mb-3"></div>
                   <p className="card-text">
                     North Texas Robotics was founded in 2015 to bring teams
@@ -307,9 +358,7 @@ function Home() {
                   <p className="sponsors-description">
                     Our amazing sponsors make everything we do possible.
                     Discover the companies and organizations that support our
-                    mission. Our amazing sponsors make everything we do
-                    possible. Discover the companies and organizations that
-                    support our mission.
+                    mission.
                   </p>
                   <a href="/about/oursponsors" className="sponsors-link">
                     View All Sponsors
@@ -337,31 +386,37 @@ function Home() {
                 </div>
               </div>
             </div>
-
-            {/* Media section */}
-            <div className="px-xl-5 px-md-3 px-0">
-              <div
-                className="row mt-3 mx-lg-3 mx-md-2 mx-0 px-xl-5 px-md-4 px-2 py-md-4 py-3"
-                id="media"
-              >
-                <div className="col col-lg-8 col-md-7 center center-element">
-                  <div className="yt-container">
-                    <iframe
-                      title="About FIRST"
-                      src="https://www.youtube.com/embed/K_PuWjr7qcM"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen={true}
-                    ></iframe>
-                  </div>
-                  <p>
-                    This video talks about who FIRST is and what FIRST Robotics
-                    Competition (FRC) does. Impacting many highschool students
-                    around the world preparing them for the future through fun
-                    challenges.
-                  </p>
-                </div>
+            {/* <div className="content-container" style={{ marginTop: '5vh', paddingBottom: '5vh' }}>
+              {/* <img
+                src={teamLogoBlack}
+                alt="Team 5431 Logo"
+                className="team-number"
+              />
+              <Carousel data={carouselItems} />
+              <div className="social-container">
+                <a
+                  href="https://www.instagram.com/frc5431/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <InstagramIcon fontSize="large" className="social-icon" />
+                </a>
+                <a
+                  href="https://www.facebook.com/frc5431/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FacebookIcon fontSize="large" className="social-icon" />
+                </a>
+                <a
+                  href="https://www.youtube.com/@frc5431/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <YouTubeIcon fontSize="large" className="social-icon" />
+                </a>
               </div>
-            </div>
+            </div> */}
           </div>
           <Footer />
         </section>
