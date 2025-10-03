@@ -11,32 +11,16 @@ import { fileURLToPath } from "url";
 const tsconfigRootDir = fileURLToPath(new URL(".", import.meta.url));
 
 export default tseslint.config(
-  { ignores: ["**/dist", "**/node_modules"] },
-
   {
-    files: ["**/*.{ts,tsx,js,jsx}"],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.node,
-      parserOptions: {
-        sourceType: "module",
-      },
-    },
-    rules: {
-      ...eslintConfigPrettier.rules,
-    },
-  },
-
-  {
-    files: ["frontend/**/*.{ts,tsx}"],
+    files: ["/**/*.{ts,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
       parser: tsParser,
       parserOptions: {
         project: [
-          "./frontend/tsconfig.app.json",
-          "./frontend/tsconfig.node.json",
+          "./tsconfig.app.json",
+          "./tsconfig.node.json",
         ],
         tsconfigRootDir: tsconfigRootDir,
         ecmaFeatures: {
@@ -53,6 +37,7 @@ export default tseslint.config(
     rules: {
       ...reactHooks.configs.recommended.rules,
       ...jsxA11y.configs.recommended.rules,
+      ...eslintConfigPrettier.rules,
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },

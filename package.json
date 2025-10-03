@@ -1,7 +1,8 @@
 {
-  "name": "frc5431-monorepo",
+  "name": "frc5431.github.io",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0",
+  "type": "module",
   "description": "FRC Team 5431 Website",
   "keywords": [
     "frc",
@@ -15,24 +16,52 @@
     "robotics"
   ],
   "scripts": {
-    "prepare": "husky install",
-    "lint": "eslint ."
+    "dev": "vite",
+    "compress-assets": "node scripts/compress-assets.js",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.2.0",
+    "@mui/material": "^7.2.0",
+    "@mui/styled-engine": "^7.2.0",
+    "@mui/styled-engine-sc": "^7.2.0",
+    "bootstrap": "^5.3.7",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.7.1",
+    "serve": "^14.2.4",
+    "sharp": "^0.34.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
+    "@types/node": "^24.1.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "@typescript-eslint/eslint-plugin": "^8.38.0",
     "@typescript-eslint/parser": "^8.38.0",
+    "@vitejs/plugin-react": "^4.7.0",
     "eslint": "^9.32.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-only-warn": "^1.1.0",
     "eslint-plugin-prettier": "^5.5.3",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
     "husky": "^9.0.0",
     "lint-staged": "^15.2.0",
     "prettier": "^3.3.2",
-    "typescript-eslint": "^8.38.0"
+    "rollup-plugin-visualizer": "^6.0.3",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.38.0",
+    "vite": "^7.0.6",
+    "vite-plugin-compression2": "^2.2.0"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
