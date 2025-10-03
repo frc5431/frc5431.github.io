@@ -3,10 +3,7 @@ import teamLogoBlack from "../../assets/img/universal/5431LogoBlackvector.svg";
 import backgroundVideoBrontes from "../../assets/img/universal/backgroundVideoBrontes.mp4";
 import imageAliases from "../../assets/imageAliases";
 import "./Home.css";
-import Carousel from "../../components/Carosuel/Carousel";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+
 import Footer from "../../components/Footer/Footer";
 import { useState, useEffect } from "react";
 
@@ -84,16 +81,6 @@ function Home() {
       clearTimeout(startDelay);
     };
   }, [currentSubteam]); // Only depend on currentSubteam
-  const carouselItems: CarouselItem[] = [
-    {
-      id: 1,
-      imagePath: imageAliases.universal5431NumberSign,
-      alt: "team holding sign",
-    },
-    { id: 2, imagePath: imageAliases.frcEvent, alt: "sfs" },
-    { id: 3, imagePath: imageAliases.hyperionShooting, alt: "fs" },
-    { id: 4, imagePath: imageAliases.hatConstruction, alt: "" },
-  ];
 
   return (
     <div className="app-container">
@@ -166,37 +153,6 @@ function Home() {
             </div>
           </div>
 
-          <div id="content" className="content-container">
-            <img
-              src={teamLogoBlack}
-              alt="Team 5431 Logo"
-              className="team-number"
-            />
-            <Carousel data={carouselItems} />
-            <div className="social-container">
-              <a
-                href="https://www.instagram.com/frc5431/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <InstagramIcon fontSize="large" className="social-icon" />
-              </a>
-              <a
-                href="https://www.facebook.com/frc5431/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FacebookIcon fontSize="large" className="social-icon" />
-              </a>
-              <a
-                href="https://www.youtube.com/@frc5431/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <YouTubeIcon fontSize="large" className="social-icon" />
-              </a>
-            </div>
-          </div>
           <div className="container-fluid pb-0 pb-md-4">
             {/* Three info cards */}
             <div className="card-group pt-3">
