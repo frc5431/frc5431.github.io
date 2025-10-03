@@ -166,6 +166,37 @@ function Home() {
             </div>
           </div>
 
+          <div id="content" className="content-container">
+            <img
+              src={teamLogoBlack}
+              alt="Team 5431 Logo"
+              className="team-number"
+            />
+            <Carousel data={carouselItems} />
+            <div className="social-container">
+              <a
+                href="https://www.instagram.com/frc5431/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <InstagramIcon fontSize="large" className="social-icon" />
+              </a>
+              <a
+                href="https://www.facebook.com/frc5431/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FacebookIcon fontSize="large" className="social-icon" />
+              </a>
+              <a
+                href="https://www.youtube.com/@frc5431/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <YouTubeIcon fontSize="large" className="social-icon" />
+              </a>
+            </div>
+          </div>
           <div className="container-fluid pb-0 pb-md-4">
             {/* Three info cards */}
             <div className="card-group pt-3">
