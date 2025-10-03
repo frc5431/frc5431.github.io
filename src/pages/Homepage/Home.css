@@ -2,6 +2,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Gothic+A1&family=Outfit:wght@100..900&display=swap");
 
+/* Video background for team description container */
+.video-bg-container {
+  position: relative;
+  overflow: hidden;
+  /* Color filter options - change this variable to apply different color overlays */
+  /* --video-filter-color: rgba(47, 42, 50, 0.3); Default: purple overlay with 30% opacity */
+
+  /* Predefined color options (uncomment one to use):
+  --video-filter-color: rgba(29, 175, 234, 0.3);  /* Brand blue overlay */
+  --video-filter-color: rgba(
+    2,
+    32,
+    78,
+    0.4
+  ); /* Brand navy overlay
+  /* --video-filter-color: rgba(43, 2, 80, 0.3);     /* Brand purple overlay */
+  /* --video-filter-color: rgba(0, 0, 0, 0.4);       /* Black overlay */
+  /* --video-filter-color: rgba(255, 255, 255, 0.2); /* White overlay */
+  /* --video-filter-color: rgba(255, 0, 0, 0.3);     /* Red overlay */
+  /* --video-filter-color: rgba(0, 255, 0, 0.3);     /* Green overlay */
+  /* --video-filter-color: transparent;              /* No color overlay */
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(3px);
+}
+
+@media (max-width: 768px) {
+  .video-bg {
+    height: 120vh;
+  }
+}
+
+.video-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--video-filter-color);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.team-description-content {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  border-radius: 1rem;
+  align-items: center;
+  flex-direction: column;
+}
+
 :root {
   --primary-color: #8b1fea;
   --secondary-color: #3c0370;
@@ -10,7 +72,8 @@
   --brand-navy: #02204e;
   --brand-purple: #2b0250;
   --light-bg: rgba(255, 255, 255, 0.9);
-  --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+  align-items: center;
 }
 
 .carousel-container {
@@ -19,6 +82,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.card {
+  border-radius: 10px;
 }
 
 .center-element {
@@ -49,12 +116,26 @@
 }
 
 .team-number {
-  width: 25vw;
+  width: 30vw;
   filter: drop-shadow(0 2px 8px rgba(139, 31, 234, 0.3))
     drop-shadow(0 4px 16px rgba(29, 175, 234, 0.2))
     drop-shadow(0 8px 24px rgba(2, 32, 78, 0.1));
-  margin-bottom: 1vh;
+  filter: invert(1);
   padding-top: 10vh;
+  z-index: 10;
+  opacity: 0.7;
+  margin-bottom: 1vh;
+}
+
+.who-are-we {
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 3vh;
+  z-index: 10;
+  opacity: 0.7;
+  margin-bottom: 7vh;
+  letter-spacing: 0.01em;
 }
 
 @media (max-width: 768px) {
@@ -264,7 +345,6 @@
 @media (max-width: 768px) {
   .sponsors-banner {
     padding: 2rem 1rem;
-    margin: 0 0.5rem;
   }
 
   .sponsors-title {
@@ -284,7 +364,6 @@
 /* Subteams Section */
 .subteams-section-container {
   margin: 3rem 0;
-  padding: 0 1rem;
 }
 
 .subteams-banner {
@@ -364,7 +443,6 @@
   .subteams-banner {
     border-radius: 10px;
     padding: 3rem 1rem;
-    margin: 0 0.5rem;
     min-height: 350px;
     display: flex;
     align-items: center;
@@ -532,4 +610,52 @@
     height: 100%;
     min-height: 300px;
   }
+}
+
+.team-description-container {
+  display: flex;
+  justify-content: center;
+  padding: 5vh;
+  padding-bottom: 10vh;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border: 20px solid rgba(4, 0, 52, 1);
+  border-left: none;
+  border-right: none;
+  border-bottom-color: rgba(0, 44, 91, 0);
+  height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .team-description-container {
+    height: 120vh;
+  }
+}
+
+.team-description-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #040034;
+  background-size: 100% 100%;
+  z-index: 0;
+}
+@media (max-width: 768px) {
+  .description-team {
+    width: 90vw;
+  }
+}
+
+.description-team {
+  width: 80vw;
+  font-size: 1.15rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 1.2rem;
+  border-radius: 10px;
+  z-index: 10;
 }

@@ -9,42 +9,12 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import Footer from "../../components/Footer/Footer";
 import { useState, useEffect } from "react";
-import { useState, useEffect } from "react";
 
 export interface CarouselItem {
   id: number;
   imagePath: string;
   alt: string;
 }
-
-interface Subteam {
-  id: number;
-  name: string;
-  backgroundClass: string;
-}
-
-const subteams: Subteam[] = [
-  {
-    id: 1,
-    name: "Build",
-    backgroundClass: "subteam-build",
-  },
-  {
-    id: 2,
-    name: "Control Systems",
-    backgroundClass: "subteam-control-systems",
-  },
-  {
-    id: 3,
-    name: "Scouting and Strategy",
-    backgroundClass: "subteam-scouting",
-  },
-  {
-    id: 4,
-    name: "Business",
-    backgroundClass: "subteam-business",
-  },
-];
 
 interface Subteam {
   id: number;
@@ -345,45 +315,6 @@ function Home() {
                       Find Out More
                     </a>
                   </h3>
-                </div>
-              </div>
-            </div>
-
-            {/* Sponsors section */}
-            <div className="sponsors-section-container">
-              <div className="sponsors-banner">
-                <div className="sponsors-content">
-                  <h2 className="sponsors-title">See Our Sponsors!</h2>
-                  <p className="sponsors-description">
-                    Our amazing sponsors make everything we do possible.
-                    Discover the companies and organizations that support our
-                    mission. Our amazing sponsors make everything we do
-                    possible. Discover the companies and organizations that
-                    support our mission.
-                  </p>
-                  <a href="/about/oursponsors" className="sponsors-link">
-                    View All Sponsors
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Subteams section */}
-            <div className="subteams-section-container">
-              <div
-                className={`subteams-banner ${subteams[currentSubteam].backgroundClass}`}
-              >
-                <div className="subteams-content">
-                  <h2 className="subteams-title">Check Out Our Subteams!</h2>
-                  <div className="current-subteam">
-                    <h3 className="current-subteam-name">
-                      {displayedText}
-                      {isTyping && <span className="cursor">|</span>}
-                    </h3>
-                  </div>
-                  <a href="/about/ourteam" className="subteams-link">
-                    Meet Our Team
-                  </a>
                 </div>
               </div>
             </div>
