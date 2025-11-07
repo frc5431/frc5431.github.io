@@ -384,7 +384,7 @@ const Memories: React.FC = () => {
         gameName: "Charged Up",
         imageURL: imageAliases.game2023,
         description:
-          "In 2023, our team competed in the FIRST Charged Up challenge.",
+          "FRC 5431 built Brontes, a multipurpose robot with a multi-jointed arm and swerve drive. Brontes brought 5431 to the FIRST World's competition in Houston! Building up to World’s, FRC 5431 won the Gracious Professionalism Award in the Dallas Competition, and the Team Spirit Award in the Fort Worth Competition.",
         memoryImages: [
           {
             imageSrc: imageAliases.team2023,
@@ -431,7 +431,7 @@ const Memories: React.FC = () => {
         gameName: "Crescendo",
         imageURL: imageAliases.game2024,
         description:
-          "In 2024, our team participated in the FIRST Crescendo competition.",
+          "FRC 5431 built Orpheus, an innovative robot with under-the-bumper electronics. This allowed Orpheus to win 5431 the Imagery Award, with our colorful designs, tie-dyed uniforms, and loud chants. In the Plano District as well, 5431 showed excellent behavior and won the Gracious Professionalism Award.",
         memoryImages: [
           {
             imageSrc: imageAliases.gametimeorpheus,
@@ -466,7 +466,7 @@ const Memories: React.FC = () => {
         gameName: "Reefscape",
         imageURL: imageAliases.game2025,
         description:
-          "In 2025, our team is competing in the FIRST Reefscape challenge.",
+          "FRC 5431 built Iris, a sleek, carbon-fiber-based machine. Iris has strong coral retrieval and placement capabilities, and the detailed documentation of Iris lent us the FIRST in Texas Quality Award. 5431’s chants and hype landed the First in Texas Spirit Award as well. FRC 5431 ended as a FIRST in Texas Fort Worth Finalist, continuing a tradition of strong performances in FIRST Competitions.",
         memoryImages: [
           {
             imageSrc: imageAliases.irisinblue,
