@@ -50,8 +50,8 @@ const Events: React.FC = () => {
   ];
 
   const calendarSrc = isMobile
-    ? "https://calendar.google.com/calendar/embed?src=pisd.edu_57n5cfp52bltnua0aegb3mnr18%40group.calendar.google.com&ctz=America%2FChicago&mode=AGENDA"
-    : "https://calendar.google.com/calendar/embed?src=pisd.edu_57n5cfp52bltnua0aegb3mnr18%40group.calendar.google.com&ctz=America%2FChicago";
+    ? "https://calendar.google.com/calendar/embed?src=d9a7fe0jcjkg5nnlpld4q66uvb9ulq4d%40import.calendar.google.com&ctz=America%2FChicago&mode=AGENDA"
+    : "https://calendar.google.com/calendar/embed?src=d9a7fe0jcjkg5nnlpld4q66uvb9ulq4d%40import.calendar.google.com&ctz=America%2FChicago";
 
   return (
     <main id="events-main" aria-labelledby="events-title">
